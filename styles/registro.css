@@ -1,4 +1,15 @@
-h1{
-    font-family:Arial, Helvetica, sans-serif;
-    text-align: center;
+h1, h2, h3, h4, h5 {
+    font-family: 'Fredoka One', cursive;
+    color: #EF8100;
+}
+* {
+    font-family: 'Catamaran', sans-serif;
+}
+
+#registro{
+    background-color: #FCDB7E;
+}
+
+a {
+    color: #FD8A3A
 }

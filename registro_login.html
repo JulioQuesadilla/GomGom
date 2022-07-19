@@ -4,12 +4,212 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran&family=Edu+TAS+Beginner&family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- BOOSTRAP CSS -->
+    <link rel="stylesheet" href="node_modules/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- LOCAL CSS -->
     <link rel="stylesheet" href="styles/registro.css">
 </head>
 <body>
-    <h1>Registro</h1>
-    <p>jeje</p>
+    <!-- NAVBAR Mobile -->
+    <nav class="navbar navbar-expand-sm bg-light">
+        <div class="container-fluid">
+          
+            <a class="navbar-brand" href="#">GomGom</a>
 
+          
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item px-2">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item px-2">
+                  <a class="nav-link" href="#">Catálogo</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="#">Acerca de</a>
+                  </li>
+                  <li class="nav-item px-2">
+                    <a class="nav-link" href="#">Contacto</a>
+                  </li>
+                  <br>
+
+
+              </ul>
+              
+
+            </div>
+          </div>
+          <div class="col-md-3 text-end">
+              
+              <button class="nav-item dropdown btn btn-warning p-0">
+                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Login
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+        <button type="button" class="btn btn-outline-warning me-2">Sign-up</button>
+
+              
+          </div>
+        </div>
+      </nav>
+
+
+      <!-- navbarPC
+      <div class="container-fluid d-none d-sm-block">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+    
+
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Features</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+          </ul>
+
+    
+          <div class="col-md-3 text-end">
+            <button type="button" class="btn btn-outline-primary me-2">Login</button>
+            <button type="button" class="btn btn-primary">Sign-up</button>
+          </div>
+        </header>
+      </div>
+
+      <br/> -->
+      <br>
+
+      <!-- ÁREA DE REGISTRO -->
+      <div class="container-fluid" id="registro">
+        <div class="row">
+            <div class="col-sm-12 col-m-6">
+                <h2 class="text-center m-4"> Regístrate </h2>
+                <!-- <form action="">
+                <div class="row">
+                    <div class="col-2"><label for="nombre">Nombre</label></div>
+                    <div class="col-10"><input type="text" name="nombre" id="nombre"> </div>
+                    
+                </div>
+                
+                </form> -->
+                <!-- FORMULARIO -->
+                <form class="g-3">
+                    <!-- nombres -->
+                    <div class="row m-1 p-1">
+                        <div class="col-sm-2">
+                            <label for="validationDefault01" class="form-label text-uppercase">Nombre</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="validationDefault01" value="" required>
+                        </div>
+                    </div>
+                    
+                    <!-- apellidos -->
+                    <div class="row m-1 p-1">
+                        <div class="col-sm-2">
+                            <label for="validationDefault02" class="form-label text-uppercase">Apellidos</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="validationDefault02" value="" required>
+                        </div>
+                    </div>
+
+                    <!-- usuario Gom -->
+                    <div class="row m-1 p-1">
+                        <div class="col-sm-2">
+                            <label for="validationDefault03" class="form-label text-uppercase">Usuario</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="validationDefault01" value="" required>
+                        </div>
+                    </div>
+                    
+                    <!-- domicilio -->
+                    <div class="row m-1 p-1">
+                        <div class="col-sm-2">
+                            <label for="validationDefault04" class="form-label text-uppercase">Domicilio</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="validationDefault04" value="" required>
+                        </div>
+                    </div>
+                    
+                    <!-- correo -->
+                    <div class="row m-1 p-1">
+                        <div class="col-sm-2">
+                            <label for="validationDefault05" class="form-label text-uppercase">Correo</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="validationDefault05" value="" required>
+                        </div>
+                    </div>
+
+                    <!-- contraseña -->
+                    <div class="row m-1 p-1 mb-3">
+                        <div class="col-sm-2">
+                            <label for="validationDefault06" class="form-label text-uppercase">Contraseña</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="validationDefault05" value="" required>
+                        </div>
+                    </div>
+
+                    
+                    <!-- botón de registro -->
+                    <div class="m-1 row align-content-center justify-content-center">
+                        <div class="col text-center">
+                            <button class="btn btn-warning rounded-pill btn-lg" type="submit">Regístrate en <br><b>GomGom</b></button>
+                        </div>
+                    </div>
+                    <div class="row align-content-center justify-content-center">
+                    
+                    </div>
+                    
+                </form>
+                
+
+            </div>
+            <!-- Imagen -->
+            <div class="col-6 d-none d-sm-block">
+                <img src="https://vinomanos.com/wp-content/uploads/2021/09/Gomitas-1-1068x605.jpg" alt="" class="w-100">
+            </div>
+        </div>
+      </div>
+
+
+
+
+
+
+    <!-- SCRIPTS -->
+    <!-- BOOTSTRAP SCRIPT -->
+    <script src="node_modules/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- LOCAL SCRIPT   -->
     <script src="scripts/registro.js"></script>
 </body>
 </html>
