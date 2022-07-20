@@ -26,13 +26,57 @@
     <div></div>
 
     <!-- Información de pago -->
-    <div></div>
+    <div class="container">
+        <!-- Tab navs -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" href="#envio">
+                    <h5>Envío</h5>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" href="#pago">
+                    <h5>Pago</h5>
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active container mt-4" id="envio">
+                <div class="input-group mb-2 input-group-sm">
+                    <div class="input-group-text">
+                        <input type="radio" name="opciones" id="opcion1">
+                    </div>
+    
+                    <input type="text" for="opcion1" placeholder="Envíos a domicio" disabled>
+                </div>
+
+                <input type="radio" name="opciones" id="opcion2">
+                <label for="opcion2">
+                    <p>
+                        Entregas en punto medio
+                    </p>
+                </label>
+            </div>
+            <div class="tab-pane fade container mt-4" id="pago">
+                <p>
+                    ipsum dolor sit amet consectetur adipisicing elit. Facere eos pariatur nulla quibusdam? Molestias
+                    ipsum quisquam corporis enim nam totam? Dolores, dignissimos repudiandae? Blanditiis repudiandae
+                    inventore possimus, illum atque nesciunt?
+                </p>
+            </div>
+        </div>
+
+    </div>
 
     <!-- Resumen de pago -->
     <div></div>
 
     <!-- Footer -->
     <div></div>
+
+
 
     <!-- Archivos -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
