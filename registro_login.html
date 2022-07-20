@@ -15,43 +15,54 @@
 </head>
 <body>
     <!-- NAVBAR Mobile -->
+    <hr class="borde mt-1">
     <nav class="navbar navbar-expand-sm bg-light">
-        <div class="container-fluid">
+        <div class="container-md">
           
-            <!-- <a class="navbar-brand" href="#">GomGom</a> -->
-
           <!-- Offcanvas y hamburguesita de menú -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-            <span class="navbar-toggler-icon"></span>
+          <!-- Hamburguesa -->
+          <div class="col text-start">
+            <button id="hamburguesita" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"><b>——— <br> ———</b></span>
           </button>
-          
+          </div>
+          <!-- Offcanvas -->
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item px-2">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link nav-items" href="#">Home</a>
                 </li>
-                <li class="nav-item px-2">
-                  <a class="nav-link" href="#">Catálogo</a>
+                <li class="nav-item">
+                  <a class="nav-link nav-items" href="#">Catálogo</a>
                 </li>
-                <li class="nav-item px-2">
-                    <a class="nav-link" href="#">Acerca de</a>
+                <li class="nav-item">
+                    <a class="nav-link nav-items" href="#">Acerca de</a>
                   </li>
-                  <li class="nav-item px-2">
-                    <a class="nav-link" href="#">Contacto</a>
+                  <li class="nav-item">
+                    <a class="nav-link nav-items" href="#">Contacto</a>
                   </li>
               </ul>
               
 
             </div>
           </div>
-          <div class="col-md-3 text-end">
+
+          
+          <!-- Navbar brand -->
+          <div class="col-md-4 text-sm-start text-md-center">
+            <a href="index.html" class="navbar-brand"><img src="https://i.ibb.co/dPfMrvL/Imagen1.png" alt="" width="auto" height="100">
+            </a>
+          </div>
+
+          <!-- Botón Dropdown -->
+          <div class="col-md-3 text-end btn-group">
               
-              <button class="nav-item dropdown btn btn-outline-warning p-0">
+              <button class="nav-item dropdown btn rounded btn-outline-warning p-0">
                 <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Login
                 </a>
@@ -72,14 +83,30 @@
                 </ul>
             </li>
         </ul>
-        
+      <!-- Botón signup -->
         <button type="button" class="btn btn-warning me-2">Sign-up</button>
 
               
           </div>
+<!-- Carrito -->
+          <div class="col text-center">
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FD8A3A" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="6" cy="19" r="2" />
+                <circle cx="17" cy="19" r="2" />
+                <path d="M17 17h-11v-14h-2" />
+                <path d="M6 5l14 1l-1 7h-13" />
+              </svg>
+            </a>
+          </div>
+          <!-- Termina navbar -->
         </div>
       </nav>
+      <hr class="borde mb-1 mt-4">
       <br>
+
+      
 
       <!-- ÁREA DE REGISTRO -->
       <div class="container-sm" id="registro">
@@ -167,8 +194,9 @@
 
             </div>
           </div>
+        </div>
+
         <!-- Imagen -->
-      </div>
         <div class="container col-6 d-none d-sm-block">
           <img src="https://vinomanos.com/wp-content/uploads/2021/09/Gomitas-1-1068x605.jpg" alt="" class="w-100">
       </div>
@@ -179,7 +207,7 @@
 
 
     <!--FOOTER-->
-    <hr class="borde-footer mt-4">
+    <hr class="borde mt-4">
     <div class="container-fluid" id="footer">
       <div class="row">
       <h5 class="col-fluid-12 pt-2 mb-3 pb-3 justify-content-center align-content-center text-center text-uppercase">
@@ -217,7 +245,7 @@
       </div>
     </div>
     </div>
-    <hr class="borde-footer mb-1 mt-4">
+    <hr class="borde mb-1 mt-4">
 
 
     

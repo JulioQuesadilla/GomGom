@@ -2,7 +2,8 @@ h1, h2, h3, h4, h5 {
     font-family: 'Fredoka One', cursive;
     color: #ef8100;
 }
-* {
+
+body, .nav-items {
     font-family: 'Catamaran', sans-serif;
 }
 
@@ -10,23 +11,22 @@ h1, h2, h3, h4, h5 {
     background-color: #FCDB7E;
 }
 
-a {
+a, .nav-items {
     color: #FD8A3A;
 }
 
-hr.borde-footer {
+
+hr.borde {
     border: 0.15em solid #8B0003;
     border-radius: 5px;
   }
 
-.icon-tabler-brand-facebook:hover{
+.icon-tabler-brand-facebook:hover,
+    .icon-tabler-brand-instagram:hover,
+    .icon-tabler-brand-whatsapp:hover {
     fill: #FCDB7E;
 }
 
-.icon-tabler-brand-instagram:hover{
-    fill: #FCDB7E;
-}
-
-.icon-tabler-brand-whatsapp:hover{
-    fill: #FCDB7E;
+#hamburguesita{
+    color: #8B0003;
 }
