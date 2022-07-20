@@ -1,0 +1,31 @@
+h1, h3, h5 {
+    font-family: 'Fredoka One', cursive;
+    color: #ef8100;
+}
+
+* {
+    font-family: 'Catamaran', sans-serif;
+}
+
+hr.borde-footer {
+    border: 0.15em solid #8B0003;
+    border-radius: 5px;
+  }
+
+.icon-tabler-brand-facebook:hover{
+    fill: #FCDB7E;
+}
+
+.icon-tabler-brand-instagram:hover{
+    fill: #FCDB7E;
+}
+
+.icon-tabler-brand-whatsapp:hover{
+    fill: #FCDB7E;
+}
+
+a {
+    color: #FD8A3A;
+}
+
+.sombra { filter: drop-shadow(0 5px 10px #FD8A3A); }
