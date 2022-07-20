@@ -47,6 +47,22 @@ hr.borde {
     background-color: #FCDB7E;
 }
 
+@media (min-width: 576px) {
+    #offcanvasNavbar {
+    background-color: #ffffff;
+    }
+}
+
+input[type=submit] {
+    background-color: #ef8100;
+    border: none;
+    color: #8B0003;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
 #botonLogin {
     color:#8B0003
 }
