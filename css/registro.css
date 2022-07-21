@@ -66,6 +66,10 @@ input[type=submit] {
 #botonLogin {
     color:#8B0003
 }
+
+#drop-login {
+    color: #FCDB7E
+}
 /*Terminan opciones por default*/
 
 #registro{
