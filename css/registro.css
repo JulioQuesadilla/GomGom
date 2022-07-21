@@ -1,14 +1,21 @@
 /*Inician opciones por default*/
-h1, h2, h3, h4, h5 {
+
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: 'Fredoka One', cursive;
     color: #ef8100;
 }
 
-body, .nav-items {
+body,
+.nav-items {
     font-family: 'Catamaran', sans-serif;
 }
 
-a, .nav-items {
+a,
+.nav-items {
     color: #FD8A3A;
 }
 
@@ -21,25 +28,25 @@ a#navItemSeis:hover,
 a#navItemSiete:hover,
 a#navItemOcho:hover {
     color: #8B0003;
-    transform:scale(1.05);
+    transform: scale(1.05);
 }
 
 hr.borde {
     border: 0.15em solid #8B0003;
     border-radius: 5px;
-  }
+}
 
 .icon-tabler-brand-facebook:hover,
-    .icon-tabler-brand-instagram:hover,
-    .icon-tabler-brand-whatsapp:hover {
+.icon-tabler-brand-instagram:hover,
+.icon-tabler-brand-whatsapp:hover {
     fill: #FCDB7E;
 }
 
 #login-borde {
-    border:#8B0003;
+    border: #8B0003;
 }
 
-#hamburguesita{
+#hamburguesita {
     color: #8B0003;
 }
 
@@ -64,14 +71,23 @@ input[type=submit] {
   }
 
 #botonLogin {
-    color:#8B0003
+    color: #8B0003
 }
+
 
 #drop-login {
     color: #FCDB7E
 }
+
+
 /*Terminan opciones por default*/
 
-#registro{
+#registro {
     background-color: #FCDB7E;
+}
+
+.img-brand:hover {
+    transform: scale(1.1) rotate(360deg);
+    transition-duration: 2s;
+    transition-delay: now;
 }
