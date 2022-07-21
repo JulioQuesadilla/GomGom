@@ -1,5 +1,6 @@
 /*Inician opciones por default*/
 
+
 h1,
 h2,
 h3,
@@ -68,6 +69,7 @@ input[type=submit] {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 150%;
   }
 
 #botonLogin {
@@ -79,15 +81,14 @@ input[type=submit] {
     color: #FCDB7E
 }
 
-
-/*Terminan opciones por default*/
-
-#registro {
-    background-color: #FCDB7E;
-}
-
 .img-brand:hover {
     transform: scale(1.1) rotate(360deg);
     transition-duration: 2s;
     transition-delay: now;
+}
+/*Terminan opciones por default*/
+
+#registro {
+    background-color: #FCDB7E;
+    border-radius: 10%;
 }
