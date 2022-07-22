@@ -8,6 +8,8 @@ console.log("Link");
 let botonRegistro = document.getElementById("boton-registro");
 botonRegistro.addEventListener("click", validarRegistro);
 
+
+
 async function validarRegistro() {
     let formularioRegistro = document.forms["registroFormulario"];
     let contraUno = formularioRegistro["validarContraUno"].value;
@@ -36,3 +38,4 @@ async function validarRegistro() {
     }
 
 }
+
