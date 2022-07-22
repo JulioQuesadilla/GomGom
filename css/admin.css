@@ -129,7 +129,7 @@ fieldset {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     height: 45rem;
     border: solid var(--naranja);
     margin-top: 10PX;
