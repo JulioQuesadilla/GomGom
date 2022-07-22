@@ -1,0 +1,221 @@
+:root {
+    --textoBurbuja: 'Fredoka one';
+    --textoSecundario: 'Catamaran';
+    --Cafe: #8B0003;
+    --crema: #FCDB7E;
+    --naranja: #ef8100;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+}
+
+#header {
+    text-align: center;
+    background-color: var(--Cafe);
+    font-family: var(--textoBurbuja);
+    background-color: #8B0003;
+    color: var(--crema);
+    height: 15rem;
+    padding-top: 1rem;
+}
+
+#header {
+    text-align: center;
+    background-color: var(--Cafe);
+    font-family: var(--textoBurbuja);
+    background-color: #8B0003;
+    color: var(--crema);
+    height: 15rem;
+    padding-top: 1rem;
+}
+
+#navBar {
+    display: flex;
+    background-color: var(--Cafe);
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5rem;
+}
+
+#navBar a {
+    color: var(--crema);
+    font-family: var(--textoBurbuja);
+    border-bottom: #FCDB7E;
+    transition-property: border-bottom;
+    transition-duration: 200ms;
+    text-decoration: none;
+}
+
+#navBar a:hover {
+    border-bottom: solid;
+    border-width: .5rem;
+}
+
+#boton {
+    background-color: white;
+    width: 30rem;
+    border: solid var(--Cafe);
+    border-width: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-family: var(--textoSecundario);
+    font-weight: bold;
+    color: #8B0003;
+    transition-property: color, background-color;
+    transition-duration: 300ms;
+    text-align: center;
+}
+
+#boton:hover,
+#inputPrecio:hover {
+    color: white;
+    background-color: var(--Cafe);
+}
+
+#etiquetaPrecio {
+    font-family: var(--textoSecundario);
+    font-weight: bold;
+    color: var(--naranja);
+}
+
+#inputPrecio {
+    background-color: white;
+    border-style: none;
+    text-align: center;
+    border-color: var(--Cafe);
+    color: #8B0003;
+    border: solid;
+    border-width: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-weight: bold;
+    transition-property: color, background-color;
+    transition-duration: 300ms;
+}
+
+#descripcionArea {
+    border-color: #8B0003;
+    border-width: 5px;
+    border-radius: 5%;
+    color: #8B0003;
+    font-weight: bolder;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40rem;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 45rem;
+    border: solid var(--naranja);
+    margin-top: 10PX;
+    padding: 10PX 10PX;
+    border-width: 4PX;
+    background-color: var(--crema);
+    border-radius: 10PX;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+}
+
+#imagen {
+    margin-top: 50px;
+}
+
+#submit {
+    background-color: #8B0003;
+    font-family: var(--textoBurbuja);
+    color: var(--crema);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 300PX;
+}
+
+#calendario {
+    background-color: var(--Cafe);
+    border-radius: 10px;
+    color: white;
+    font-family: var(--textoBurbuja);
+}
+
+#fechaLegend {
+    font-family: var(--textoBurbuja);
+    color: #8B0003;
+}
+
+#select {
+    color: white;
+    background-color: var(--Cafe);
+    text-align: center;
+    border-radius: 20px 20px;
+    font-family: var(--textoBurbuja);
+}
+
+.option {
+    font-family: var(--textoBurbuja);
+}
+
+.div-formulario {
+    width: 20rem;
+}
+
+@media(max-width:767px) {
+    #header {
+        text-align: center;
+        background-color: var(--Cafe);
+        font-family: var(--textoBurbuja);
+        background-color: var(--Cafe);
+        color: var(--crema);
+        height: 5rem;
+        padding-top: 1rem;
+    }
+    #navBar {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--Cafe);
+        justify-content: space-evenly;
+        align-items: center;
+        height: 19rem;
+    }
+    #navBar a {
+        color: var(--crema);
+        font-family: var(--textoBurbuja);
+        border-bottom: #FCDB7E;
+        text-decoration: none;
+    }
+    #imagen {
+        display: none;
+    }
+    section {
+        display: flex;
+        justify-content: center;
+    }
+}
