@@ -236,3 +236,4 @@ bin
 
 # Ignora carpeta node_module
 node_modules/
+.json
