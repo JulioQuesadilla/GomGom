@@ -1,0 +1,94 @@
+/*Inician opciones por default*/
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Fredoka One', cursive;
+    color: #ef8100;
+}
+
+body,
+.nav-items {
+    font-family: 'Catamaran', sans-serif;
+}
+
+a,
+.nav-items {
+    color: #FD8A3A;
+}
+
+a#navItemUno:hover,
+a#navItemDos:hover,
+a#navItemTres:hover,
+a#navItemCuatro:hover,
+a#navItemCinco:hover,
+a#navItemSeis:hover,
+a#navItemSiete:hover,
+a#navItemOcho:hover {
+    color: #8B0003;
+    transform: scale(1.05);
+}
+
+hr.borde {
+    border: 0.15em solid #8B0003;
+    border-radius: 5px;
+}
+
+.icon-tabler-brand-facebook:hover,
+.icon-tabler-brand-instagram:hover,
+.icon-tabler-brand-whatsapp:hover {
+    fill: #FCDB7E;
+}
+
+#login-borde {
+    border: #8B0003;
+}
+
+#hamburguesita {
+    color: #8B0003;
+}
+
+#offcanvasNavbar {
+    background-color: #FCDB7E;
+}
+
+@media (min-width: 576px) {
+    #offcanvasNavbar {
+    background-color: #ffffff;
+    }
+}
+
+input[type=submit] {
+    background-color: #ef8100;
+    border: none;
+    color: #8B0003;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 150%;
+  }
+
+#botonLogin {
+    color: #8B0003
+}
+
+
+#drop-login {
+    color: #FCDB7E
+}
+
+.img-brand:hover {
+    transform: scale(1.1) rotate(360deg);
+    transition-duration: 2s;
+    transition-delay: now;
+}
+/*Terminan opciones por default*/
+
+#registro {
+    background-color: #FCDB7E;
+    border-radius: 10%;
+}
