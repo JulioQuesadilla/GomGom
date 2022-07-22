@@ -1,0 +1,138 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran&family=Edu+TAS+Beginner&family=Fredoka+One&display=swap"
+        rel="stylesheet">
+
+    <!-- Archivos -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/shopping-cart.css">
+</head>
+
+<body>
+
+    <h1>Hey Julio</h1>
+
+    <!-- Navbar -->
+    <div></div>
+
+    <!-- Información de pago -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-12">
+
+                <!-- Tab navs -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" href="#envio">Envío</button>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" href="#pago">Pago</button>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content border">
+                    <!-- Primera pestaña -->
+                    <div class="tab-pane active container mt-4" id="envio">
+                        <div class="input-group mb-2 input-group-sm">
+
+                            <!-- Opciones -->
+                            <div class="input-group-text">
+                                <input type="radio" name="opciones" id="opcion1">
+                            </div>
+
+                            <input type="text" for="opcion1" placeholder="Envíos a domicio" disabled>
+                        </div>
+
+                        <input type="radio" name="opciones" id="opcion2">
+                        <button class="btn btn-primary" disabled="disabled">Entrega en punto medio</button>
+                    </div>
+
+                    <!-- Segunda pestaña -->
+                    <div class="tab-pane fade container mt-4" id="pago">
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Resumen del pedido -->
+            <div class="col-12 col-md-6 mt-lg-5 mt-4">
+                <div class="container border">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Artículo</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Descuento</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>Yo</td>
+                                <td>Quiero</td>
+                            </tr>
+                            <tr>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                <td>Arroz</td>
+                                <td>Blanco</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <table class="table mt-lg-4 text-center table-borderless">
+                        <tbody>
+                            <tr class="text-center">
+                                <th scope="row">Subtotal</th>
+                                <td>$1000 200 3000 4000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Descuentos</th>
+                                <td>$000.000</td>
+                            </tr>
+                            <tr class="table-active">
+                                <th scope="row">Total</th>
+                                <td>$20003003030303030</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Resumen de pago -->
+    <div></div>
+
+    <!-- Footer -->
+    <div></div>
+
+
+
+    <!-- Archivos -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/js/shopping-cart.js"></script>
+</body>
+
+</html>
