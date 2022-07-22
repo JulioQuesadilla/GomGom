@@ -60,38 +60,44 @@
                             <li class="nav-item">
                                 
                                 <button class="nav-item dropdown btn rounded btn-outline-warning p-0" id="login-borde">
-                                    <a class="nav-link dropdown-toggle nav-items" href="#" id="navItemSiete" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                      Login
+                                    <a class="nav-link dropdown-toggle nav-items" href="#" id="navItemSiete" id="offcanvasNavbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Login
                                     </a>
-                                    
+                                
                                     <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                      
-                                      <form class="p-4 p-md-5 border rounded-3 bg-light dropdown-item">
-                                        <!-- Encabezado -->
-                                        <div class="form-floating mb-3">
-                                          <li><h5 class="text-center">Inicia sesión</h5></li>
-                                        </div>
-                                        <br>
-                                        <!-- Correo -->
-                                        <div class="form-floating mb-3">
-                                          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                          <label for="floatingInput">Correo</label>
-                                        </div>
-                                        <br>
-                                        <!-- Contraseña -->
-                                        <div class="form-floating mb-3">
-                                          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                          <label for="floatingPassword">Contraseña</label>
-                                          <!-- Sumbit para login -->
-                                          <br>
-                                          <br>
-                                          <input class="text-center" id="boton-login" type="submit" value="Quiero mis gomitas">
-                                          <br>
-                                          <br>
-                                          <a class="text-center" href="registro_login.html">¿Aún sin cuenta? ¡Regístrate aquí!</a>
-                                          <!-- <button class="btn btn-primary" type="submit">Entrar por gomitas</button> -->
-                                        </div>                            </li>
-                        </div>
+                                
+                                        <form class="p-4 p-md-5 border rounded-3 bg-light dropdown-item">
+                                            <!-- Encabezado -->
+                                            <div class="form-floating mb-3">
+                                                <li>
+                                                    <h5 class="text-center">Inicia sesión</h5>
+                                                </li>
+                                            </div>
+                                            <br>
+                                            <!-- Correo -->
+                                            <div class="form-floating mb-3">
+                                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                <label for="floatingInput">Correo</label>
+                                            </div>
+                                            <br>
+                                            <!-- Contraseña -->
+                                            <div class="form-floating mb-3">
+                                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                                <label for="floatingPassword">Contraseña</label>
+                                                <!-- Sumbit para login -->
+                                                <br>
+                                                <br>
+                                                <input class="text-center" id="boton-login" type="submit" value="Quiero mis gomitas">
+                                                <br>
+                                                <br>
+                                                <a class="text-center" href="registro_login.html">¿Aún sin cuenta? ¡Regístrate aquí!</a>
+                                                <!-- <button class="btn btn-primary" type="submit">Entrar por gomitas</button> -->
+                                            </div>
+                                            </li>
+                                            <!-- termina form -->
+                                        </form>
+                                            </div>
                     </ul>
 
 
@@ -125,18 +131,18 @@
                     <br>
                     <!-- Correo -->
                     <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                      <input type="email" class="form-control" id="floatingInputDos" placeholder="name@example.com">
                       <label for="floatingInput">Correo</label>
                     </div>
                     <br>
                     <!-- Contraseña -->
                     <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                      <input type="password" class="form-control" id="floatingPasswordDos" placeholder="Password">
                       <label for="floatingPassword">Contraseña</label>
                       <!-- Sumbit para login -->
                       <br>
                       <br>
-                      <input class="text-center" id="boton-login" type="submit" value="Quiero mis gomitas">
+                      <input class="text-center" id="boton-loginDos" type="submit" value="Quiero mis gomitas">
                       <br>
                       <br>
                       <a class="text-center" href="registro_login.html">¿Aún sin cuenta? ¡Regístrate aquí!</a>
@@ -180,74 +186,92 @@
                 <!-- Encabezado -->
                 <h2 class="text-center m-4"> Regístrate </h2>
                 <!-- FORMULARIO -->
-                <form class="g-3">
+                <form class="g-3" name="registroFormulario">
                     <!-- nombres -->
                     <div class="row m-1 p-1">
                         <div class="col-sm">
-                            <label for="validationDefault01" class="form-label text-uppercase">Nombre</label>
+                            <label for="validationNombre" class="form-label text-uppercase">Nombre</label>
                         </div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="validationDefault01" value="" required>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="validarNombre" id="validationNombre" value="" required>
                         </div>
                     </div>
 
                     <!-- apellidos -->
                     <div class="row m-1 p-1">
                         <div class="col-sm">
-                            <label for="validationDefault02" class="form-label text-uppercase">Apellidos</label>
+                            <label for="validationApellido" class="form-label text-uppercase">Apellidos</label>
                         </div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="validationDefault02" value="" required>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="validarApellido" id="validationApellido" value="" required>
                         </div>
                     </div>
 
                     <!-- usuario Gom -->
                     <div class="row m-1 p-1">
                         <div class="col-sm">
-                            <label for="validationDefault03" class="form-label text-uppercase">Usuario</label>
+                            <label for="validationUsuario" class="form-label text-uppercase">Usuario</label>
                         </div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="validationDefault01" value="" required>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="validarUsuario" id="validationUsuario" value="" required>
                         </div>
                     </div>
 
                     <!-- domicilio -->
                     <div class="row m-1 p-1">
                         <div class="col-sm">
-                            <label for="validationDefault04" class="form-label text-uppercase">Domicilio</label>
+                            <label for="validationDomicilio" class="form-label text-uppercase">Domicilio</label>
                         </div>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="validationDefault04" value="" required>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="validarDomicilio" id="validationDomicilio" value="" required>
                         </div>
                     </div>
 
                     <!-- correo -->
                     <div class="row m-1 p-1">
                         <div class="col-sm">
-                            <label for="validationDefault05" class="form-label text-uppercase">Correo</label>
+                            <label for="validationCorreo" class="form-label text-uppercase">Correo</label>
                         </div>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" id="validationDefault05" value="" required>
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" name="validarCorreo" id="validationCorreo" value="" required>
                         </div>
                     </div>
 
                     <!-- contraseña -->
                     <div class="row m-1 p-1 mb-3">
                         <div class="col-sm">
-                            <label for="validationDefault06" class="form-label text-uppercase">contra</label>
+                            <label for="validationContraUno" class="form-label text-uppercase">contraseña</label>
                         </div>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="validationDefault05" value="" required>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" name="validarContraUno" id="validationContraUno" value="" required>
+                        </div>
+                    </div>
+
+                    <!-- contraseña repetir-->
+                    <div class="row m-1 p-1">
+                        <div class="col-sm">
+                            <label for="validationContraDos" class="form-label text-uppercase">repetir contraseña</label>
+                        </div>
+                        <div class="col-sm-12">
+                            <input type="password" class="form-control" name="validarContraDos" id="validationContraDos" value="" required>
+                        </div>
+                    </div>
+
+                    <!-- cuadrovalidación -->
+                    <div class="row m-1 p-1">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="validacion" id="validacion" value="" disabled>
                         </div>
                     </div>
 
 
 
 
+                    <br>
                     <!-- botón de registro -->
                     <div class="m-1 row align-content-center justify-content-center">
                         <div class="col text-center">
-                            <button class="btn btn-warning rounded-pill btn-lg" type="submit">Regístrate en <br><b>GomGom</b></button>
+                            <button id="boton-registro" class="btn btn-warning rounded-pill btn-lg" type="submit">Regístrate en <br><b>GomGom</b></button>
                         </div>
                     </div>
                     <div class="row align-content-center justify-content-center">

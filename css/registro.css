@@ -1,5 +1,7 @@
 /*Inician opciones por default*/
-
+body{
+    font-size: 1rem;
+}
 
 h1,
 h2,
@@ -8,6 +10,7 @@ h4,
 h5 {
     font-family: 'Fredoka One', cursive;
     color: #ef8100;
+
 }
 
 body,
