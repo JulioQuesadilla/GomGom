@@ -1,7 +1,5 @@
 /*Inician opciones por default*/
-body{
-    font-size: 1rem;
-}
+
 
 h1,
 h2,
@@ -10,7 +8,6 @@ h4,
 h5 {
     font-family: 'Fredoka One', cursive;
     color: #ef8100;
-
 }
 
 body,
@@ -56,6 +53,7 @@ hr.borde {
 
 #offcanvasNavbar {
     background-color: #FCDB7E;
+    
 }
 
 @media (min-width: 576px) {
@@ -90,8 +88,3 @@ input[type=submit] {
     transition-delay: now;
 }
 /*Terminan opciones por default*/
-
-#registro {
-    background-color: #FCDB7E;
-    border-radius: 10%;
-}
