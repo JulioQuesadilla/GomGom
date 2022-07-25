@@ -91,7 +91,7 @@ input[type=submit] {
 
 .division {
     border-color: #8B0003;
-    border-width: 0.15em;
+    border-width: 0.2em;
 }
 
 .titulo-elemento{
@@ -100,12 +100,13 @@ input[type=submit] {
 }
 
 
-#cajitas{
+#cajitas {
     display: flex;
     flex-wrap: wrap;
     justify-self: center;
     align-items: center;
     align-content: center;
+    background-color: #8B0003;
 }
 
 .cajita{
@@ -143,7 +144,8 @@ table{
 
 .producto{
     border-radius: 1em;
-    height: 100px;
+    height: 80px;
+    width:auto;
 }
 
 #btn{
@@ -157,9 +159,52 @@ table{
     transform: scale(1.2);
 }
 
-#items{
-    max-height: 80%;
-    background-color: azure;
+#col2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    align-items: center;
 }
 
+#items{
+    height: 50%;
+    overflow: hidden scroll;
+    align-self: flex-start;
+}
 
+#items::-webkit-scrollbar {
+    display: none;
+}
+
+#datos{
+    height: 50%;
+    width: 100%;
+    background-color: white;
+    align-self: flex-start;
+}
+
+/*
+#table1{
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+*/
+
+.btn.btn-warning{
+    background-color: #EF8100;
+    border-color: #EF8100;
+    color: white;
+    font-family:'Fredoka One';
+    width: 40%;
+    margin: 0 auto;
+}
+
+#floatingInput{
+    text-align: center;
+    width: 75%;
+    border-color: #8B000362;
+}
+
+.form-floating label{
+    color: #8B0003;
+}
