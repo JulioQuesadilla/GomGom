@@ -1,6 +1,8 @@
+
 /*Inician opciones por default*/
 * {
     font-family: 'Catamaran', sans-serif;
+    box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5 {
@@ -96,3 +98,68 @@ input[type=submit] {
     color: #8B0003;
     font-family:'Fredoka One';
 }
+
+
+#cajitas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    align-items: center;
+    align-content: center;
+}
+
+.cajita{
+background-color: #FCDB7E;
+border-radius: 0.8em;
+height: 40%;
+color:black;
+width: 500px;
+max-width: 85%;
+margin: auto auto;
+
+}
+
+table{
+    padding-top: 15px;
+    width: 80%;
+    background-color: white;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.cantidad{
+   width: 30%;
+   text-align: center;
+   background-color: white;
+   border-style: none;
+}
+
+.precio{
+    width: 50%;
+    text-align: center;
+    background-color: white;
+    border-style: none;
+}
+
+.producto{
+    border-radius: 1em;
+    height: 100px;
+}
+
+#btn{
+    display: none;
+}
+
+.botones{
+    height: 1.6rem;
+}
+.botones:active{
+    transform: scale(1.2);
+}
+
+#items{
+    max-height: 80%;
+    background-color: azure;
+}
+
+

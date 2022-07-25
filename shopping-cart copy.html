@@ -20,8 +20,8 @@
 
 <body>
   <!-- NAVBAR Mobile -->
-  <hr class="borde mt-1">
-  <nav class="navbar navbar-expand-sm bg-light">
+  <hr class="borde my-0">
+  <nav class="navbar navbar-expand-sm">
     <div class="container-md">
 
       <!-- Offcanvas y hamburguesita de menú -->
@@ -181,19 +181,73 @@
       <!-- Termina navbar -->
     </div>
   </nav>
-  <hr class="borde mb-1 mt-4">
-  <br>
+
+  <hr class="borde mb-0 mt-0">
+
 
 
   <!-- Shopping Cart -->
-  <div class="container">
-    <div class="row">
-      <div class="col-6" style="background-color: #2ba826a4;"></div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid illo quod neque ab minima dolor harum itaque.
-        Nulla aperiam praesentium id aliquid, illum ipsum sapiente porro sunt veritatis? Quam, repudiandae.</p>
-      <div class="col-6"></div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid illo quod neque ab minima dolor harum itaque.
-        Nulla aperiam praesentium id aliquid, illum ipsum sapiente porro sunt veritatis? Quam, repudiandae.</p>
+  <div class="container-fluid" id="contenedor">
+    <div class="row" id="row" style="height: 80%;">
+      <div class="col-7 text-light" style="background-color: #8B0003;" id="cajitas">
+        
+        <div class="cajita mb-4">Esta es una cajita</div>
+        <br>
+        <div class="cajita">Otra cajita</div>
+
+      </div>
+
+      <div class="col-5" style="background-color: white;" id="col2">
+        
+         <!-- Resumen de pedido -->
+         <div id="items">
+           <table>
+            <thead>
+              <tr>
+                <th colspan="5" class="text-center">
+                  <h5>RESUMEN DEL PEDIDO</h5>
+                </th>
+              </tr>
+            </thead>
+  
+            <tbody>
+              <!-- Elemento inicia -->
+              <tr>
+                <td rowspan="2">
+                  <img class="producto" src="https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg" height="100rem"
+                    width="auto">
+                </td>
+                <td colspan="4" class="titulo-elemento">Picasandías enchiladas</td>
+              </tr>
+  
+              <tr class="text-center">
+                <!-- Botones -->
+                <td colspan="2" >
+                  <img class="botones" src="https://i.ibb.co/mq7XTJ1/pandita-rojo.png" alt="pandita-rojo">
+                  <input type="text" class="cantidad" placeholder="5" disabled>
+                  <img class="botones" src="https://i.ibb.co/F7nPFbK/pandita-verde-antonio.png" alt="pandita-verde-antonio">
+                </td>
+  
+                <td ><input type="text" class="precio" placeholder="$$$" disabled></td>
+                
+                <td>
+                  <button class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-trash-fill" viewBox="0 0 16 16">
+                      <path
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <!-- Termina elemento -->
+  
+            </tbody>
+          </table>
+         </div>
+         
+      </div>
+
     </div>
 
   </div>
@@ -204,7 +258,7 @@
 
 
   <!--FOOTER-->
-  <hr class="borde mt-4">
+  <hr class="borde mt-0">
   <div class="container-fluid" id="footer">
     <div class="row">
       <h5 class="col-fluid-12 pt-2 mb-3 pb-3 justify-content-center align-content-center text-center text-uppercase">
