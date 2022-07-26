@@ -128,6 +128,19 @@ table{
     text-align: center;
 }
 
+@media screen and (min-width: 576px) and (max-width:800px) {
+    table{
+        width: 100%;
+    }
+    
+}
+/* @media screen and (max-width: 800px) {
+    table{
+        width: 90%;
+    }
+    
+} */
+
 .cantidad{
    width: 30%;
    text-align: center;
@@ -136,7 +149,7 @@ table{
 }
 
 .precio{
-    width: 50%;
+    width: 100%;
     text-align: center;
     background-color: white;
     border-style: none;
