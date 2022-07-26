@@ -112,7 +112,7 @@ input[type=submit] {
 .cajita{
 background-color: #FCDB7E;
 border-radius: 0.8em;
-height: 40%;
+height: auto;
 color:black;
 width: 500px;
 max-width: 85%;
@@ -207,4 +207,56 @@ table{
 
 .form-floating label{
     color: #8B0003;
+}
+
+.circulo{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+}
+
+.circulito{
+    border-radius: 50%;
+    background-color: #8B0003;
+    height: 25px;
+    width: 25px;
+}
+.circulo-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+    height: 30px;
+    width: 30px;
+}
+
+.circulito-2{
+    border-radius: 50%;
+    background-color: #8B0003;
+    height: 18px;
+    width: 18px;
+}
+
+.botoncito{
+    color:#8B0003;
+    background-color: #FD8A3A;
+    border-style: none;
+    border-radius: 2em;
+    width: 100%;
+    height: 100%;
+}
+
+.botoncito-2{
+    color:#8B0003;
+    background-color: white;
+    border-style: none;
+    border-radius: 2em;
+    width: 100%;
+    height: 100%;
+    border:solid #8B0003 0.18em
 }
