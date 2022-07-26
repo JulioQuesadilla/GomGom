@@ -1,10 +1,18 @@
-let opciones = document.getElementsByName("opciones");
-let medios = document.getElementsByName("puntoMedio");
+let entrega = document.getElementById("puntosMedios");
+let opciones = document.getElementsByName("puntosMedios");
+let circulos = document.getElementsByClassName("circulo-2");
+let circulitos = document.getElementsByClassName("circulito-2");
 
-opciones[0].addEventListener("onclick",function(){
-    if (opciones[0].checked){
-        alert("opcion 1");
-    } else{
-        alert("opcion 2")
-    }
-});
+// opciones.forEach(elemento=>elemento.style.visibility = "hidden");
+// circulos.forEach(elemento=>elemento.style.display = "none");
+// circulitos.forEach(elemento=>elemento.style.display = "hidden");
+
+function showOptions(){
+
+    let opciones = document.getElementsByName("puntosMedios");
+    opciones.forEach(elemento=>elemento.style.visibility = "visible");
+    
+}
+
+entrega.addEventListener("onclick", showOptions);
+entrega.addEventListener("onclick", ()=>alert("Se hizo click"));
