@@ -192,14 +192,26 @@
       <div class="col-12 col-sm-6 col-md-7 order-2 order-md-0 text-light" id="cajitas">
 
         <div class="cajita container-fluid mb-4 mt-5">
-          <div class="row mt-4 mb-3 px-3">
-            <div class="col-2"><div class="circulo"><div class="circulito"></div></div></div>
-            <div class="col"><button class="botoncito">Envíos en Zona de Trabajo</button></div>
+          <div class="row mt-4 mb-3 px-3 text-center">
+            <div class="col offset-1">
+              <label for="envios" class="radio">
+                <input type="radio" name="opciones" id="envios" class="radio-input">
+                <div class="radio-radio"></div>
+                <buttton class="botoncito">Envios en Zona de Trabajo</buttton>
+              </label>
+            </div>
           </div>
-          <div class="row px-3">
-            <div class="col-2"><div class="circulo"><div class="circulito"></div></div></div>
-            <div class="col"><button class="botoncito" id="puntosMedios">Entregas en Punto Medio</button></div>
+
+          <div class="row px-3 text-center">
+            <div class="col offset-1">
+                <label for="entregas" class="radio">
+                  <input type="radio" name="opciones" id="entregas" class="radio-input">
+                  <div class="radio-radio"></div>
+                  <buttton class="botoncito">Entregas en Punto Medio</buttton>
+                </label>
+              </div>
           </div>
+
           <div class="row my-2">
             <div class="col-1 offset-2"><div class="circulo-2"><div class="circulito-2"></div></div></div>
             <div class="col-8"><button class="botoncito-2" name="puntosMedios">IEST</button></div>
