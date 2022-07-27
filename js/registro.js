@@ -14,15 +14,19 @@ async function validarRegistro() {
     let formularioRegistro = document.forms["registroFormulario"];
     let contraUno = formularioRegistro["validarContraUno"].value;
     let contraDos = formularioRegistro["validarContraDos"].value;
-    let validacion = formularioRegistro["validacion"];
+    //let validacion = formularioRegistro["validacion"];
+    let validacion = document.getElementById("validaContraTxt");
 
     if (contraUno.length > 6) {
         if (contraUno == contraDos) {
+            validacion.style.color= "green";
+                validacion.innerHTML = "¡Casi todo listo para las gomitas!";
           console.log("tan iguales");
         } else {
             event.preventDefault();
             try {
-                validacion.value = "¡Ups! Creo que las contraseñas no son iguales...";
+                validacion.style.color= "#8B0003";
+                validacion.innerHTML = "¡Ups! Creo que las contraseñas no son iguales...";
             } catch (error) {
                 console.log("nanai");
             }
@@ -31,7 +35,8 @@ async function validarRegistro() {
     else {
         event.preventDefault();
         try {
-            validacion.value = "Para acceder por Gomitas, la contraseña debe tener 6 o más caracteres"
+            validacion.style.color= "#8B0003";
+            validacion.innerHTML = "Para acceder por Gomitas, la contraseña debe tener 6 o más caracteres"
         } catch (error) {
             console.log("nanai");
         }
