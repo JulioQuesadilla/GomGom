@@ -189,49 +189,101 @@
   <!-- Shopping Cart -->
   <div class="container-fluid" id="contenedor">
     <div class="row" id="row">
-      <div class="col-12 col-sm-6 col-md-7 order-2 order-md-0 text-light" id="cajitas">
+      <div class="col-12 col-sm-6 col-md-7 order-2 order-md-0 px-sm-0" id="cajitas">
 
-        <div class="cajita container-fluid mb-4 mt-5">
-          <div class="row mt-4 mb-3 px-3">
-            <div class="col-2"><div class="circulo"><div class="circulito"></div></div></div>
-            <div class="col"><button class="botoncito">Envíos en Zona de Trabajo</button></div>
+        <div class="cajita container-fluid mb-4 mt-5 px-sm-0">
+          <div class="row mt-4 mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
+            <div class="col">
+              <label for="envios" class="radio">
+                <input type="radio" name="opciones" id="envios" class="radio-input">
+                <div class="radio-radio"></div>
+                <div class="botoncito">Envios en Zona de Trabajo</div>
+              </label>
+            </div>
           </div>
-          <div class="row px-3">
-            <div class="col-2"><div class="circulo"><div class="circulito"></div></div></div>
-            <div class="col"><button class="botoncito" id="puntosMedios">Entregas en Punto Medio</button></div>
+
+          <div class="row mx-3 mb-2 mx-sm-0 mx-md-3 text-center">
+            <div class="col">
+              <label for="entregas" class="radio">
+                <input type="radio" name="opciones" id="entregas" class="radio-input">
+                <div class="radio-radio"></div>
+                <div class="botoncito">Entregas en Punto Medio</div>
+              </label>
+            </div>
           </div>
-          <div class="row my-2">
-            <div class="col-1 offset-2"><div class="circulo-2"><div class="circulito-2"></div></div></div>
-            <div class="col-8"><button class="botoncito-2" name="puntosMedios">IEST</button></div>
+
+          <div class="entregas">
+
+            <div class="row my-2">
+              <div class="col offset-2">
+                <label for="puntoA" class="radio">
+                  <input type="radio" name="entregas" id="puntoA" class="radio-input">
+                  <div class="radio-radio radio-2"></div>
+                  <button class="botoncito-2">IEST</button>
+                </label>
+              </div>
+            </div>
+  
+            <div class="row mb-2 text-center">
+              <div class="col offset-2">
+                <label for="puntoB" class="radio">
+                  <input type="radio" name="entregas" id="puntoB" class="radio-input">
+                  <div class="radio-radio radio-2"></div>
+                  <div class="botoncito-2">Plaza Arenas</div>
+                </label>
+              </div>
+  
+            </div>
+  
+            <div class="row mb-4 text-center">
+              <div class="col offset-2">
+                <label for="puntoC" class="radio">
+                  <input type="radio" name="entregas" id="puntoC" class="radio-input">
+                  <div class="radio-radio radio-2"></div>
+                  <div class="botoncito-2">Divisoria</div>
+                </label>
+              </div>
+            </div>
           </div>
-          <div class="row mb-2">
-            <div class="col-1 offset-2"><div class="circulo-2"><div class="circulito-2"></div></div></div>
-            <div class="col-8"><button class="botoncito-2" name="puntosMedios">Plaza Arenas</button></div>
-          </div>
-          <div class="row mb-4">
-            <div class="col-1 offset-2"><div class="circulo-2"><div class="circulito-2"></div></div></div>
-            <div class="col-8"><button class="botoncito-2" name="puntosMedios">Divisoria</button></div>
-          </div>
-         
+
         </div>
         <br>
-        <div class="cajita container-fluid mb-5"><div class="row mt-4 mb-3 mx-auto">
-          <div class="col-2"><div class="circulo"><div class="circulito"></div></div></div>
-          <div class="col"><button class="botoncito">PayPal</button></div>
-        </div>
-        <div class="row mb-3 mx-auto">
-          <div class="col-2"><div class="circulo"><div class="circulito"></div></div></div>
-          <div class="col"><button class="botoncito">Transferencia/Depósito</button></div>
-        </div>
-        <div class="row mb-4 mx-auto">
-          <div class="col-2"><div class="circulo"><div class="circulito"></div></div></div>
-          <div class="col"><button class="botoncito">Efectivo</button></div>
-        </div>
+        <div class="cajita container-fluid mb-5 px-sm-0">
+          <div class="row mt-4 mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
+            <div class="col">
+              <label for="Paypal" class="radio">
+                <input type="radio" name="pago" id="Paypal" class="radio-input">
+                <div class="radio-radio"></div>
+                <div class="botoncito">Paypal</div>
+              </label>
+              
+            </div>
+          </div>
+
+          <div class="row mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
+            <div class="col">
+              <label for="deposito" class="radio">
+                <input type="radio" name="pago" id="deposito" class="radio-input">
+                <div class="radio-radio"></div>
+                <div class="botoncito">Depósito/Transferencia</div>
+              </label>
+            </div>
+          </div>
+
+          <div class="row mb-4 mx-3 mx-sm-0 mx-md-3 text-center">
+            <div class="col">
+              <label for="efectivo" class="radio">
+                <input type="radio" name="pago" id="efectivo" class="radio-input">
+                <div class="radio-radio"></div>
+                <div class="botoncito">Efectivo</div>
+              </label>
+            </div>
+          </div>  
         </div>
 
       </div>
 
-      <div class="col-12 col-sm-6 col-md-5" id="col2">
+      <div class="col-12 col-sm-6 col-md-5 px-4 px-sm-3" id="col2">
 
         <!-- Resumen de pedido -->
         <div id="items">
@@ -350,15 +402,15 @@
           </table>
 
         </div>
-        
+
         <div id="datos">
           <div class="container mx-0 px-0">
-            
+
             <hr class="division my-2">
             <div class="row">
               <div class="col text-center form-floating">
-                  <input type="text" class="form-control mx-auto my-1" id="floatingInput" placeholder="GomGom-22">
-                  <label for="floatingInput">Ingresa tu código secreto</label>
+                <input type="text" class="form-control mx-auto my-1" id="floatingInput" placeholder="GomGom-22">
+                <label for="floatingInput">Ingresa tu código secreto</label>
               </div>
             </div>
             <div class="row mt-2 text-center ">
@@ -366,9 +418,9 @@
                 <button class="btn btn-warning">Aplicar</button>
               </div>
             </div>
-  
+
             <hr class="division">
-  
+
             <div class="row mx-auto">
               <div class="col col-sm-6 col-md-3 text-end">
                 <label for="">Descuentos:</label>
@@ -383,9 +435,9 @@
                 <label for="">$$$$</label>
               </div>
             </div>
-  
+
             <hr class="division">
-  
+
             <div class="row justify-content-center mx-auto">
               <div class="col text-end">
                 <label class="text-center" for="">Total:</label>
@@ -395,7 +447,7 @@
               </div>
             </div>
           </div>
-          
+
         </div>
 
       </div>
