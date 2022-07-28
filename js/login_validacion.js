@@ -2,6 +2,7 @@ let loginInfo = {
     "mail": "abueloco@gmail.com",
     "password": "abuehackerman123"
 }
+
 let formLoginNav = document.forms["loginDos"];
 let correoLoginNav = formLoginNav["correoDos"];
 let contraseniaLoginNav = formLoginNav["contraDos"];
