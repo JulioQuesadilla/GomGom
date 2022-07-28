@@ -264,7 +264,7 @@ table{
 
     /* Espacio entre el círculo grande y el chico */
     box-sizing: border-box;
-    padding: 7px;
+    padding: 8px;
 }
 
 /* Se crea un elemento virtual (el circulito de adentro) */
@@ -290,8 +290,8 @@ table{
 }
 
 .radio-radio.radio-2{
-    width: 1.5em;
-    height: 1.5em;
+    width: 2em;
+    height: 2em;
 }
 
 .radio-radio.radio-2::after{
