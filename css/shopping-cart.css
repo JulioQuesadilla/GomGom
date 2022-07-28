@@ -297,3 +297,8 @@ table{
 .radio-radio.radio-2::after{
     background-color: #8B0003;
 }
+
+.btn.btn-warning[type="submit"]{
+    background-color: #8B0003;
+    border-color: #8B0003;
+}
