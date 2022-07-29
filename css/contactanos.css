@@ -1,76 +1,129 @@
-*{
+* {
     font-family: 'Catamaran', sans-serif;
     color: #ef8100;
-   
+
 }
 
-.Title__content{
+.Title__content {
     width: 100%;
     display: flex;
     justify-content: center;
     height: max-content;
     margin-bottom: 2rem;
-    background-color: #FCDB7E;
+
 }
+
 .container {
     width: 100%;
-    height: 100%;
+    height: 40rem;
     display: flex;
-    justify-content: space-between;
     background-color: #FCDB7E;
-}
 
-.container___form #floatingInput {
 
-    width: 30rem;
-}
-
-.container__img {
-    background-color: red;
-    height: 55%;
-    width: 60%;
 
 }
 
-.container__img>img {
 
-    height: 60%;
-    width: 60%;
-}
-
-.footer {
-
+.form {
+    width: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.container__form {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.form-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.4rem;
+}
+
+.form-input > input{
+    border-radius: .5rem;
+    border: 0;
+    outline: 0;
+    height: 2.4rem;
+}
+
+.event-radio {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.event-radio > .radio{
+
+    height: 1.8rem;
+    width: 1.8rem;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
-    border: 2px 2px 2px 2px solid #000;
-   
-
-
+    justify-content: center;
+    margin-bottom: .5rem;
+    
 }
 
-.footer>h3 {
+.label-radio-center{
+    margin-left: 1.5rem;
+}
+.event-radio .radio-center{
+    height: 0.8rem;
+    width: 0.8rem;
+    background: #8B0003;
+    border-radius: 50%;
+}
+
+
+.container__img {
+    width: 50%;
+    background-color: black;
+}
+
+.btn-form-siguiente{
+    width: 10rem;
+    height: 3rem;
+    border: 0;
+    color: #fff;
+    background: #ef8100;
+    border-radius: .5rem;
+    margin: 0 auto 0 auto;
     font-family: 'Fredoka One', cursive;
-    color: #ef8100;
-    margin-top: 0.8rem;
-   
 }
 
-.footer_imagenes>i {
-
-    margin: 1rem;
-    font-size: 4rem;
-    color: #ef8100;
-   
-}
-
-.footer_imagenes>i:hover {
-    color: #FCDB7E;
+.hide{
+    display: none;
 }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+
+
+@media (max-width: 770px){
+
+    .redes{
+        display: flex;
+
+    }
+    .container__img{
+        display: none;
+    }
+
+    .container__form{
+     width: 100%;
+    }
 }

@@ -101,4 +101,13 @@ input[type=submit] {
     transition-duration: 2s;
     transition-delay: now;
 }
+
+.img-brand:not(:hover) {
+    transform: scale(1.1) rotate(-360deg);
+    transition-duration: 2s;
+    transition-delay: now;
+}
+
+/*Terminan opciones por default*/
+
 /*Terminan opciones por default*/
