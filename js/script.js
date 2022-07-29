@@ -1,4 +1,4 @@
-fetch('prueba.json')
+fetch('../json/prueba.json')
     .then(response => response.json())
     .then(response => {
         for (const i of response.articulos) {
