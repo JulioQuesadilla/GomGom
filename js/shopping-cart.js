@@ -2,7 +2,7 @@
 //Eliminar tabla
 //Cargar datos
 
-function cargaDatos(url) {
+/* function cargaDatos(url) {
     //Carga datos
     fetch(url)
         .then(response => response.json())
@@ -23,7 +23,7 @@ function cargaDatos(url) {
             localStorage.setItem(`pag${pagina}`, JSON.stringify(usuarios.data));
             localStorage.setItem(`expPag${pagina}`, limite);  //Se ingresa el tiempo de expiración: un minuto
         });
-}
+} */
 
 fetch("../json/shopping-cart.json")
     .then(response => response.json())
