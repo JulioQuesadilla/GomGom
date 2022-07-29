@@ -1,6 +1,7 @@
 /*Inician opciones por default*/
+/*Plantilla por default*/
 
-
+/*Color y fuente para encabezados*/
 h1,
 h2,
 h3,
@@ -10,16 +11,21 @@ h5 {
     color: #ef8100;
 }
 
+/*Fuente para body y elementos en navbar*/
 body,
 .nav-items {
     font-family: 'Catamaran', sans-serif;
 }
 
+/*Color para elementos anchor y del navbar*/
 a,
 .nav-items {
     color: #FD8A3A;
 }
 
+/*Cambios de color al pasar el mouse en elementos de navbar
+puestos con ID y por separado para evitar conflictos con
+TwitterBootstrap*/
 a#navItemUno:hover,
 a#navItemDos:hover,
 a#navItemTres:hover,
@@ -32,36 +38,43 @@ a#navItemOcho:hover {
     transform: scale(1.05);
 }
 
+/*Color de los bordes de la navbar*/
 hr.borde {
     border: 0.15em solid #8B0003;
     border-radius: 5px;
 }
 
+/*Color de relleno de los iconos del footer*/
 .icon-tabler-brand-facebook:hover,
 .icon-tabler-brand-instagram:hover,
 .icon-tabler-brand-whatsapp:hover {
     fill: #FCDB7E;
 }
 
+/*Color de borde para el login*/
 #login-borde {
     border: #8B0003;
 }
 
+/*Color para el icono toggler en mobile navbar*/
 #hamburguesita {
     color: #8B0003;
 }
 
+/*Color para el menú de offcanvas...*/
 #offcanvasNavbar {
     background-color: #FCDB7E;
     
 }
 
+/*...que se elimina al pasar a PC*/
 @media (min-width: 576px) {
     #offcanvasNavbar {
     background-color: #ffffff;
     }
 }
 
+/*Color y estilo para inputs submit, como el de login de la navbar*/
 input[type=submit] {
     background-color: #ef8100;
     border: none;
@@ -77,11 +90,12 @@ input[type=submit] {
     color: #8B0003
 }
 
-
+/*Color para el login dropdown*/
 #drop-login {
     color: #FCDB7E
 }
 
+/*Poderosa animación creada por Leo para el logo GomGom*/
 .img-brand:hover {
     transform: scale(1.1) rotate(360deg);
     transition-duration: 2s;

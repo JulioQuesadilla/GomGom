@@ -9,14 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran&family=Edu+TAS+Beginner&family=Fredoka+One&display=swap" rel="stylesheet">
-    <!-- BOOSTRAP CSS -->
-    <link rel="stylesheet" href="node_modules/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- BOOSTRAP CSS
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
     <!-- LOCAL CSS -->
-    <link rel="stylesheet" href="css/registro.css">
-    <!-- CSS link Este link jala bootstrap. Quitar comentarios si se quiere ocupar BS desde link -->
-    <!--
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">-->
-
+    <!-- <link rel="stylesheet" href="../css/registro.css"> -->
+    <!-- Bootstrap CSS CDN  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- CSS plantilla -->
+    <link rel="stylesheet" href="../css/plantilla.css">
+    <!-- Favicon -->
     <link rel="shortcut icon" href="https://i.ibb.co/dPfMrvL/Imagen1.png">
 
 </head>
@@ -32,7 +33,7 @@
             <!-- Hamburguesa -->
             <div class="col text-start">
                 <button id="hamburguesita" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-            <span class="navbar-toggler-icon"><b>——— <br> ———</b></span>
+            <span class="navbar-toggler-icon"><!---<b>——— <br> ———</b>---></span>
           </button>
             </div>
             <!-- Offcanvas -->
@@ -44,7 +45,7 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link nav-items" id="navItemUno" href="index.html">Home</a>
+                            <a class="nav-link nav-items" id="navItemUno" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-items" id="navItemDos" href="catalogo.html">Catálogo</a>
@@ -53,7 +54,7 @@
                             <a class="nav-link nav-items" id="navItemTres" href="acerca.html">Acerca</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-items" id="navItemCuatro" href="contacto.html">Contacto</a>
+                            <a class="nav-link nav-items" id="navItemCuatro" href="contactanos.html">Contacto</a>
                         </li>
                         <div class="oculta-boton d-block d-sm-none">
                             <br>
@@ -91,6 +92,7 @@
                                                 <label for="floatingPassword">Contraseña</label>
                                                 <!-- Sumbit para login -->
                                                 <br>
+                                                <small><p class="text-center" id="validaLoginNav"></p></small></small>
                                                 <br>
                                                 <input class="text-center" id="botonLoginDos" type="submit" value="Quiero mis gomitas">
                                                 <br>
@@ -112,7 +114,7 @@
 
         <!-- LOGO/Navbar brand -->
         <div class="col-md-4 text-sm-start text-md-center">
-            <a href="index.html" class="navbar-brand" id="logo"><img class="img-brand" src="https://i.ibb.co/dPfMrvL/Imagen1.png" alt="" width="auto" height="100">
+            <a href="../index.html" class="navbar-brand" id="logo"><img class="img-brand" src="https://i.ibb.co/dPfMrvL/Imagen1.png" alt="" width="auto" height="100">
             </a>
         </div>
 
@@ -127,7 +129,7 @@
                 
                 <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
                   
-                  <form class="p-4 p-md-5 border rounded-3 bg-light dropdown-item">
+                  <form class="p-4 p-md-5 border rounded-3 bg-light dropdown-item" name="loginUno">
                     <!-- Encabezado -->
                     <div class="form-floating mb-3">
                       <li><h5 class="text-center">Inicia sesión</h5></li>
@@ -135,18 +137,19 @@
                     <br>
                     <!-- Correo -->
                     <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="floatingInputDos" placeholder="name@example.com">
+                      <input type="email" class="form-control" id="floatingInputDos" placeholder="name@example.com" name="correoUno">
                       <label for="floatingInput">Correo</label>
                     </div>
                     <br>
                     <!-- Contraseña -->
                     <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="floatingPasswordDos" placeholder="Password">
+                      <input type="password" class="form-control" id="floatingPasswordDos" placeholder="Password" name="contraUno">
                       <label for="floatingPassword">Contraseña</label>
                       <!-- Sumbit para login -->
                       <br>
+                      <small><p class="text-center" id="validaLogin"></p></small></small>
                       <br>
-                      <input class="text-center" id="boton-loginDos" type="submit" value="Quiero mis gomitas">
+                      <input class="text-center" id="botonLoginUno" type="submit" value="Quiero mis gomitas">
                       <br>
                       <br>
                       <a class="text-center" href="registro_login.html">¿Aún sin cuenta? ¡Regístrate aquí!</a>
@@ -176,123 +179,14 @@
               </svg>
             </a>
         </div>
-        <!-- Termina navbar -->
-        </div>
+    </div>
     </nav>
     <hr class="borde mb-1 mt-4">
     <br>
+    <!-- Termina navbar -->
 
 
-    <!-- ÁREA DE REGISTRO -->
-    <div class="container-sm" id="registro">
-        <div class="row">
-            <div class="col-sm-12">
-                <!-- Encabezado -->
-                <h2 class="text-center m-4"> Regístrate </h2>
-                <!-- FORMULARIO -->
-                <form class="g-3" name="registroFormulario">
-                    <!-- nombres -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationNombre" class="form-label text-uppercase">Nombre</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="validarNombre" id="validationNombre" value="" required>
-                        </div>
-                    </div>
-
-                    <!-- apellidos -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationApellido" class="form-label text-uppercase">Apellidos</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="validarApellido" id="validationApellido" value="" required>
-                        </div>
-                    </div>
-
-                    <!-- usuario Gom -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationUsuario" class="form-label text-uppercase">Usuario</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="validarUsuario" id="validationUsuario" value="" required>
-                        </div>
-                    </div>
-
-                    <!-- domicilio -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationDomicilio" class="form-label text-uppercase">Domicilio</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="validarDomicilio" id="validationDomicilio" value="" required>
-                        </div>
-                    </div>
-
-                    <!-- correo -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationCorreo" class="form-label text-uppercase">Correo</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="email" class="form-control" name="validarCorreo" id="validationCorreo" value="" required>
-                        </div>
-                    </div>
-
-                    <!-- contraseña -->
-                    <div class="row m-1 p-1 mb-3">
-                        <div class="col-sm">
-                            <label for="validationContraUno" class="form-label text-uppercase">contraseña</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="password" class="form-control" name="validarContraUno" id="validationContraUno" value="" required>
-                        </div>
-                    </div>
-
-                    <!-- contraseña repetir-->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationContraDos" class="form-label text-uppercase">repetir contraseña</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="password" class="form-control" name="validarContraDos" id="validationContraDos" value="" required>
-                        </div>
-                    </div>
-
-                    <!-- cuadrovalidación -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="validacion" id="validacion" value="" disabled>
-                        </div>
-                    </div>
-
-
-
-
-                    <br>
-                    <!-- botón de registro -->
-                    <div class="m-1 row align-content-center justify-content-center">
-                        <div class="col text-center">
-                            <button id="boton-registro" class="btn btn-warning rounded-pill btn-lg" type="submit">Regístrate en <br><b>GomGom</b></button>
-                        </div>
-                    </div>
-                    <div class="row align-content-center justify-content-center">
-
-                    </div>
-
-                </form>
-
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Imagen
-        <div class="container col-6 d-none d-sm-block">
-          <img src="https://vinomanos.com/wp-content/uploads/2021/09/Gomitas-1-1068x605.jpg" alt="" class="w-100">
-      </div> -->
+<!-- Aquí va el código -->
 
 
 
@@ -310,6 +204,7 @@
             <div class="col-3 text-center">
             </div>
             <div class="col-6 text-center">
+                <!-- Facebook icon -->
                 <a href="https://www.google.com">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mx-2 icon icon-tabler icon-tabler-brand-facebook" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ef8100" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -325,6 +220,7 @@
           <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
         </svg>
                 </a>
+                <!-- Whatsapp Icon -->
                 <a href="https://web.whatsapp.com">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mx-2 icon icon-tabler icon-tabler-brand-whatsapp" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ef8100" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -338,17 +234,14 @@
         </div>
     </div>
     <hr class="borde mb-1 mt-4">
-
-
-
-
+    
     <!-- SCRIPTS -->
-    <!-- BOOTSTRAP SCRIPT -->
-    <script src="node_modules/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- LOCAL SCRIPT   -->
-    <script src="js/registro.js"></script>
-
-
+    <!-- LOGIN VALIDACIÓN-->
+    <script src="../js/login_validacion.js"></script>
+    <!-- BOOTSTRAP SCRIPT CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>    <!-- LOCAL SCRIPT   -->
+    <!-- LOCAL REGISTRO -->
+    <!-- <script src="../js/registro.js"></script> -->
 </body>
 
 </html>
