@@ -106,7 +106,7 @@ table{
 }
 
 #items{
-    height: 50%;
+    max-height:18.75em ;
     overflow: hidden scroll;
     align-self: flex-start;
 }
