@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 /*Inician opciones por default*/
 body{
     font-size: 1rem;
 }
 
-h1, h2, h3, h4, h5 {
-=======
-h1,
-h3,
-h5 {
->>>>>>> 3a47be865f82c8198cfc04ff1a4fd91b45bb291d
+h1, h2, h3, h4, h5  {
     font-family: 'Fredoka One', cursive;
     color: #ef8100;
 }
@@ -117,11 +111,10 @@ a {
 
 .sombra {
     filter: drop-shadow(0 5px 10px #FD8A3A);
-<<<<<<< HEAD
 }
 
 .contenedor{
     width: 300px;
-=======
->>>>>>> 3a47be865f82c8198cfc04ff1a4fd91b45bb291d
+
 }
+
