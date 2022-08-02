@@ -54,17 +54,33 @@ let checkLoginDos = document.getElementById("validaLoginNav");
  *Una función asíncrona que se realiza para celulares, al dar click en iniciar sesión 
  */
 async function validateNavLogin() {
+
     //Se revisa que los valores del input coincidan con el JSON
     //Si está bien, se loggea
-    if (correoLoginNav.value == loginInfo.mail && contraseniaLoginNav.value == loginInfo.password) {
-        console.log("Logeado");
-    }
-    //En caso contrario, le dice que no existe la cuenta
-    else {
-        event.preventDefault();
-        checkLoginDos.style.color= "#8B0003";
-        checkLoginDos.innerHTML = "No tenemos esa cuenta de gomitas";
-        console.log("Sólo abuehackerman puede entrar zi ke zi");
+   
+    //Se iteran los elementos del JSON
+    for (i = 0; ; i++) {
+        if (i < loginInfo.data.length) {
+            //y se revisa que coincidan con la info del JSON
+            if (correoLoginNav.value == loginInfo.data[i].mail &&
+                contraseniaLoginNav.value == loginInfo.data[i].password) {
+                //en caso de que encuentre coincidencia, rompe el loop y deja iniciar sesión
+                console.log("Logeado");
+                logged = true;
+                break;
+            }
+            //En caso contrario, continúa el loop, buscando cuenta...
+            else {
+                continue;
+            }
+        } else { //una vez terminados de iterar los elementos, si no hay coincidencias, no deja entrar
+            event.preventDefault();
+            checkLoginDos.style.color = "#8B0003";
+            checkLoginDos.innerHTML = "No tenemos esa cuenta de gomitas";
+            console.log("Sólo abuehackerman puede entrar zi ke zi");
+            console.log("...y JulioQuesadillas ps");
+            break;
+        }
     }
 }
 
@@ -74,16 +90,33 @@ async function validateNavLogin() {
 async function validatePcLogin() {
     //Se revisa que los valores del input coincidan con el JSON
     //Si está bien, se loggea
-    if (correoLoginPc.value == loginInfo.mail && contraseniaLoginPc.value == loginInfo.password) {
-        console.log("Logeado");
+   
+    //Se iteran los elementos del JSON
+    for (i = 0; ; i++) {
+        if (i < loginInfo.data.length) {
+            //y se revisa que coincidan con la info del JSON
+            if (correoLoginPc.value == loginInfo.data[i].mail &&
+                contraseniaLoginPc.value == loginInfo.data[i].password) {
+                //en caso de que encuentre coincidencia, rompe el loop y deja iniciar sesión
+                console.log("Logeado");
+                logged = true;
+                break;
+            }
+            //En caso contrario, continúa el loop, buscando cuenta...
+            else {
+                continue;
+            }
+        } else { //una vez terminados de iterar los elementos, si no hay coincidencias, no deja entrar
+            event.preventDefault();
+            checkLoginUno.style.color = "#8B0003";
+            checkLoginUno.innerHTML = "No tenemos esa cuenta de gomitas";
+            console.log("Sólo abuehackerman puede entrar zi ke zi");
+            console.log("...y JulioQuesadillas ps");
+            break;
+        }
     }
-    //En caso contrario, le dice que no existe la cuenta
-    else {
-        event.preventDefault();
-        checkLoginUno.style.color= "#8B0003";
-        checkLoginUno.innerHTML = "No tenemos esa cuenta de gomitas";
-        console.log("Sólo abuehackerman puede entrar zi ke zi");
-    }
+
+    
 }
 
 
@@ -101,3 +134,4 @@ async function validatePcLogin() {
  }
 
  //D. R. Y.
+

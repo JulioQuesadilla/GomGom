@@ -1,8 +1,20 @@
 {
-    "mail": "abueloco@gmail.com",
-    "password": "abuehackerman123",
-    "nombre": "abu",
-    "apellidos": "abue",
-    "usuario": "abueglezcito",
-    "domicilio": "av. siempreviva"
+  "data": [
+    {
+      "mail": "abueloco@gmail.com",
+      "password": "abuehackerman123",
+      "nombre": "abu",
+      "apellidos": "abue",
+      "usuario": "abueglezcito",
+      "domicilio": "av. siempreviva"
+    },
+    {
+      "mail": "julioquesadilla@gmail.com",
+      "password": "venividivici",
+      "nombre": "juliojulitojulion",
+      "apellidos": "alvarez",
+      "usuario": "julioergocesar",
+      "domicilio": "puebla puebla"
+    }
+  ]
 }
