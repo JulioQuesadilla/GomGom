@@ -81,3 +81,36 @@ function cargarEventLIstener() {
     })
 }
 cargarEventLIstener();
+
+// Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
+(function () {
+    listaCursos.addEventListener('click', (e) => {
+        if (e.target.classList.contains("boton")) {
+            
+
+            let clave = e.target.parentElement.children[1].id;
+            let elemento = e.target.parentElement;
+            let imagen = elemento.children[0].src;
+            let producto = elemento.children[1].innerHTML;
+            let precio = elemento.children[3].innerHTML;
+            let cantidad;
+
+            if (localStorage.getItem(clave)!=null){
+                elemento = JSON.parse(localStorage.getItem(clave));
+                cantidad = ++elemento.cantidad;
+                localStorage.removeItem(clave);
+
+            } else cantidad =1;
+
+            let datos = {
+                imagen: imagen,
+                producto: producto,
+                precio: precio,
+                cantidad: cantidad
+            }
+            
+            localStorage.setItem(clave, JSON.stringify(datos));
+        }
+
+    })
+})();
