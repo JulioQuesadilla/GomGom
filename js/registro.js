@@ -14,7 +14,6 @@ comienza la función asíncrona validarRegistro*/
 let botonRegistro = document.getElementById("boton-registro");
 botonRegistro.addEventListener("click", validarRegistro);
 
-
 /**
  * La función asíncrona validarRegistro se enfoca en ver que las contraseñas
  * coincidan
@@ -52,6 +51,30 @@ async function validarRegistro() {
             validacion.style.color= "#8B0003";
             validacion.innerHTML = "Para acceder por Gomitas, la contraseña debe tener 6 o más caracteres"
         
+    }
+
+    //-------
+    //Validar correo:
+
+    //Se guarda una Regular Expresion para los correos
+    /*Un correo bien validado tiene la siguiente forma: un string y si existe un arroba
+    ya no deja poner arrobas. Se pueden poner puntos y continuar escribiendo,
+    pero se verifica que al final se termine con letras, no con signos de puntuación*/
+    let regex = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+\w$/);
+    let correoInput = formularioRegistro["validarCorreo"].value;
+    let validationCorreo = document.getElementById("validaCorreoTxt");
+    console.log(regex.test(correoInput));
+    if (regex.test(correoInput)) {
+        validationCorreo.style.color= "green";
+        validationCorreo.innerHTML = "¡Bonito correo!";
+    }
+    else {
+        event.preventDefault();
+
+        console.log(regex.test(correoInput.value));
+ 
+        validationCorreo.style.color= "#8B0003";
+        validationCorreo.innerHTML = "Creo que esa no es una dirección de correo válida..."   
     }
 
 }
