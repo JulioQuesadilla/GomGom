@@ -86,31 +86,37 @@ cargarEventLIstener();
 (function () {
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
-            
 
+            let carritos = {};
             let clave = e.target.parentElement.children[1].id;
             let elemento = e.target.parentElement;
             let imagen = elemento.children[0].src;
             let producto = elemento.children[1].innerHTML;
             let precio = elemento.children[3].innerHTML;
-            let cantidad;
+            let cantidad=1;;
 
-            if (localStorage.getItem(clave)!=null){
-                elemento = JSON.parse(localStorage.getItem(clave));
-                cantidad = ++elemento.cantidad;
-                localStorage.removeItem(clave);
+            //Si ya hay algo guardado en el LocalStorage:
+            if(localStorage.getItem("carritos")!=null){
 
-            } else cantidad =1;
+                //Si además, ya está guardado el producto en el LocalStorage:
+                if (JSON.parse(localStorage.getItem("carritos"))[`${clave}`] != null) {
+                    elemento = JSON.parse(localStorage.getItem("carritos"))[`${clave}`];
+                    cantidad = ++elemento.cantidad;
+                    localStorage.removeItem("carritos");
+                } 
+            } 
 
-            let datos = {
-                imagen: imagen,
-                producto: producto,
-                precio: precio,
-                cantidad: cantidad
-            }
+            let datos = 
+                {
+                    producto: producto,
+                    imagen: imagen,
+                    precio: precio,
+                    cantidad: cantidad
+                };
             
-            localStorage.setItem(clave, JSON.stringify(datos));
+            carritos[`${clave}`] = datos;
+            localStorage.setItem("carritos", JSON.stringify(carritos));
+            console.log(carritos);
         }
-
     })
 })();
