@@ -4,113 +4,25 @@
             "id": 7,
             "usuario": "abue",
             "carrito": [
-                {
+                {   "idproducto" : 1,
                     "articulo": "Gomitas Locas",
                     "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
                     "cantidad": 4,
                     "preciounitario": 12
                 },
                 {
+                    "idproducto" : 2,
                     "articulo": "Pulparindo",
                     "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
                     "cantidad": 3,
                     "preciounitario": 10
                 },
                 {
+                    "idproducto" : 3,
                     "articulo": "Manguito enchilado",
                     "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
                     "cantidad": 10,
                     "preciounitario": 8
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "usuario": "Julio",
-            "carrito": [
-                {
-                    "articulo": "Panditas",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
-                },
-                {
-                    "articulo": "Gusanitos",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
-                },
-                {
-                    "articulo": "Escuincles",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
-                },
-                {
-                    "articulo": "Pulparindo enchilado",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "usuario": "abue",
-            "carrito": [
-                {
-                    "articulo": "Gomitas Locas",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
-                },
-                {
-                    "articulo": "Gomitas Locas",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
-                },
-                {
-                    "articulo": "Gomitas Locas",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
-                },
-                {
-                    "articulo": "Gomitas Locas",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
-                },
-                {
-                    "articulo": "Gomitas Locas",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "usuario": "abue",
-            "carrito": [
-                {
-                    "articulo": "Gomitas Locas",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
-                },
-                {
-                    "articulo": "Gomitas Locas",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
-                },
-                {
-                    "articulo": "Gomitas Locas",
-                    "imagen": "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg",
-                    "cantidad": 4,
-                    "preciounitario": 12
                 }
             ]
         }

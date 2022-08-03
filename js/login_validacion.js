@@ -19,6 +19,28 @@
 let loginInfo;
 fetchInfo("../json/login.json");
 
+/*Checar expiración de login*/
+
+/*------------*/
+//Se guarda una variable que modifica el tiempo de expiración que puede tener una persona
+//loggeada
+
+let timeExpir = Date.now() + 1000*60;
+/**---------- */
+
+if (localStorage.getItem("logged") && JSON.parse(localStorage.getItem("expirationInfo")).expiration <= Date.now()) {
+    localStorage.clear();
+}
+else if (localStorage.getItem("logged")) {
+    let user = localStorage.getItem("logged");
+    let botonesLogin = document.getElementById("grupo-botonesPC");
+    let listaLogin = document.getElementById("grupo-botonesNav");
+    botonesLogin.innerHTML = `<p class="text-center justify-content-center align-content-center">Logeado ${user}</p>`;
+    listaLogin.innerHTML = `<hr><br><p class="text-center justify-content-center align-content-center">Logeado ${user}</p>`;
+}
+
+
+
 /*Este es un (piedra) formulario para tabletas y celulares (prehistóricos)
  Se almacena el input para correo y la contraseña del piedraFormulario,
  y se recuerda el botón de login que acompaña en la navbar que tiene offcanvas*/
@@ -67,6 +89,12 @@ async function validateNavLogin() {
                 //en caso de que encuentre coincidencia, rompe el loop y deja iniciar sesión
                 console.log("Logeado");
                 logged = true;
+                //y crea un local storage con datos de expiración
+                localStorage.setItem("logged", JSON.stringify(loginInfo.data[i].usuario));
+                localStorage.setItem("expirationInfo", JSON.stringify ({
+                    expiration: timeExpir,
+                    }));
+
                 break;
             }
             //En caso contrario, continúa el loop, buscando cuenta...
@@ -100,6 +128,12 @@ async function validatePcLogin() {
                 //en caso de que encuentre coincidencia, rompe el loop y deja iniciar sesión
                 console.log("Logeado");
                 logged = true;
+                //y crea un local storage con datos de expiración
+                localStorage.setItem("logged", JSON.stringify(loginInfo.data[i].usuario));
+                localStorage.setItem("expirationInfo", JSON.stringify ({
+                    expiration: timeExpir,
+                }));
+                
                 break;
             }
             //En caso contrario, continúa el loop, buscando cuenta...

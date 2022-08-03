@@ -12,11 +12,11 @@
     <!-- BOOSTRAP CSS
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
     <!-- LOCAL CSS -->
-    <link rel="stylesheet" href="../css/registro.css">
+    <!-- <link rel="stylesheet" href="../css/registro.css"> -->
     <!-- Bootstrap CSS CDN  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- CSS plantilla -->
-    <link rel="stylesheet" href="../css/plantilla.css">
+    <link rel="stylesheet" href="../css/plantilla_nav_cart.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://i.ibb.co/dPfMrvL/Imagen1.png">
 
@@ -56,7 +56,7 @@
                         <li class="nav-item">
                             <a class="nav-link nav-items" id="navItemCuatro" href="contactanos.html">Contacto</a>
                         </li>
-                        <div class="oculta-boton d-block d-sm-none" id="grupo-botonesNav">
+                        <div class="oculta-boton d-block d-sm-none">
                             <br>
                             <hr>
                             <li class="nav-item">
@@ -120,7 +120,7 @@
 
         <!-- Botón Dropdown -->
         <!-- Se agrupan ambos botones -->
-        <div class="col-md-3 text-end btn-group d-none d-sm-block" id="grupo-botonesPC">
+        <div class="col-md-3 text-end btn-group d-none d-sm-block">
 
             <button class="nav-item dropdown btn rounded btn-outline-warning p-0" id="login-borde">
                 <a class="nav-link dropdown-toggle nav-items" href="#" id="navItemSiete" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -186,126 +186,7 @@
     <!-- Termina navbar -->
 
 
-    <!-- ÁREA DE REGISTRO -->
-    <div class="container-sm" id="registro">
-        <div class="row">
-            <div class="col-sm-12">
-                <!-- Encabezado -->
-                <h2 class="text-center m-4"> Regístrate </h2>
-                <!-- FORMULARIO -->
-                <form class="g-3" name="registroFormulario">
-                    <!-- nombres -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationNombre" class="form-label text-uppercase">Nombre</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="validarNombre" id="validationNombre" value="" required>
-                        </div>
-                    </div>
-                    <div class="row m-1"><!--Validacion?--></div>
-
-                    <!-- apellidos -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationApellido" class="form-label text-uppercase">Apellidos</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="validarApellido" id="validationApellido" value="" required>
-                        </div>
-                    </div>
-                    <div class="row m-1"><!--Validacion?--></div>
-
-                    <!-- usuario Gom -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationUsuario" class="form-label text-uppercase">Usuario</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="validarUsuario" id="validationUsuario" value="" required>
-                        </div>
-                    </div>
-                    <div class="row m-1"><!--Validacion?--></div>
-
-                    <!-- domicilio -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationDomicilio" class="form-label text-uppercase">Domicilio</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="text" class="form-control" name="validarDomicilio" id="validationDomicilio" value="" required>
-                        </div>
-                    </div>
-                    <div class="row m-1"><!--Validacion?--></div>
-
-                    <!-- correo -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationCorreo" class="form-label text-uppercase">Correo</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="email" class="form-control" name="validarCorreo" id="validationCorreo" value="" required>
-                        </div>
-                    </div>
-
-                    <!-- ValidaciónCorreo -->
-                    <div class="row m-1">
-                        <div class="col-sm-12">
-                            <small><p id="validaCorreoTxt"></p></small></small>
-                            <!-- <input type="text" class="form-control" name="validacion" id="validacion" value="" disabled> -->
-                        </div>
-                    </div>
-
-                    <!-- contraseña -->
-                    <div class="row m-1 p-1 mb-3">
-                        <div class="col-sm">
-                            <label for="validationContraUno" class="form-label text-uppercase">contraseña</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="password" class="form-control" name="validarContraUno" id="validationContraUno" value="" required>
-                        </div>
-                    </div>
-                    <div class="row m-1"><!--Validacion?--></div>
-
-
-                    <!-- contraseña repetir-->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm">
-                            <label for="validationContraDos" class="form-label text-uppercase">repetir contraseña</label>
-                        </div>
-                        <div class="col-sm-12">
-                            <input type="password" class="form-control" name="validarContraDos" id="validationContraDos" value="" required>
-                        </div>
-                    </div>
-
-                    <!-- cuadrovalidación -->
-                    <div class="row m-1 p-1">
-                        <div class="col-sm-12">
-                            <small><p id="validaContraTxt"></p></small></small>
-                            <!-- <input type="text" class="form-control" name="validacion" id="validacion" value="" disabled> -->
-                        </div>
-                    </div>
-
-
-
-
-                    <br>
-                    <!-- botón de registro -->
-                    <div class="m-1 row align-content-center justify-content-center">
-                        <div class="col text-center">
-                            <button id="boton-registro" class="btn btn-warning rounded-pill btn-lg" type="submit">Regístrate en <br><b>GomGom</b></button>
-                        </div>
-                    </div>
-                    <div class="row align-content-center justify-content-center">
-
-                    </div>
-
-                </form>
-
-
-            </div>
-        </div>
-    </div>
+<!-- Aquí va el código -->
 
 
 
@@ -360,9 +241,7 @@
     <!-- BOOTSTRAP SCRIPT CDN-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>    <!-- LOCAL SCRIPT   -->
     <!-- LOCAL REGISTRO -->
-    <script src="../js/registro.js"></script>
-
-
+    <!-- <script src="../js/registro.js"></script> -->
 </body>
 
 </html>
