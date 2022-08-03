@@ -86,6 +86,6 @@ function cargarLocal(){
             creaTabla(producto.replace(/((?:producto0*))/,""),carrito[producto].imagen,carrito[producto].producto,carrito[producto].cantidad,carrito[producto].precio);
 }
 
-// cargarLocal();
-cargarFetch(direccion);
+cargarLocal();
+// cargarFetch(direccion);
 
