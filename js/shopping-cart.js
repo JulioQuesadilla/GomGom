@@ -1,7 +1,15 @@
+let direccion = "../json/shopping-cart.json";
+function cargarFetch(url){
+    fetch(url)
+        .then(response => response.json())
+        .then(datos => {
+            carrito = datos.data[0].carrito;
+            carrito.forEach(producto => {
+                creaTabla(producto.idproducto,producto.imagen,producto.articulo,producto.cantidad,producto.preciounitario);
+            });
+        });
 
-fetch("../json/shopping-cart.json")
-    .then(response => response.json())
-    .then(datos => console.log(datos.data[0].carrito));
+}
 
       /**
        * 
@@ -71,10 +79,13 @@ function borrarUno(num){
     document.getElementById("items").removeChild(document.getElementById(`elemento-${num}`));
 }
 
-for (let i = 1; i < 3; i++)creaTabla(i, "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg","Picasandías Enchiladas",3,33);
-
 //Traer desde LocalStorage:
-for (let j=1;j<=100;j++){
-    localStorage.getItem(clave);
-        elemento = JSON.parse(localStorage.getItem(clave));
+function cargarLocal(){
+    carrito = JSON.parse(localStorage.getItem("carritos"));
+    for (const producto in carrito) 
+            creaTabla(producto.replace(/((?:producto0*))/,""),carrito[producto].imagen,carrito[producto].producto,carrito[producto].cantidad,carrito[producto].precio);
 }
+
+// cargarLocal();
+cargarFetch(direccion);
+
