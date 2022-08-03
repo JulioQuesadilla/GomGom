@@ -35,8 +35,8 @@ else if (localStorage.getItem("logged")) {
     let user = localStorage.getItem("logged");
     let botonesLogin = document.getElementById("grupo-botonesPC");
     let listaLogin = document.getElementById("grupo-botonesNav");
-    botonesLogin.innerHTML = `<p class="text-center justify-content-center align-content-center">Logeado ${user}</p>`;
-    listaLogin.innerHTML = `<hr><br><p class="text-center justify-content-center align-content-center">Logeado ${user}</p>`;
+    botonesLogin.innerHTML = `<p class="text-center justify-content-center align-content-center">¡Hola de nuevo, ${user}!</p>`;
+    listaLogin.innerHTML = `<hr><br><p class="text-center justify-content-center align-content-center">¡Hola de nuevo, ${user}!</p>`;
 }
 
 
