@@ -17,7 +17,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <!-- CSS plantilla -->
-  <link rel="stylesheet" href="../css/plantilla.css">
+  <link rel="stylesheet" href="../css/plantilla_nav_cart.css">
   <!-- Local style -->
   <link rel="stylesheet" href="/css/shopping-cart.css">
   <!-- Favicon -->
@@ -26,166 +26,187 @@
 </head>
 
 <body>
-      <!-- NAVBAR Mobile -->
-      <hr class="borde mt-1">
-      <nav class="navbar navbar-expand-sm bg-light">
-          <div class="container-md">
-  
-              <!-- Offcanvas y hamburguesita de menú -->
-              <!-- Hamburguesa -->
-              <div class="col text-start">
-                  <button id="hamburguesita" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-              <span class="navbar-toggler-icon"><!---<b>——— <br> ———</b>---></span>
-            </button>
-              </div>
-              <!-- Offcanvas -->
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                  <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Mi menú de gomita</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                  </div>
-                  <div class="offcanvas-body">
-                      <ul class="navbar-nav">
-                          <li class="nav-item">
-                              <a class="nav-link nav-items" id="navItemUno" href="../index.html">Home</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link nav-items" id="navItemDos" href="catalogo.html">Catálogo</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link nav-items" id="navItemTres" href="acerca.html">Acerca</a>
-                          </li>
-                          <li class="nav-item">
-                              <a class="nav-link nav-items" id="navItemCuatro" href="contactanos.html">Contacto</a>
-                          </li>
-                          <div class="oculta-boton d-block d-sm-none">
-                              <br>
-                              <hr>
-                              <li class="nav-item">
-                                  <a class="nav-link nav-items" id="navItemSeis" href="registro_login.html">Sign up</a>
-                              </li>
-                              <li class="nav-item">
-  
-                                  <button class="nav-item dropdown btn rounded btn-outline-warning p-0" id="login-borde">
-                                      <a class="nav-link dropdown-toggle nav-items" href="#" id="navItemSiete" id="offcanvasNavbarDropdown" role="button"
-                                          data-bs-toggle="dropdown" aria-expanded="false">
-                                          Login
-                                      </a>
-                                  
-                                      <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                  
-                                          <form class="p-4 p-md-5 border rounded-3 bg-light dropdown-item" name="loginDos">
-                                              <!-- Encabezado -->
-                                              <div class="form-floating mb-3">
-                                                  <li>
-                                                      <h5 class="text-center">Inicia sesión</h5>
-                                                  </li>
-                                              </div>
-                                              <br>
-                                              <!-- Correo -->
-                                              <div class="form-floating mb-3">
-                                                  <input type="email" class="form-control" id="floatingInput" placeholder="gomgom@gmail.com" name="correoDos" required>
-                                                  <label for="floatingInput">Correo</label>
-                                              </div>
-                                              <br>
-                                              <!-- Contraseña -->
-                                              <div class="form-floating mb-3">
-                                                  <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="contraDos" required>
-                                                  <label for="floatingPassword">Contraseña</label>
-                                                  <!-- Sumbit para login -->
-                                                  <br>
-                                                  <small><p class="text-center" id="validaLoginNav"></p></small></small>
-                                                  <br>
-                                                  <input class="text-center" id="botonLoginDos" type="submit" value="Quiero mis gomitas">
-                                                  <br>
-                                                  <br>
-                                                  <a class="text-center" href="registro_login.html">¿Aún sin cuenta? ¡Regístrate aquí!</a>
-                                                  <!-- <button class="btn btn-primary" type="submit">Entrar por gomitas</button> -->
-                          </div>
-                          </li>
-                          <!-- termina form -->
-                          </form>
-                  </div>
-                  </ul>
-  
-  
-  
-              </div>
-          </div>
-  
-  
-          <!-- LOGO/Navbar brand -->
-          <div class="col-md-4 text-sm-start text-md-center">
-              <a href="../index.html" class="navbar-brand" id="logo"><img class="img-brand" src="https://i.ibb.co/dPfMrvL/Imagen1.png" alt="" width="auto" height="100">
-              </a>
-          </div>
-  
-          <!-- Botón Dropdown -->
-          <!-- Se agrupan ambos botones -->
-          <div class="col-md-3 text-end btn-group d-none d-sm-block">
-  
-              <button class="nav-item dropdown btn rounded btn-outline-warning p-0" id="login-borde">
-                  <a class="nav-link dropdown-toggle nav-items" href="#" id="navItemSiete" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <!-- COPIAR -->
+  <!-- NAVBAR Mobile -->
+  <hr class="borde mt-1">
+  <nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-md">
+
+      <!-- Offcanvas y hamburguesita de menú -->
+      <!-- Hamburguesa -->
+      <div class="col text-start">
+        <button id="hamburguesita" class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon">
+            <!---<b>——— <br> ———</b>--->
+          </span>
+        </button>
+      </div>
+      <!-- Offcanvas -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Mi menú de gomita</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link nav-items" id="navItemUno" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-items" id="navItemDos" href="catalogo.html">Catálogo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-items" id="navItemTres" href="acerca.html">Acerca</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-items" id="navItemCuatro" href="contactanos.html">Contacto</a>
+            </li>
+            <div class="oculta-boton d-block d-sm-none">
+              <br>
+              <hr>
+              <li class="nav-item">
+                <a class="nav-link nav-items" id="navItemSeis" href="registro_login.html">Sign up</a>
+              </li>
+              <li class="nav-item">
+
+                <button class="nav-item dropdown btn rounded btn-outline-warning p-0" id="login-borde">
+                  <a class="nav-link dropdown-toggle nav-items" href="#" id="navItemSiete" id="offcanvasNavbarDropdown"
+                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Login
                   </a>
-                  
+
                   <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                    
-                    <form class="p-4 p-md-5 border rounded-3 bg-light dropdown-item" name="loginUno">
+
+                    <form class="p-4 p-md-5 border rounded-3 bg-light dropdown-item" name="loginDos">
                       <!-- Encabezado -->
                       <div class="form-floating mb-3">
-                        <li><h5 class="text-center">Inicia sesión</h5></li>
+                        <li>
+                          <h5 class="text-center">Inicia sesión</h5>
+                        </li>
                       </div>
                       <br>
                       <!-- Correo -->
                       <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInputDos" placeholder="name@example.com" name="correoUno">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="gomgom@gmail.com"
+                          name="correoDos" required>
                         <label for="floatingInput">Correo</label>
                       </div>
                       <br>
                       <!-- Contraseña -->
                       <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingPasswordDos" placeholder="Password" name="contraUno">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña"
+                          name="contraDos" required>
                         <label for="floatingPassword">Contraseña</label>
                         <!-- Sumbit para login -->
                         <br>
-                        <small><p class="text-center" id="validaLogin"></p></small></small>
+                        <small>
+                          <p class="text-center" id="validaLoginNav"></p>
+                        </small></small>
                         <br>
-                        <input class="text-center" id="botonLoginUno" type="submit" value="Quiero mis gomitas">
+                        <input class="text-center" id="botonLoginDos" type="submit" value="Quiero mis gomitas">
                         <br>
                         <br>
                         <a class="text-center" href="registro_login.html">¿Aún sin cuenta? ¡Regístrate aquí!</a>
                         <!-- <button class="btn btn-primary" type="submit">Entrar por gomitas</button> -->
-          </div>
-  
-          </form>
+                      </div>
+              </li>
+              <!-- termina form -->
+              </form>
+            </div>
+          </ul>
+
+
+
+        </div>
+      </div>
+
+
+      <!-- LOGO/Navbar brand -->
+      <div class="col-md-4 text-sm-start text-md-center">
+        <a href="../index.html" class="navbar-brand" id="logo"><img class="img-brand"
+            src="https://i.ibb.co/dPfMrvL/Imagen1.png" alt="" width="auto" height="100">
+        </a>
+      </div>
+
+      <!-- Botón Dropdown -->
+      <!-- Se agrupan ambos botones -->
+      <div class="col-md-3 text-end btn-group d-none d-sm-block">
+
+        <button class="nav-item dropdown btn rounded btn-outline-warning p-0" id="login-borde">
+          <a class="nav-link dropdown-toggle nav-items" href="#" id="navItemSiete" id="offcanvasNavbarDropdown"
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+
+            <form class="p-4 p-md-5 border rounded-3 bg-light dropdown-item" name="loginUno">
+              <!-- Encabezado -->
+              <div class="form-floating mb-3">
+                <li>
+                  <h5 class="text-center">Inicia sesión</h5>
+                </li>
+              </div>
+              <br>
+              <!-- Correo -->
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInputDos" placeholder="name@example.com"
+                  name="correoUno">
+                <label for="floatingInput">Correo</label>
+              </div>
+              <br>
+              <!-- Contraseña -->
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPasswordDos" placeholder="Password"
+                  name="contraUno">
+                <label for="floatingPassword">Contraseña</label>
+                <!-- Sumbit para login -->
+                <br>
+                <small>
+                  <p class="text-center" id="validaLogin"></p>
+                </small></small>
+                <br>
+                <input class="text-center" id="botonLoginUno" type="submit" value="Quiero mis gomitas">
+                <br>
+                <br>
+                <a class="text-center" href="registro_login.html">¿Aún sin cuenta? ¡Regístrate aquí!</a>
+                <!-- <button class="btn btn-primary" type="submit">Entrar por gomitas</button> -->
+              </div>
+
+            </form>
           </ul>
           </li>
           </ul>
           <!-- Botón signup -->
-          <a id="navItemOcho" href="registro_login.html"><button type="button" class="btn btn-outline-warning me-2 nav-items">Sign-up</button></a>
-  
-  
-  
-          </div>
-          <!-- Carrito -->
-          <div class="col text-end text-fluid-start">
-              <a id="navItemNueve" href="shopping-cart.html">
-  
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FD8A3A" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                  <circle cx="6" cy="19" r="2" />
-                  <circle cx="17" cy="19" r="2" />
-                  <path d="M17 17h-11v-14h-2" />
-                  <path d="M6 5l14 1l-1 7h-13" />
-                </svg>
-              </a>
-          </div>
-      </div>
-      </nav>
-      <hr class="borde mb-1 mt-4">
+          <a id="navItemOcho" href="registro_login.html"><button type="button"
+              class="btn btn-outline-warning me-2 nav-items">Sign-up</button></a>
 
-      <!-- Termina navbar -->
+
+
+      </div>
+      <!-- Carrito -->
+      <div class="col text-end text-fluid-start">
+        <a id="navItemNueve" href="shopping-cart.html">
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44"
+            height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FD8A3A" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="6" cy="19" r="2" />
+            <circle cx="17" cy="19" r="2" />
+            <path d="M17 17h-11v-14h-2" />
+            <path d="M6 5l14 1l-1 7h-13" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <hr class="borde mb-1 mt-4">
+  <br>
+  <!-- Termina navbar -->
+
+  <!-- Termina navbar -->
 
   <!-- <hr class="division mb-0 mt-0"> -->
 
@@ -295,7 +316,7 @@
           <h5 class="text-center mt-3">RESUMEN DEL PEDIDO</h5>
 
           <!-- Elemento inicia -->
-         <!--  <table id="elemento{num}">
+          <!--  <table id="elemento{num}">
             <tbody>
               Imagen y título
               <tr>
@@ -332,7 +353,7 @@
           </table>
           Termina elemento -->
 
-      
+
 
         </div>
 
