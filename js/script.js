@@ -87,36 +87,56 @@ cargarEventLIstener();
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
 
-            let carritos = {};
+
             let clave = e.target.parentElement.children[1].id;
             let elemento = e.target.parentElement;
             let imagen = elemento.children[0].src;
             let producto = elemento.children[1].innerHTML;
             let precio = elemento.children[3].innerHTML;
-            let cantidad=1;;
+            let cantidad = 1;
 
-            //Si ya hay algo guardado en el LocalStorage:
-            if(localStorage.getItem("carritos")!=null){
-
-                //Si además, ya está guardado el producto en el LocalStorage:
-                if (JSON.parse(localStorage.getItem("carritos"))[`${clave}`] != null) {
-                    elemento = JSON.parse(localStorage.getItem("carritos"))[`${clave}`];
-                    cantidad = ++elemento.cantidad;
-                    localStorage.removeItem("carritos");
-                } 
-            } 
-
-            let datos = 
+            //Si no hay algo guardado en el LocalStorage:
+            if (localStorage.getItem("carritos") == null) {
+                let carritos = {};
+                let datos =
                 {
                     producto: producto,
                     imagen: imagen,
                     precio: precio,
                     cantidad: cantidad
                 };
-            
-            carritos[`${clave}`] = datos;
-            localStorage.setItem("carritos", JSON.stringify(carritos));
-            console.log(carritos);
+
+                carritos[`${clave}`] = datos;
+                localStorage.setItem("carritos", JSON.stringify(carritos));
+
+            } else {
+                //Si  ya hay un carrito
+                let carritos = (JSON.parse(localStorage.getItem("carritos")));
+               
+
+                //Si además, ya está guardado el producto en el LocalStorage:
+                if (carritos[`${clave}`] != null) {
+                    //Se modifica la cantidad del item y se guarda
+                    carritos[`${clave}`].cantidad++;
+                   
+
+                } else { //si no está guardado el elemento en el item
+                    let datos =
+                    {
+                        producto: producto,
+                        imagen: imagen,
+                        precio: precio,
+                        cantidad: cantidad
+                    };
+
+                    carritos[`${clave}`] = datos;
+                }
+                localStorage.setItem("carritos", JSON.stringify(carritos));
+            }
+
+            // carritos[`${clave}`] = datos;
+            // localStorage.setItem("carritos", JSON.stringify(carritos));
+            // console.log(carritos);
         }
     })
 })();
