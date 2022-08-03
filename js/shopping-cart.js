@@ -1,29 +1,3 @@
-//Función crear tabla
-//Eliminar tabla
-//Cargar datos
-
-/* function cargaDatos(url) {
-    //Carga datos
-    fetch(url)
-        .then(response => response.json())
-        .then(usuarios => {
-            //console.log(usuarios.data)
-            for (user in usuarios.data) {
-
-                //console.log(`${usuarios.data[user].email} tiene email ${user}`);
-                document.getElementsByClassName("id")[user].innerHTML = usuarios.data[user].id;
-                document.getElementsByClassName("email")[user].innerHTML = usuarios.data[user].email;
-                document.getElementsByClassName("fName")[user].innerHTML = usuarios.data[user].first_name;
-                document.getElementsByClassName("lName")[user].innerHTML = usuarios.data[user].last_name;
-                document.getElementsByClassName("img-avatar")[user].src = usuarios.data[user].avatar;
-            }
-
-            //Guarda los datos
-            limite = Date.now() + 1000 * 60 + 3
-            localStorage.setItem(`pag${pagina}`, JSON.stringify(usuarios.data));
-            localStorage.setItem(`expPag${pagina}`, limite);  //Se ingresa el tiempo de expiración: un minuto
-        });
-} */
 
 fetch("../json/shopping-cart.json")
     .then(response => response.json())
@@ -98,3 +72,9 @@ function borrarUno(num){
 }
 
 for (let i = 1; i < 3; i++)creaTabla(i, "https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg","Picasandías Enchiladas",3,33);
+
+//Traer desde LocalStorage:
+for (let j=1;j<=100;j++){
+    localStorage.getItem(clave);
+        elemento = JSON.parse(localStorage.getItem(clave));
+}
