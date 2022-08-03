@@ -86,31 +86,57 @@ cargarEventLIstener();
 (function () {
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
-            
+
 
             let clave = e.target.parentElement.children[1].id;
             let elemento = e.target.parentElement;
             let imagen = elemento.children[0].src;
             let producto = elemento.children[1].innerHTML;
             let precio = elemento.children[3].innerHTML;
-            let cantidad;
+            let cantidad = 1;
 
-            if (localStorage.getItem(clave)!=null){
-                elemento = JSON.parse(localStorage.getItem(clave));
-                cantidad = ++elemento.cantidad;
-                localStorage.removeItem(clave);
+            //Si no hay algo guardado en el LocalStorage:
+            if (localStorage.getItem("carritos") == null) {
+                let carritos = {};
+                let datos =
+                {
+                    producto: producto,
+                    imagen: imagen,
+                    precio: precio,
+                    cantidad: cantidad
+                };
 
-            } else cantidad =1;
+                carritos[`${clave}`] = datos;
+                localStorage.setItem("carritos", JSON.stringify(carritos));
 
-            let datos = {
-                imagen: imagen,
-                producto: producto,
-                precio: precio,
-                cantidad: cantidad
+            } else {
+                //Si  ya hay un carrito
+                let carritos = (JSON.parse(localStorage.getItem("carritos")));
+               
+
+                //Si además, ya está guardado el producto en el LocalStorage:
+                if (carritos[`${clave}`] != null) {
+                    //Se modifica la cantidad del item y se guarda
+                    carritos[`${clave}`].cantidad++;
+                   
+
+                } else { //si no está guardado el elemento en el item
+                    let datos =
+                    {
+                        producto: producto,
+                        imagen: imagen,
+                        precio: precio,
+                        cantidad: cantidad
+                    };
+
+                    carritos[`${clave}`] = datos;
+                }
+                localStorage.setItem("carritos", JSON.stringify(carritos));
             }
-            
-            localStorage.setItem(clave, JSON.stringify(datos));
-        }
 
+            // carritos[`${clave}`] = datos;
+            // localStorage.setItem("carritos", JSON.stringify(carritos));
+            // console.log(carritos);
+        }
     })
 })();
