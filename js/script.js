@@ -38,7 +38,8 @@ fetch('../json/prueba.json')
             let boton = document.createElement('button')
             boton.setAttribute('id', "boton" + i.id)
             boton.classList.add("boton")
-            boton.innerHTML = "+"
+            boton.classList.add("mb-5")
+            boton.innerHTML = "Añadir al carrito"
 
 
 

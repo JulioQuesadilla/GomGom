@@ -77,4 +77,24 @@ async function validarRegistro() {
         validationCorreo.innerHTML = "Creo que esa no es una dirección de correo válida..."   
     }
 
+    //Validar un username corto
+    let user_propuesto = formularioRegistro["validarUsuario"].value;
+    let validationUser = document.getElementById("validaUserTxt");
+    let regexUser = new RegExp(/^\S+\w+\S$/);
+    if (user_propuesto.length > 18) {
+        validationUser.style.color= "#8B0003";
+        validationUser.innerHTML = "Intentemos un nombre de usuario más corto, mejor..."
+    }
+    else {
+        if (regexUser.test(user_propuesto)) {
+            validationUser.style.color= "green";
+            validationUser.innerHTML = `¡Gran nombre!: ${user_propuesto}`;
+        }
+        else {
+            validationUser.style.color= "#8B0003";
+            validationUser.innerHTML = "Mejor un username sin espacios, por favor de Gomita"
+        }
+        }
+
+
 }
