@@ -135,7 +135,6 @@ table{
     border-color: #EF8100;
     color: white;
     font-family:'Fredoka One';
-    width: 40%;
     margin: 0 auto;
     width: 12em;
 }
@@ -234,4 +233,5 @@ table{
 .btn.btn-warning[type="submit"]{
     background-color: #8B0003;
     border-color: #8B0003;
+    height: 3.125em;
 }
