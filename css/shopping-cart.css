@@ -106,9 +106,10 @@ table{
 }
 
 #items{
-    max-height:18.75em ;
+    height:18.75em ;
     overflow: hidden scroll;
     align-self: flex-start;
+    width: 100%;
 }
 
 #items::-webkit-scrollbar {
