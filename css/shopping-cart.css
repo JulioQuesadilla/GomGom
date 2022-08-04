@@ -152,7 +152,11 @@ table{
 
 /* Estilos de opciones en inputs */
 .botoncito, .botoncito-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color:#8B0003;
+    font-weight: bold;
     background-color: #FD8A3A;
     border-style: none;
     border-radius: 2em;
@@ -163,7 +167,8 @@ table{
 .botoncito-2{
     background-color: white;
     width: 70%;
-    border:solid #8B0003 0.18em
+    border:solid #8B0003 0.18em;
+    font-weight: normal;
 }
 
 /* La clase .radio es la clase de label que contiene el radio input */
