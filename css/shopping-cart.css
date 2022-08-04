@@ -137,6 +137,7 @@ table{
     font-family:'Fredoka One';
     width: 40%;
     margin: 0 auto;
+    width: 12em;
 }
 
 #floatingInput{
