@@ -36,8 +36,9 @@ function cargarFetch(url) {
  */
 function creaTabla(num, url, titulo, cantidad, precio) {
     // Se crea tabla y cuerpo de tabla
-    document.getElementById("items").appendChild(document.createElement("table")).id = `elemento-${num}`;
-    let body = document.getElementById(`elemento-${num}`).appendChild(document.createElement("tbody"));
+    document.getElementById("items").appendChild(document.createElement("table")).id = `producto${num}`;
+    document.getElementById(`producto${num}`).classList.add(`${num}`);
+    let body = document.getElementById(`producto${num}`).appendChild(document.createElement("tbody"));
 
     // Se crea primera fila: imagen y título
     let fila1 = body.insertRow();
