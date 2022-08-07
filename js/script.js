@@ -89,7 +89,7 @@ cargarEventLIstener();
         if (e.target.classList.contains("boton")) {
 
 
-            let clave = e.target.parentElement.children[1].id;
+            let clave = e.target.parentElement.children[1].id.replace(/((?:0+))/, "");
             let elemento = e.target.parentElement;
             let imagen = elemento.children[0].src;
             let producto = elemento.children[1].innerHTML;
