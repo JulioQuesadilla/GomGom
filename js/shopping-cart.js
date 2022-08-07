@@ -1,25 +1,40 @@
 let direccion = "../json/shopping-cart.json";
-function cargarFetch(url){
+
+// cargarLocal();
+cargarFetch(direccion);
+let descuentos = document.getElementById("descuentos");
+let subtotales = document.getElementById("subtotales");
+let totales = document.getElementById("totales");
+
+descuentos.innerHTML = 30; //Unidades en pesos;
+subtotales.innerHTML = 200;
+
+totales.innerHTML = Number(subtotales.innerHTML) - Number(descuentos.innerHTML);
+totales.style = "font-weight: bold";
+
+/* * * * * * * * *  Funciones  * * * * * * * * * * * */
+
+function cargarFetch(url) {
     fetch(url)
         .then(response => response.json())
         .then(datos => {
             carrito = datos.data[0].carrito;
             carrito.forEach(producto => {
-                creaTabla(producto.idproducto,producto.imagen,producto.articulo,producto.cantidad,producto.preciounitario);
+                creaTabla(producto.idproducto, producto.imagen, producto.articulo, producto.cantidad, producto.preciounitario);
             });
         });
 
 }
 
-      /**
-       * 
-       * @param {number} num de item iniciando desde 1
-       * @param {string} url 
-       * @param {string} titulo del item
-       * @param {number} cantidad de elementos del item
-       * @param {number} precio unitario del item
-       */
-function creaTabla(num, url,titulo,cantidad, precio) {
+/**
+ * 
+ * @param {number} num de item iniciando desde 1
+ * @param {string} url 
+ * @param {string} titulo del item
+ * @param {number} cantidad de elementos del item
+ * @param {number} precio unitario del item
+ */
+function creaTabla(num, url, titulo, cantidad, precio) {
     // Se crea tabla y cuerpo de tabla
     document.getElementById("items").appendChild(document.createElement("table")).id = `elemento-${num}`;
     let body = document.getElementById(`elemento-${num}`).appendChild(document.createElement("tbody"));
@@ -36,23 +51,28 @@ function creaTabla(num, url,titulo,cantidad, precio) {
 
     // Se crea segunda fila
     let fila2 = body.insertRow();
-    
-    fila2.insertCell().insertAdjacentHTML("afterbegin",`<img class="botones" id="btn-menos-${num}" src="https://i.ibb.co/mq7XTJ1/pandita-rojo.png" alt="pandita-rojo">
-    <input id="cantidad-${num}" type="number" class="cantidad text-center" disabled>
-    <img class="botones" id="btn-mas-${num}" src="https://i.ibb.co/F7nPFbK/pandita-verde-antonio.png"
-      alt="pandita-verde-antonio">`);
 
-      document.getElementById(`btn-mas-${num}`).setAttribute("onclick",`sumarUno(${num})`);
-      document.getElementById(`btn-menos-${num}`).setAttribute("onclick",`restarUno(${num})`);
+    //Se crean botones e input de cantidad
+    fila2.insertCell().insertAdjacentHTML("afterbegin",
+        `<img class="botones" id="btn-menos-${num}" src="https://i.ibb.co/mq7XTJ1/pandita-rojo.png" alt="pandita-rojo">
+         <input id="cantidad-${num}" type="number" class="cantidad text-center" disabled>
+         <img class="botones" id="btn-mas-${num}" src="https://i.ibb.co/F7nPFbK/pandita-verde-antonio.png" alt="pandita-verde-antonio">`
+    );
+
+    document.getElementById(`btn-mas-${num}`).setAttribute("onclick", `sumarUno(${num})`);
+    document.getElementById(`btn-menos-${num}`).setAttribute("onclick", `restarUno(${num})`);
 
     fila2.cells[0].colSpan = 2;
+    //se asigna valor de cantidad
     document.getElementById(`cantidad-${num}`).value = cantidad;
 
+    //Se crean precios
     fila2.insertCell();
-    fila2.cells[1].insertAdjacentHTML("beforeend",`<input id="precio-${num}" type="text" class="precio" placeholder="$$$" disabled>`);
-    document.getElementById(`precio-${num}`).value = "$ "+precio;
+    fila2.cells[1].insertAdjacentHTML("beforeend", `<input id="precio-${num}" type="text" class="precio" placeholder="$$$" disabled>`);
+    document.getElementById(`precio-${num}`).value = "$ " + precio;
 
-    fila2.appendChild(document.createElement("td")).insertAdjacentHTML("beforeend",`<button class="btn" id="borrar-${num}">
+    //Se crea trash can
+    fila2.appendChild(document.createElement("td")).insertAdjacentHTML("beforeend", `<button class="btn" id="borrar-${num}">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       class="bi bi-trash-fill" viewBox="0 0 16 16">
       <path
@@ -60,32 +80,30 @@ function creaTabla(num, url,titulo,cantidad, precio) {
     </svg>
   </button>`);
 
-  document.getElementById(`borrar-${num}`).setAttribute("onclick",`borrarUno(${num})`);
+    document.getElementById(`borrar-${num}`).setAttribute("onclick", `borrarUno(${num})`);
 
 }
 
-function sumarUno(num){
+function sumarUno(num) {
     let cantidadUno = Number(document.getElementById(`cantidad-${num}`).value);
-    document.getElementById(`cantidad-${num}`).value = cantidadUno+1;
+    document.getElementById(`cantidad-${num}`).value = cantidadUno + 1;
 
 }
 
-function restarUno(num){
+function restarUno(num) {
     let valor = document.getElementById(`cantidad-${num}`);
-    Number(valor.value)==1 ? valor.value = 1 : valor.value = Number(valor.value)-1;
+    Number(valor.value) == 1 ? valor.value = 1 : valor.value = Number(valor.value) - 1;
 }
 
-function borrarUno(num){
+function borrarUno(num) {
     document.getElementById("items").removeChild(document.getElementById(`elemento-${num}`));
 }
 
 //Traer desde LocalStorage:
-function cargarLocal(){
+function cargarLocal() {
     carrito = JSON.parse(localStorage.getItem("carritos"));
-    for (const producto in carrito) 
-            creaTabla(producto.replace(/((?:producto0*))/,""),carrito[producto].imagen,carrito[producto].producto,carrito[producto].cantidad,carrito[producto].precio);
+    for (const producto in carrito)
+        creaTabla(producto.replace(/((?:producto0*))/, ""), carrito[producto].imagen, carrito[producto].producto, carrito[producto].cantidad, carrito[producto].precio);
 }
 
-// cargarLocal();
-cargarFetch(direccion);
 
