@@ -89,11 +89,12 @@ cargarEventLIstener();
         if (e.target.classList.contains("boton")) {
 
 
-            let clave = e.target.parentElement.children[1].id;
+            let clave = e.target.parentElement.children[1].id.replace(/((?:0+))/, "");
             let elemento = e.target.parentElement;
             let imagen = elemento.children[0].src;
             let producto = elemento.children[1].innerHTML;
             let precio = elemento.children[3].innerHTML;
+            precio = precio.replace(/((?:\$*))/,"")
             let cantidad = 1;
 
             //Si no hay algo guardado en el LocalStorage:
