@@ -1,7 +1,7 @@
 let direccion = "../json/shopping-cart.json";
 
-// cargarLocal();
-cargarFetch(direccion);
+cargarLocal();
+// cargarFetch(direccion);
 let descuentos = document.getElementById("descuentos");
 let subtotales = document.getElementById("subtotales");
 let totales = document.getElementById("totales");
@@ -37,7 +37,6 @@ function cargarFetch(url) {
 function creaTabla(num, url, titulo, cantidad, precio) {
     // Se crea tabla y cuerpo de tabla
     document.getElementById("items").appendChild(document.createElement("table")).id = `producto${num}`;
-    document.getElementById(`producto${num}`).classList.add(`${num}`);
     let body = document.getElementById(`producto${num}`).appendChild(document.createElement("tbody"));
 
     // Se crea primera fila: imagen y título
@@ -89,16 +88,49 @@ function sumarUno(num) {
     let cantidadUno = Number(document.getElementById(`cantidad-${num}`).value);
     document.getElementById(`cantidad-${num}`).value = cantidadUno + 1;
 
+    /* * * * * * * * *  LocalStorage * * * * * * * *  */
+    //Jala el carrito
+    let carritos = JSON.parse(localStorage.getItem("carritos"));
+
+    //Modifica cantidad
+    carritos[`producto${num}`].cantidad = ++cantidadUno;
+    
+    //Guarda el nuevo carrito en el LocalStorage
+    localStorage.setItem("carritos", JSON.stringify(carritos));
+
 }
 
 function restarUno(num) {
     let valor = document.getElementById(`cantidad-${num}`);
     Number(valor.value) == 1 ? valor.value = 1 : valor.value = Number(valor.value) - 1;
+
+    /* * * * * * * * *  LocalStorage * * * * * * * *  */
+    //Jala el carrito
+    let carritos = JSON.parse(localStorage.getItem("carritos"));
+
+    //Modifica cantidad
+    carritos[`producto${num}`].cantidad = Number(valor.value);
+
+    //Guarda el nuevo carrito en el LocalStorage
+    localStorage.setItem("carritos", JSON.stringify(carritos));
 }
 
 function borrarUno(num) {
-    document.getElementById("items").removeChild(document.getElementById(`elemento-${num}`));
-}
+            //Jala el nombre del producto
+            let producto = document.getElementById(`producto${num}`);
+
+            //Borra del HTML
+            document.getElementById("items").removeChild(producto);
+
+            //Jala el carrito
+            let carritos = JSON.parse(localStorage.getItem("carritos"));
+
+            // elimina el producto
+            delete carritos[producto.id];
+
+            //Guarda el nuevo carrito en el LocalStorage
+            localStorage.setItem("carritos", JSON.stringify(carritos));
+        }
 
 //Traer desde LocalStorage:
 function cargarLocal() {
@@ -108,3 +140,4 @@ function cargarLocal() {
 }
 
 
+   
