@@ -6,7 +6,7 @@
  * Product Owner: Hector Mora
  * Scrums: MoisesCH14 y el abuelin
  * Lead Devs: Venus, JulionQuesadillonALCESARLOKEESDELCESAR, LeoKawicha, AdriánLimón
- * (textrañamos,Lau)
+ * (textrañamos,Lau & Moi)
  * 
  * JAVAJAVA-DO!
  *  
@@ -35,7 +35,7 @@ else if (localStorage.getItem("logged")) {
     let user = localStorage.getItem("logged");
     let botonesLogin = document.getElementById("grupo-botonesPC");
     let listaLogin = document.getElementById("grupo-botonesNav");
-    botonesLogin.innerHTML = `<p class="text-center justify-content-center align-content-center">¡Hola de nuevo, ${user}!</p>`;
+    botonesLogin.innerHTML = `<p class="text-center justify-content-center align-content-center" style="color: #ef8100;">¡Hola de nuevo, ${user}!</p>`;
     listaLogin.innerHTML = `<hr><br><p class="text-center justify-content-center align-content-center">¡Hola de nuevo, ${user}!</p>`;
 }
 
