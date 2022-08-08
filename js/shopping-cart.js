@@ -1,16 +1,10 @@
+/* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
 
 cargarLocal();
 // cargarFetch(direccion);
-let descuentos = document.getElementById("descuentos");
-let subtotales = document.getElementById("subtotales");
-let totales = document.getElementById("totales");
-
-descuentos.innerHTML = 30; //Unidades en pesos;
-subtotales.innerHTML = 200;
-
-totales.innerHTML = Number(subtotales.innerHTML) - Number(descuentos.innerHTML);
-totales.style = "font-weight: bold";
+asignaDescuentos(50);
+calculaSubtotal();
 
 /* * * * * * * * *  Funciones  * * * * * * * * * * * */
 
@@ -94,9 +88,12 @@ function sumarUno(num) {
 
     //Modifica cantidad
     carritos[`producto${num}`].cantidad = ++cantidadUno;
-    
+
     //Guarda el nuevo carrito en el LocalStorage
     localStorage.setItem("carritos", JSON.stringify(carritos));
+
+    //Recalcula subtotal y total
+    calculaSubtotal();
 
 }
 
@@ -113,24 +110,30 @@ function restarUno(num) {
 
     //Guarda el nuevo carrito en el LocalStorage
     localStorage.setItem("carritos", JSON.stringify(carritos));
+
+    //Recalcula subtotal y total
+    calculaSubtotal();
 }
 
 function borrarUno(num) {
-            //Jala el nombre del producto
-            let producto = document.getElementById(`producto${num}`);
+    //Jala el nombre del producto
+    let producto = document.getElementById(`producto${num}`);
 
-            //Borra del HTML
-            document.getElementById("items").removeChild(producto);
+    //Borra del HTML
+    document.getElementById("items").removeChild(producto);
 
-            //Jala el carrito
-            let carritos = JSON.parse(localStorage.getItem("carritos"));
+    //Jala el carrito
+    let carritos = JSON.parse(localStorage.getItem("carritos"));
 
-            // elimina el producto
-            delete carritos[producto.id];
+    // elimina el producto
+    delete carritos[producto.id];
 
-            //Guarda el nuevo carrito en el LocalStorage
-            localStorage.setItem("carritos", JSON.stringify(carritos));
-        }
+    //Guarda el nuevo carrito en el LocalStorage
+    localStorage.setItem("carritos", JSON.stringify(carritos));
+
+    //Recalcula subtotal y total
+    calculaSubtotal();
+}
 
 //Traer desde LocalStorage:
 function cargarLocal() {
@@ -139,5 +142,39 @@ function cargarLocal() {
         creaTabla(producto.replace(/((?:producto0*))/, ""), carrito[producto].imagen, carrito[producto].producto, carrito[producto].cantidad, carrito[producto].precio);
 }
 
+function calculaSubtotal() {
+    let cantidades = document.getElementsByClassName("cantidad");
+    let descuentos = document.getElementById("descuentos");
+    let totales = document.getElementById("totales");
+    let subtotales = document.getElementById("subtotales");
+    if (cantidades.length!=0){
+        let suma = 0;
+    for (let i = 0; i < cantidades.length; i++) {
 
-   
+        let cantidad = Number(cantidades[i].value);
+        let numId = cantidades[i].id.replace(/((?:cantidad-))/, "");
+        let precioElement = document.getElementById(`precio-${numId}`);
+        let precioValue = Number(precioElement.value.replace(/((?:\$ ))/, ""));
+        console.log(precioValue);
+
+        suma += cantidad * precioValue;
+    }
+    subtotales.innerHTML = suma;
+    if (Number(descuentos.innerHTML)>(suma+100)) {
+        totales.innerHTML = suma - Number(descuentos.innerHTML);
+        descuentos.innerHTML = "";
+    }
+    else totales.innerHTML = suma;
+    totales.style = "font-weight: bold";
+
+} else {
+    descuentos.innerHTML = "";
+    totales.innerHTML = "";
+    subtotales.innerHTML = "";
+}
+}
+
+function asignaDescuentos(num){
+    descuentos.innerHTML = num; //Unidades en pesos;
+}
+
