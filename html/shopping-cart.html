@@ -218,7 +218,8 @@
       <div class="col-12 col-sm-6 col-md-7 order-2 order-md-0 px-sm-0" id="cajitas">
 
         <div class="cajita container-fluid mb-4 mt-5 px-sm-0">
-          <div class="row mt-4 mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
+          <div class="row mt-3 mb-2 text-center"><h5>INFORMACIÓN DE ENVÍO</h5></div>
+          <div class="row  mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
             <div class="col">
               <label for="envios" class="radio">
                 <input type="radio" name="opciones" id="envios" class="radio-input">
@@ -240,12 +241,12 @@
 
           <div class="entregas">
 
-            <div class="row my-2">
+            <div class="row my-2 text-center">
               <div class="col offset-2">
                 <label for="puntoA" class="radio">
                   <input type="radio" name="entregas" id="puntoA" class="radio-input">
                   <div class="radio-radio radio-2"></div>
-                  <button class="botoncito-2">IEST</button>
+                  <div class="botoncito-2">IEST</div>
                 </label>
               </div>
             </div>
@@ -274,8 +275,9 @@
 
         </div>
         <br>
-        <div class="cajita container-fluid mb-5 px-sm-0">
-          <div class="row mt-4 mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
+        <div class="cajita container-fluid mb-4 px-sm-0">
+          <div class="row mt-3 mb-2 text-center"><h5>INFORMACIÓN DE PAGO</h5></div>
+          <div class="row mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
             <div class="col">
               <label for="Paypal" class="radio">
                 <input type="radio" name="pago" id="Paypal" class="radio-input">
@@ -306,6 +308,12 @@
             </div>
           </div>
         </div>
+        <div class="container-fluid mt-2">
+          <div class="row mb-4  "><div class="col text-center">
+            <button class="btn btn-warning py-2 d-sm-none mx-auto" type="submit" style="background-color: #EF8100;">¡Quiero mis Gomitas!</button>
+          </div></div>
+        </div>
+        
         <hr>
       </div>
 
@@ -377,16 +385,16 @@
 
             <div class="row mx-auto">
               <div class="col col-sm-6 col-md-3 text-end">
-                <label for="">Descuentos:</label>
+                <label >Descuentos:</label>
               </div>
               <div class="col col-sm-6 col-md-3 text-md-end text-lg-start">
-                <label for="">$$$$</label>
+                <label id="descuentos">$$$$</label>
               </div>
               <div class="col col-sm-6 col-md-3 text-end">
-                <label for="">Subtotal:</label>
+                <label >Subtotal:</label>
               </div>
               <div class="col col-sm-6 col-md-3">
-                <label for="">$$$$</label>
+                <label id="subtotales">$$$$</label>
               </div>
             </div>
 
@@ -394,16 +402,16 @@
 
             <div class="row justify-content-center mx-auto">
               <div class="col text-end">
-                <label class="text-center" for="">Total:</label>
+                <label class="text-center">Total:</label>
               </div>
               <div class="col">
-                <label for="">$$$$</label>
+                <label id="totales">$$$$</label>
               </div>
             </div>
-            <hr class="division">
-            <div class="row justify-content-center mx-auto mb-5">
+            <!-- <hr class="division"> -->
+            <div class="row justify-content-center mx-auto mt-4 mb-5">
               <!-- <div class="col"> -->
-              <button class="btn btn-warning py-2" type="submit">¡Quiero mis Gomitas!</button>
+              <button class="btn btn-warning py-2 d-none d-sm-block" type="submit">¡Quiero mis Gomitas!</button>
               <!-- </div> -->
             </div>
           </div>

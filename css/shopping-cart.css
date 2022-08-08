@@ -106,9 +106,10 @@ table{
 }
 
 #items{
-    max-height:18.75em ;
+    height:18.75em ;
     overflow: hidden scroll;
     align-self: flex-start;
+    width: 100%;
 }
 
 #items::-webkit-scrollbar {
@@ -134,8 +135,8 @@ table{
     border-color: #EF8100;
     color: white;
     font-family:'Fredoka One';
-    width: 40%;
     margin: 0 auto;
+    width: 12em;
 }
 
 #floatingInput{
@@ -150,7 +151,11 @@ table{
 
 /* Estilos de opciones en inputs */
 .botoncito, .botoncito-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color:#8B0003;
+    font-weight: bold;
     background-color: #FD8A3A;
     border-style: none;
     border-radius: 2em;
@@ -161,7 +166,8 @@ table{
 .botoncito-2{
     background-color: white;
     width: 70%;
-    border:solid #8B0003 0.18em
+    border:solid #8B0003 0.18em;
+    font-weight: normal;
 }
 
 /* La clase .radio es la clase de label que contiene el radio input */
@@ -227,4 +233,5 @@ table{
 .btn.btn-warning[type="submit"]{
     background-color: #8B0003;
     border-color: #8B0003;
+    height: 3.125em;
 }
