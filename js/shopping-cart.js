@@ -155,7 +155,6 @@ function calculaSubtotal() {
         let numId = cantidades[i].id.replace(/((?:cantidad-))/, "");
         let precioElement = document.getElementById(`precio-${numId}`);
         let precioValue = Number(precioElement.value.replace(/((?:\$ ))/, ""));
-        console.log(precioValue);
 
         suma += cantidad * precioValue;
     }
