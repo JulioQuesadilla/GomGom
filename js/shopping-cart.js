@@ -159,11 +159,15 @@ function calculaSubtotal() {
         suma += cantidad * precioValue;
     }
     subtotales.innerHTML = suma;
-    if (Number(descuentos.innerHTML)>(suma+100)) {
-        totales.innerHTML = suma - Number(descuentos.innerHTML);
+    if (Number(descuentos.innerHTML)+100>suma) { //El monto mínimo es de 100
+        totales.innerHTML = suma;
         descuentos.innerHTML = "";
     }
-    else totales.innerHTML = suma;
+    else {
+        totales.innerHTML = suma - Number(descuentos.innerHTML);
+        
+    }
+
     totales.style = "font-weight: bold";
 
 } else {
