@@ -94,6 +94,7 @@ cargarEventLIstener();
             let imagen = elemento.children[0].src;
             let producto = elemento.children[1].innerHTML;
             let precio = elemento.children[3].innerHTML;
+            precio = precio.replace(/((?:\$*))/,"")
             let cantidad = 1;
 
             //Si no hay algo guardado en el LocalStorage:
