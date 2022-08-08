@@ -97,6 +97,6 @@ body {
     display: inline-block;
     font-size: 15px;
     font-family: var(--textoBurbuja);
-    float: right;
     border-radius: 7px;
+    margin: 0 auto;
 }
