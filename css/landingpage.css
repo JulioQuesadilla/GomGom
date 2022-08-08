@@ -1,0 +1,58 @@
+:root {
+    --textoBurbuja: 'Fredoka one';
+    --textoSecundario: 'Catamaran';
+    --Cafe: #8B0003;
+    --crema: #FCDB7E;
+    --naranja: #ef8100;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16PX;
+}
+
+main {
+    background-color: var(--Cafe);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sectionFormulario {
+    display: flex;
+    height: 40rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+fieldset {
+    height: 40rem;
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 2rem;
+    font-family: var(--textoBurbuja);
+    color: white;
+}
+
+legend {
+    font-size: 2rem;
+}
+
+.div {
+    display: flex;
+    flex-direction: column;
+}

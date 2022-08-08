@@ -95,6 +95,15 @@ input[type=submit] {
     color: #FCDB7E
 }
 
+/*Redes fijas*/
+@media (max-width: 770px){
+
+    .redes{
+        display: flex;
+        justify-content: center;
+    }
+}
+
 /*Poderosa animación creada por Leo para el logo GomGom*/
 .img-brand:hover {
     transform: scale(1.1) rotate(360deg);
