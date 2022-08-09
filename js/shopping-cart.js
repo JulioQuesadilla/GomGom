@@ -1,8 +1,6 @@
-var perfEntries = performance.getEntriesByType("navigation");
-
-if (perfEntries[0].type === "back_forward") {
-    location.reload(true);
-}
+Response.AppendHeader("Cache-Control","no-cache, no-store, must-revalidate");
+Response.AppendHeader("Pragma", "no-cache");
+Response.AppendHeader("Expires", "0");
 
 /* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
