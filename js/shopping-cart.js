@@ -1,7 +1,11 @@
-Response.Cache.SetCacheability(HttpCacheability.NoCache);
-Response.Cache.SetMaxAge(TimeSpan.Zero);
-Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
-Response.Cache.SetNoStore();
+jQuery( document ).ready(function( $ ) {
+
+    //Use this inside your document ready jQuery 
+    $(window).on('popstate', function() {
+       location.reload(true);
+    });
+ 
+ });
 /* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
 
