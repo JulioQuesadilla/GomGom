@@ -1,11 +1,6 @@
-jQuery( document ).ready(function( $ ) {
-
-    //Use this inside your document ready jQuery 
-    $(window).on('popstate', function() {
-       location.reload(true);
-    });
- 
- });
+window.onbeforeunload = function() {
+    window.location.reload(true);
+  }
 /* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
 
