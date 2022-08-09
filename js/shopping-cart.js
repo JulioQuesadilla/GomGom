@@ -1,6 +1,6 @@
 window.onbeforeunload = function() {
     window.location.reload(true);
-    window.history.pushState('', null, './');
+    window.history.pushState('', null, './shopping-cart.html');
   }
 /* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
