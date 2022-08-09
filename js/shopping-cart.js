@@ -1,3 +1,7 @@
+if(performance.navigation.type == 2){
+    location.reload(true);
+ }
+
 /* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
 
