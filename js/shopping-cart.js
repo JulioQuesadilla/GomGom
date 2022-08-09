@@ -1,7 +1,7 @@
-Response.AppendHeader("Cache-Control","no-cache, no-store, must-revalidate");
-Response.AppendHeader("Pragma", "no-cache");
-Response.AppendHeader("Expires", "0");
-
+Response.Cache.SetCacheability(HttpCacheability.NoCache);
+Response.Cache.SetMaxAge(TimeSpan.Zero);
+Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
+Response.Cache.SetNoStore();
 /* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
 
