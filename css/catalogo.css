@@ -3,12 +3,12 @@ body{
     font-size: 1rem;
 }
 
-h1, h2, h3, h4, h5  {
+h1, h2, h3, h4, h5 {
     font-family: 'Fredoka One', cursive;
     color: #ef8100;
 }
 
-body, .nav-items {
+body, .nav-items p{
     font-family: 'Catamaran', sans-serif;
 }
 

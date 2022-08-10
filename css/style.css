@@ -87,7 +87,7 @@ body {
     border-style: solid;
 }
 
-.buttonDescarga {
+.buttonPrecio {
     background-color: var(--Cafe);
     border: none;
     color: var(--crema);
@@ -95,8 +95,18 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 15px;
+    font-size: 30px;
     font-family: var(--textoBurbuja);
     border-radius: 7px;
     margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Fredoka One', cursive;
+    color: #ef8100;
+}
+
+p {
+    font-family: var(--textoSecundario), cursive;
+    color: var(--Cafe);
 }
