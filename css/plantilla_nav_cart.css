@@ -67,18 +67,33 @@ hr.borde {
 }
 
 /*-------------------*/
+/*Cambios para CSS cart*/
 /*Esto oculta los elementos*/
 a#navItemUno, a#navItemDos, a#navItemTres, a#navItemCuatro, a#navItemNueve {
     display: none;
 }
 /*-------------------*/
 
-/*...que se elimina al pasar a PC*/
+/*...que se elimina al pasar a pc*/
 @media (min-width: 576px) {
     #offcanvasNavbar {
     display: block;
     }
+    
 }
+
+@media (max-width: 576px) {
+    #backcatalogoPC {
+        display: none;
+    }
+}
+
+#backcatalogoNav{
+    text-decoration-line: none;
+}
+
+/*Cambios para CSS cart*/
+/*--------*/
 
 /*Color y estilo para inputs submit, como el de login de la navbar*/
 input[type=submit] {
