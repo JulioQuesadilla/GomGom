@@ -11,11 +11,12 @@
   window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
       alert("The page was cached by the browser");
+      window.location.reload();
     } else {
       alert("The page was NOT cached by the browser");
     }
   });
-  
+
 /* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
 
