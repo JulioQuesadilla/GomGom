@@ -1,12 +1,9 @@
-/* window.onbeforeunload = function() {
-    window.location.reload(true);
-    window.history.pushState('', null, './shopping-cart.html');
-  }
- */
-  window.addEventListener("DOMContentLoaded",(e)=>{
-    e.preventDefault();
-  })
-/* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
+ /* * * * * * Recargar la página si se acceder por el historial * * * * * */
+ window.addEventListener('pageshow', (event) => {
+    if (event.persisted) window.location.reload();
+  });
+
+/* * * * * * * * * * * * * INICIALIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
 
 cargarLocal();
