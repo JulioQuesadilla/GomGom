@@ -1,10 +1,21 @@
-/* window.onbeforeunload = function() {
-    window.location.reload(true);
-  } */
+/* window.addEventListener( "pageshow", function ( event ) {
+    var historyTraversal = event.persisted || 
+                           ( typeof window.performance != "undefined" && 
+                                window.performance.navigation.type === 2 );
+    if ( historyTraversal ) {
+      // Handle page restore.
+      window.location.reload();
+    }
+  }); */
 
-window.addEventListener("beforeunload", (e)=>{
-    e.preventDefault});
-    
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      alert("The page was cached by the browser");
+    } else {
+      alert("The page was NOT cached by the browser");
+    }
+  });
+  
 /* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
 
