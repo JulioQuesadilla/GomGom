@@ -1,23 +1,9 @@
-/* window.addEventListener( "pageshow", function ( event ) {
-    var historyTraversal = event.persisted || 
-                           ( typeof window.performance != "undefined" && 
-                                window.performance.navigation.type === 2 );
-    if ( historyTraversal ) {
-      // Handle page restore.
-      window.location.reload();
-    }
-  }); */
-
-  window.addEventListener('pageshow', (event) => {
-    if (event.persisted) {
-      alert("The page was cached by the browser");
-      window.location.reload();
-    } else {
-      alert("The page was NOT cached by the browser");
-    }
+ /* * * * * * Recargar la página si se acceder por el historial * * * * * */
+ window.addEventListener('pageshow', (event) => {
+    if (event.persisted) window.location.reload();
   });
 
-/* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
+/* * * * * * * * * * * * * INICIALIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
 
 cargarLocal();
