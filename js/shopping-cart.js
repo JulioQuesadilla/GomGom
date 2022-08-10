@@ -1,11 +1,10 @@
 /* window.onbeforeunload = function() {
     window.location.reload(true);
-    window.history.pushState('', null, './shopping-cart.html');
-  }
- */
-  window.addEventListener("DOMContentLoaded",(e)=>{
-    e.preventDefault();
-  })
+  } */
+
+window.addEventListener("beforeunload", (e)=>{
+    e.preventDefault});
+    
 /* * * * * * * * * * * * * INICILIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
 
