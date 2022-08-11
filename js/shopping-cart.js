@@ -186,3 +186,15 @@ function asignaDescuentos(num){
     descuentos.innerHTML = num; //Unidades en pesos;
 }
 
+/* Función de estilos para el chamoy */
+
+let check = document.getElementById("chamoy");
+let checkbox = document.getElementById("checkbox");
+
+check.addEventListener("change", ()=>{
+    if (check.checked){
+        checkbox.classList.add("selected");
+    } else{
+        checkbox.classList.remove("selected");
+    }
+})

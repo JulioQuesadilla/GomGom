@@ -54,11 +54,27 @@ table{
     text-align: center;
 }
 
+@media screen and (max-width: 575px) {
+
+    #label-group{
+        width: 80%;
+    }
+}
+
 @media screen and (min-width: 576px) and (max-width:800px) {
     table{
         width: 100%;
     }
-    
+
+    #label-group{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width:900px) {
+    #label-group{
+        width: 80%;
+    }
 }
 /* @media screen and (max-width: 800px) {
     table{
@@ -66,6 +82,7 @@ table{
     }
     
 } */
+
 
 .cantidad{
    width: 30%;
@@ -235,3 +252,41 @@ table{
     border-color: #8B0003;
     height: 3.125em;
 }
+
+/* Estilos para chamoy */
+input[type="checkbox"]{
+    display: none;
+}
+
+.checkbox{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 3px;
+    border: 2px #8B0003 solid;
+}
+#label-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto auto;
+    /* border: #8B0003 3px solid; */
+    border-radius:5px;
+    padding: 7px 15px;
+    /* width: 80%; */
+    /* Se debe cambiarel width cuando el ancho cambia */
+    cursor: pointer;
+}
+
+.selected{
+    background-color: #8B0003;
+    padding: 5px;
+}
+
+.producto-chamoy{
+    border-radius: 10px;
+    height: 50px;
+    width:auto;
+}
+
