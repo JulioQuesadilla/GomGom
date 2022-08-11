@@ -163,7 +163,7 @@ function calculaTotal() {
         }
 
         if (document.getElementById("chamoy").checked) suma += 10;
-        totales.innerHTML = suma;
+        totales.innerHTML = `$${suma} pesos`;
         totales.style = "font-weight: bold";
 
     } else {
