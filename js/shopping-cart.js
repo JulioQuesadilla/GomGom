@@ -1,15 +1,14 @@
- /* * * * * * Recargar la página si se acceder por el historial * * * * * */
- window.addEventListener('pageshow', (event) => {
+/* * * * * * Recargar la página si se acceder por el historial * * * * * */
+window.addEventListener('pageshow', (event) => {
     if (event.persisted) window.location.reload();
-  });
+});
 
 /* * * * * * * * * * * * * INICIALIZACIONES * * * * * * * * * * * * */
 let direccion = "../json/shopping-cart.json";
 
 cargarLocal();
 // cargarFetch(direccion);
-asignaDescuentos(50);
-calculaSubtotal();
+calculaTotal();
 
 /* * * * * * * * *  Funciones  * * * * * * * * * * * */
 
@@ -98,7 +97,7 @@ function sumarUno(num) {
     localStorage.setItem("carritos", JSON.stringify(carritos));
 
     //Recalcula subtotal y total
-    calculaSubtotal();
+    calculaTotal();
 
 }
 
@@ -117,7 +116,7 @@ function restarUno(num) {
     localStorage.setItem("carritos", JSON.stringify(carritos));
 
     //Recalcula subtotal y total
-    calculaSubtotal();
+    calculaTotal();
 }
 
 function borrarUno(num) {
@@ -137,7 +136,7 @@ function borrarUno(num) {
     localStorage.setItem("carritos", JSON.stringify(carritos));
 
     //Recalcula subtotal y total
-    calculaSubtotal();
+    calculaTotal();
 }
 
 //Traer desde LocalStorage:
@@ -147,54 +146,43 @@ function cargarLocal() {
         creaTabla(producto.replace(/((?:producto0*))/, ""), carrito[producto].imagen, carrito[producto].producto, carrito[producto].cantidad, carrito[producto].precio);
 }
 
-function calculaSubtotal() {
+function calculaTotal() {
     let cantidades = document.getElementsByClassName("cantidad");
-    let descuentos = document.getElementById("descuentos");
     let totales = document.getElementById("totales");
-    let subtotales = document.getElementById("subtotales");
-    if (cantidades.length!=0){
+
+    if (cantidades.length != 0) {
         let suma = 0;
-    for (let i = 0; i < cantidades.length; i++) {
+        for (let i = 0; i < cantidades.length; i++) {
 
-        let cantidad = Number(cantidades[i].value);
-        let numId = cantidades[i].id.replace(/((?:cantidad-))/, "");
-        let precioElement = document.getElementById(`precio-${numId}`);
-        let precioValue = Number(precioElement.value.replace(/((?:\$ ))/, ""));
+            let cantidad = Number(cantidades[i].value);
+            let numId = cantidades[i].id.replace(/((?:cantidad-))/, "");
+            let precioElement = document.getElementById(`precio-${numId}`);
+            let precioValue = Number(precioElement.value.replace(/((?:\$ ))/, ""));
 
-        suma += cantidad * precioValue;
-    }
-    subtotales.innerHTML = suma;
-    if (Number(descuentos.innerHTML)+100>suma) { //El monto mínimo es de 100
+            suma += cantidad * precioValue;
+        }
+
+        if (document.getElementById("chamoy").checked) suma += 10;
         totales.innerHTML = suma;
-        descuentos.innerHTML = "";
+        totales.style = "font-weight: bold";
+
+    } else {
+        totales.innerHTML = "";
+        document.getElementById("chamoy").disabled = true;
     }
-    else {
-        totales.innerHTML = suma - Number(descuentos.innerHTML);
-        
-    }
-
-    totales.style = "font-weight: bold";
-
-} else {
-    descuentos.innerHTML = "";
-    totales.innerHTML = "";
-    subtotales.innerHTML = "";
-}
 }
 
-function asignaDescuentos(num){
-    descuentos.innerHTML = num; //Unidades en pesos;
-}
 
 /* Función de estilos para el chamoy */
 
 let check = document.getElementById("chamoy");
 let checkbox = document.getElementById("checkbox");
 
-check.addEventListener("change", ()=>{
-    if (check.checked){
+check.addEventListener("change", () => {
+    if (check.checked) {
         checkbox.classList.add("selected");
-    } else{
+    } else {
         checkbox.classList.remove("selected");
     }
+    calculaTotal();
 })
