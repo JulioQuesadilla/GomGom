@@ -123,7 +123,7 @@ table{
 }
 
 #items{
-    height:18.75em ;
+    height:23em ;
     overflow: hidden scroll;
     align-self: flex-start;
     width: 100%;
