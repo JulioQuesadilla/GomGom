@@ -5,8 +5,8 @@
  * Realizado para GomGom
  * Product Owner: Hector Mora
  * Scrums: MoisesCH14 y el abuelin
- * Lead Devs: Venus, JulionQuesadillonALCESARLOKEESDELCESAR, LeoKawicha, AdriánLimón
- * (textrañamos,Lau & Moi)
+ * Lead Devs: Venus, JulionQuesadillonALCESARLOKEESDELCESAR, LeoKawicha, AdrianLimón
+ * (notextrañamos,Lau & Moi)
  * 
  * JAVAJAVA-DO!
  *  
@@ -107,6 +107,7 @@ async function validateNavLogin() {
             checkLoginDos.innerHTML = "No tenemos esa cuenta de gomitas";
             console.log("Sólo abuehackerman puede entrar zi ke zi");
             console.log("...y JulioQuesadillas ps");
+            console.log("...y maybe adriancho ps");
             break;
         }
     }
