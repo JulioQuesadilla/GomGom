@@ -48,7 +48,7 @@
                             <a class="nav-link nav-items" id="navItemUno" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-items" id="navItemDos" href="catalogo.html">Catálogo</a>
+                            <a class="nav-link nav-items" id="navItemDos" href="catalogo.html">Paquetes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-items" id="navItemTres" href="acerca.html">Acerca</a>
@@ -168,16 +168,28 @@
         </div>
         <!-- Carrito -->
         <div class="col text-end text-fluid-start">
-            <a id="navItemNueve" href="shopping-cart.html">
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FD8A3A" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <circle cx="6" cy="19" r="2" />
-                <circle cx="17" cy="19" r="2" />
-                <path d="M17 17h-11v-14h-2" />
-                <path d="M6 5l14 1l-1 7h-13" />
-              </svg>
+            <!-- <button type="button" class="btn btn-outline-light"> -->
+                <button type="button" class="btn btn-outline-light position-relative">
+                <a id="navItemNueve" href="shopping-cart.html">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FD8A3A" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="6" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M17 17h-11v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                        
+                        
+                    </svg>
+                    <span class="position-absolute top-100 start-75 translate-middle badge rounded-pill bg-warning" id="cartbadge">
+                        0
+                        <span class="visually-hidden">¡Elementos en carrito!</span>
+                      </span>
+                    
+                    
+                </button>
             </a>
+            
         </div>
     </div>
     </nav>
@@ -247,7 +259,7 @@
                 </div>
                 <div id="form-2" class="form-2 hide">
                     <div class="form-input">
-                        <label>Descripción de tu evento:</label>
+                        <label>Describenos que quisieras ver en tu evento:</label>
                         <textarea name="descripcion" id="descripcion" placeholder="Describe tu evento" cols="30" rows="5"></textarea>
                     </div><div class="form-input">
                         <label > Número telefónico:</label>

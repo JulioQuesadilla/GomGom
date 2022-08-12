@@ -1,11 +1,10 @@
-<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Paquetes</title>
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +24,7 @@
 
 <body>
     <!-- COPIAR -->
+    <!-- NAVBAR Mobile -->
     <hr class="borde mt-1">
     <nav class="navbar navbar-expand-sm bg-light">
         <div class="container-md">
@@ -48,7 +48,7 @@
                             <a class="nav-link nav-items" id="navItemUno" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-items" id="navItemDos" href="catalogo.html">Catálogo</a>
+                            <a class="nav-link nav-items" id="navItemDos" href="paquetes.html">Paquetes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-items" id="navItemTres" href="acerca.html">Acerca</a>
@@ -168,16 +168,28 @@
         </div>
         <!-- Carrito -->
         <div class="col text-end text-fluid-start">
-            <a id="navItemNueve" href="shopping-cart.html">
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FD8A3A" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <circle cx="6" cy="19" r="2" />
-                <circle cx="17" cy="19" r="2" />
-                <path d="M17 17h-11v-14h-2" />
-                <path d="M6 5l14 1l-1 7h-13" />
-              </svg>
+            <!-- <button type="button" class="btn btn-outline-light"> -->
+                <button type="button" class="btn btn-outline-light position-relative">
+                <a id="navItemNueve" href="shopping-cart.html">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FD8A3A" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="6" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M17 17h-11v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                        
+                        
+                    </svg>
+                    <span class="position-absolute top-100 start-75 translate-middle badge rounded-pill bg-warning" id="cartbadge">
+                        0
+                        <span class="visually-hidden">¡Elementos en carrito!</span>
+                      </span>
+                    
+                    
+                </button>
             </a>
+            
         </div>
     </div>
     </nav>
@@ -198,22 +210,23 @@
     </div>
     <br>
     <div>
-        <p class="col-fluid-12 pt-2 mb-3 pb-3 justify-content-center align-content-center text-center text-uppercase">
-            Selecciona tu presupuesto
+        <p class=" text-uppercase txt__budget">
+            ¿Cuántos 🤑gomipesos🤑 comprarás hoy?
         </p>
     </div>
-    <div ALIGN=center >
+    <div class="btn__container">
             <button class="buttonPrecio">50</button>
             <button class="buttonPrecio">75</button>
             <button class="buttonPrecio">100</button>
             <button class="buttonPrecio">150</button>
             <button class="buttonPrecio">200</button>
             <button class="buttonPrecio">250</button>
+  
     </div>
     <br>
     <div>
         <p class="col-fluid-12 pt-2 mb-3 pb-3 justify-content-center align-content-center text-center text-uppercase">
-            Selecciona a lo más 6 gomitas
+            ¡Recuerda que puedes seleccionar hasta 6 diferentes tipos de gomitas!
         </p>
     </div>
     <br>
@@ -264,7 +277,7 @@
 
     <!--FOOTER-->
     <hr class="borde mt-4">
-    <div class="container-fluid" id="footer">
+    <div class="container-fluid justify-content-center" id="footer">
         <div class="row">
             <h5 class="col-fluid-12 pt-2 mb-3 pb-3 justify-content-center align-content-center text-center text-uppercase">
                 ¡Síguenos!
@@ -273,7 +286,7 @@
         <div class="row mb-3">
             <div class="col-3 text-center">
             </div>
-            <div class="col-6 text-center">
+            <div class="col-6 text-center d-flex justify-content-center redes">
                 <!-- Facebook icon -->
                 <a href="https://www.google.com">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mx-2 icon icon-tabler icon-tabler-brand-facebook" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ef8100" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -306,6 +319,9 @@
     <hr class="borde mb-1 mt-4">
     
     <!-- SCRIPTS -->
+    <!-- SCRIPT CART BADGE -->
+    <script src="../js/cart_badge.js"></script>
+   
     <!-- LOGIN VALIDACIÓN-->
     <script src="../js/login_validacion.js"></script>
     <!-- BOOTSTRAP SCRIPT CDN-->
