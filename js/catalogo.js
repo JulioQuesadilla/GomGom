@@ -32,10 +32,4 @@ async function validarRegistro() {
         }
     }
 
-    
-
-
-
-
-
 }

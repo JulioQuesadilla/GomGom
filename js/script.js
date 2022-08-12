@@ -75,7 +75,7 @@ const botonVaciar = document.querySelector("#vaciar-carrito")
 function cargarEventLIstener() {
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
-            console.log(e.target.parentElement)
+            return
 
         }
 
@@ -88,13 +88,21 @@ cargarEventLIstener();
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
 
+            const anadirCarrito = document.querySelectorAll(".boton");
 
+            anadirCarrito.forEach(function(element, i){
+
+                element.addEventListener("click", () => {
+                    
+                    setBackgrounImage(i)
+                })
+            });
             let clave = e.target.parentElement.children[1].id.replace(/((?:0+))/, "");
             let elemento = e.target.parentElement;
             let imagen = elemento.children[0].src;
             let producto = elemento.children[1].innerHTML;
             let precio = elemento.children[3].innerHTML;
-            precio = precio.replace(/((?:\$*))/,"")
+            precio = precio.replace(/((?:\$*))/, "")
             let cantidad = 1;
 
             //Si no hay algo guardado en el LocalStorage:
@@ -114,13 +122,13 @@ cargarEventLIstener();
             } else {
                 //Si  ya hay un carrito
                 let carritos = (JSON.parse(localStorage.getItem("carritos")));
-               
+
 
                 //Si además, ya está guardado el producto en el LocalStorage:
                 if (carritos[`${clave}`] != null) {
                     //Se modifica la cantidad del item y se guarda
                     carritos[`${clave}`].cantidad++;
-                   
+
 
                 } else { //si no está guardado el elemento en el item
                     let datos =
@@ -142,3 +150,25 @@ cargarEventLIstener();
         }
     })
 })();
+const seleccionPrecio = document.querySelectorAll(".buttonPrecio");
+
+seleccionPrecio.forEach(element => {
+
+    element.addEventListener("click", () => {
+
+        seleccionPrecio.forEach(element => element.classList.remove("background-botones"))
+        element.classList.add("background-botones")
+    })
+
+
+
+});
+
+
+
+function setBackgroundImage(valor) {
+    
+    const imagen = document.querySelectorAll(".infoContainer>.imagen")
+
+    imagen[valor].style.border = "15px solid var(--Cafe)"
+}
