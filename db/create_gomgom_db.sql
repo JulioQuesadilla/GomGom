@@ -162,7 +162,7 @@ ENGINE = InnoDB;
 -- Table `gomgom`.`pedidos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `gomgom`.`pedidos` (
-  `id_pedidos` INT NOT NULL AUTO_INCREMENT,
+  `id_pedidos` INT NOT NULL,
   `gomitas_id_gomitas` INT NOT NULL,
   `paquetes_id_paquetes` INT UNSIGNED NOT NULL,
   `fecha` DATE NULL,
