@@ -34,7 +34,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `gomgom`.`roles` (
   `id_roles` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `rol` VARCHAR(10) NOT NULL,
+  `rol` VARCHAR(10) NULL,
   PRIMARY KEY (`id_roles`))
 ENGINE = InnoDB;
 
@@ -162,31 +162,32 @@ ENGINE = InnoDB;
 -- Table `gomgom`.`pedidos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `gomgom`.`pedidos` (
-  `id_pedidos` INT NOT NULL,
+  `id_pedidos` INT NOT NULL AUTO_INCREMENT,
+  `numero_pedido` INT NOT NULL,
   `gomitas_id_gomitas` INT NOT NULL,
   `paquetes_id_paquetes` INT UNSIGNED NOT NULL,
   `fecha` DATE NULL,
   `venta_total` DECIMAL(10,2) NULL,
   `id_has_chamoy` INT(1) NULL,
-  PRIMARY KEY (`id_pedidos`, `gomitas_id_gomitas`, `paquetes_id_paquetes`),
+  PRIMARY KEY (`id_pedidos`, `numero_pedido`, `gomitas_id_gomitas`, `paquetes_id_paquetes`),
   INDEX `fk_pedidos_gomitas_idx` (`gomitas_id_gomitas` ASC),
   INDEX `fk_pedidos_paquetes_idx` (`paquetes_id_paquetes` ASC),
   INDEX `fk_pedidos_has_chamoy_idx` (`id_has_chamoy` ASC),
   CONSTRAINT `fk_pedidos_paquetes`
     FOREIGN KEY (`paquetes_id_paquetes`)
     REFERENCES `gomgom`.`paquetes` (`id_paquetes`)
-    ON DELETE RESTRICT
-    ON UPDATE RESTRICT,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_pedidos_gomitas`
     FOREIGN KEY (`gomitas_id_gomitas`)
     REFERENCES `gomgom`.`gomitas` (`id_gomitas`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_pedidos_has_chamoy`
     FOREIGN KEY (`id_has_chamoy`)
     REFERENCES `gomgom`.`has_chamoy` (`id_has_chamoy`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -198,17 +199,17 @@ CREATE TABLE IF NOT EXISTS `gomgom`.`ventas` (
   `id_usuario` INT UNSIGNED NOT NULL,
   `id_pedidos` INT NOT NULL,
   PRIMARY KEY (`id_ventas`),
-  INDEX `fk_ventas_paquetes_has_gomitas_idx` (`id_pedidos` ASC),
+  INDEX `fk_ventas_pedidos_idx` (`id_pedidos` ASC),
   CONSTRAINT `fk_ventas_usuarios`
     FOREIGN KEY (`id_usuario`)
     REFERENCES `gomgom`.`usuarios` (`id_usuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_ventas_paquetes_has_gomitas`
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_ventas_pedidos`
     FOREIGN KEY (`id_pedidos`)
     REFERENCES `gomgom`.`pedidos` (`id_pedidos`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
