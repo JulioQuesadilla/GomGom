@@ -1,3 +1,4 @@
+ALTER TABLE id_pedidos AUTO_INCREMENT= 19;
 -- Paquetes de un cliente
 INSERT INTO gomgom.pedidos(`numero_pedido`, `paquetes_id_paquetes`, `gomitas_id_gomitas`, `fecha`, `venta_total`, `id_has_chamoy`) VALUES (1, 6, 2, "2022-10-01", 500.00, 1);
 INSERT INTO gomgom.pedidos(`numero_pedido`, `paquetes_id_paquetes`, `gomitas_id_gomitas`, `fecha`, `venta_total`, `id_has_chamoy`) VALUES (1, 6, 3, "2022-10-01", 500.00, 1);
