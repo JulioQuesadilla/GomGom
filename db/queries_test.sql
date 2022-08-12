@@ -6,7 +6,7 @@ FROM gomgom.usuarios NATURAL JOIN gomgom.clientes NATURAL JOIN gomgom.roles;
 
 
 
-SELECT DISTINCT * FROM gomgom.usuarios INNER JOIN gomgom.roles;
+SELECT DISTINCT * FROM gomgom.usuarios INNER JOIN gomgom.roles ON id_roles;
 
 
 SELECT * FROM gomgom.empleados;
