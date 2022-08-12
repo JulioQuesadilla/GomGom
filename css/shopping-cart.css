@@ -187,66 +187,6 @@ table{
     font-weight: normal;
 }
 
-/* La clase .radio es la clase de label que contiene el radio input */
-.radio{
-    display:inline-flex;
-    align-items: center;
-    cursor: pointer;
-    margin-right: 10px;
-    width: 100%;
-    height: 100%;
-}
-
-.radio-input {
-    display:none;
-}
-
-/* Se está creando el círculo grande del input */
-.radio-radio{
-    width: 2.5em;
-    height: 2.5em;
-    background-color: white;
-    border-radius: 50%;
-
-    /* Margen a al texto de al lado */
-    margin-right: 10px;
-
-    /* Espacio entre el círculo grande y el chico */
-    box-sizing: border-box;
-    padding: 8px;
-}
-
-/* Se crea un elemento virtual (el circulito de adentro) */
-.radio-radio::after{
-    /* Para que se visualice */
-    content: ""; 
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-color: #8B0003;
-    border-radius: 50%;
-
-    /* El aspecto base es "deseleccionado" */
-    transform: scale(0);
-    transition: 0.15s;
-
-}
-
-/* Se selecciona el siguiente elemento al '.radio-input:checked' */
-/* Es decir, se selecciona el circulito 'seleccionado' */
-.radio-input:checked + .radio-radio::after{
- transform: scale(1);
-}
-
-.radio-radio.radio-2{
-    width: 2em;
-    height: 2em;
-}
-
-.radio-radio.radio-2::after{
-    background-color: #8B0003;
-}
-
 .btn.btn-warning[type="submit"]{
     background-color: #8B0003;
     border-color: #8B0003;
@@ -254,11 +194,11 @@ table{
 }
 
 /* Estilos para chamoy */
-input[type="checkbox"]{
+input[type="checkbox"], input[type="radio"]{
     display: none;
 }
 
-.checkbox{
+.checkbox, .input, .dot{
     display: inline-block;
     width: 25px;
     height: 25px;
@@ -266,7 +206,7 @@ input[type="checkbox"]{
     border-radius: 3px;
     border: 2px #8B0003 solid;
 }
-#label-group{
+#label-group, #info-envio{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -281,7 +221,7 @@ input[type="checkbox"]{
 
 .selected{
     background-color: #8B0003;
-    padding: 5px;
+    border-color: #8B0003;
 }
 
 .producto-chamoy{
@@ -289,4 +229,24 @@ input[type="checkbox"]{
     height: 50px;
     width:auto;
 }
+
+/*Refactoring*/
+#info-envio{
+    justify-content: space-around;
+}
+
+.radio-input{
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+
+}
+.dot{
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    margin: auto auto;
+}
+
 
