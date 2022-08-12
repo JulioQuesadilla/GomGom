@@ -168,7 +168,7 @@ seleccionPrecio.forEach(element => {
 
 
 
-function setBackgroundImage(valor) {
+function setBackgrounImage(valor) {
     
     const imagen = document.querySelectorAll(".infoContainer>.imagen")
 
