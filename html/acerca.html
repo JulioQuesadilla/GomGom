@@ -48,7 +48,7 @@
                             <a class="nav-link nav-items" id="navItemUno" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-items" id="navItemDos" href="catalogo.html">Catálogo</a>
+                            <a class="nav-link nav-items" id="navItemDos" href="paquetes.html">Paquetes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-items" id="navItemTres" href="acerca.html">Acerca</a>
@@ -168,16 +168,28 @@
         </div>
         <!-- Carrito -->
         <div class="col text-end text-fluid-start">
-            <a id="navItemNueve" href="shopping-cart.html">
-
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FD8A3A" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <circle cx="6" cy="19" r="2" />
-                <circle cx="17" cy="19" r="2" />
-                <path d="M17 17h-11v-14h-2" />
-                <path d="M6 5l14 1l-1 7h-13" />
-              </svg>
+            <!-- <button type="button" class="btn btn-outline-light"> -->
+                <button type="button" class="btn btn-outline-light position-relative">
+                <a id="navItemNueve" href="shopping-cart.html">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FD8A3A" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="6" cy="19" r="2" />
+                        <circle cx="17" cy="19" r="2" />
+                        <path d="M17 17h-11v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                        
+                        
+                    </svg>
+                    <span class="position-absolute top-100 start-75 translate-middle badge rounded-pill bg-warning" id="cartbadge">
+                        0
+                        <span class="visually-hidden">¡Elementos en carrito!</span>
+                      </span>
+                    
+                    
+                </button>
             </a>
+            
         </div>
     </div>
     </nav>
@@ -200,13 +212,13 @@
 
           <div>
           <h1>Quiénes somos</h1>
-          <p class="text">Gomgom nació siendo un hobby y ha crecido buscando ser líder en el desarrollo de las mejores gomitas enchiladas de todo Tampico, el cual busca entregar la calidad por la que se ha distinguido en diferentes ciudades del país.
+          <p class="text">Gomgom nació siendo un hobby y ha crecido buscando ser líder en el desarrollo de las mejores gomitas enchiladas de todo Tampico, la cual busca entregar la calidad por la que se ha distinguido en diferentes ciudades del país.
           En Gomgom buscamos implementar una empresa que sea accesible a todos, adaptándonos a los escenarios que nos proporcionan nuestros clientes, siempre trabajando con esfuerzo, honestidad y amor por lo que hacemos</p>
           </div><br>
 
           <div>
           <h1>Misión</h1>
-          <p class="text">Gomgom nació siendo un hobby y ha crecido buscando ser un negocio rentable, el cual busca entregar la calidad por la que se ha distinguido en diferentes ciudades del país</p>
+          <p class="text">Gomgom se ha desarrollado en la zona metropolitana de Tampico y ha crecido buscando ser un negocio rentable, el cual busca entregar la calidad por la que se ha distinguido en diferentes ciudades del país</p>
           </div><br>
           
           <div>
@@ -247,7 +259,7 @@
         <div class="row mb-3">
             <div class="col-3 text-center">
             </div>
-            <div class="col-6 text-center d-flex justify-content-center">
+            <div class="col-6 text-center d-flex justify-content-center redes">
                 <!-- Facebook icon -->
                 <a href="https://www.google.com">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mx-2 icon icon-tabler icon-tabler-brand-facebook" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ef8100" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -284,6 +296,8 @@
     <script src="../js/login_validacion.js"></script>
     <!-- BOOTSTRAP SCRIPT CDN-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>    <!-- LOCAL SCRIPT   -->
+    <!-- SCRIPT CART BADGE -->
+    <script src="../js/cart_badge.js"></script>
     <!-- LOCAL REGISTRO -->
     <!-- <script src="../js/registro.js"></script> -->
 </body>
