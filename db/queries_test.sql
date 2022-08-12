@@ -17,7 +17,12 @@ SELECT id_has_chamoy, fecha, venta_total FROM gomgom.pedidos INNER JOIN gomgom.p
 SELECT DISTINCT nombre_paquete AS Paketaxos, precio AS precio FROM gomgom.paquetes INNER JOIN gomgom.nombre_paquete ON id_paquetes;
 
 -- ¿Qué pedidos hay y qué gomitas llevan los paquetes que pidieron?
-SELECT numero_pedido, nombre_paquete, venta_total, fecha, gomitas.nombre FROM gomgom.nombre_paquete NATURAL JOIN gomgom.paquetes NATURAL JOIN gomgom.pedidos NATURAL JOIN gomgom.gomitas
+SELECT DISTINCT numero_pedido, nombre_paquete, venta_total, fecha, gomitas.nombre FROM gomgom.nombre_paquete NATURAL JOIN gomgom.paquetes NATURAL JOIN gomgom.pedidos NATURAL JOIN gomgom.gomitas
 ORDER BY numero_pedido, nombre_paquete;
 
-SELECT * FROM gomgom.paquetes;
+-- ¿Cómo contactar a alguien que hizo cotización y está registrado?
+SELECT * FROM gomgom.usuarios;
+SELECT * FROM gomgom.cotizaciones_eventos;
+SELECT nombre, evento, fecha, presupuesto, telefono, descripcion FROM gomgom.usuarios NATURAL JOIN gomgom.cotizaciones_eventos;
+
+SELECT * FROM gomgom.cotizaciones_eventos;
