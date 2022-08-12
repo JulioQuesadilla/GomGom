@@ -161,3 +161,44 @@ body {
   text-align: center;
 }
 
+/*boton 2*/
+
+.boton2 {
+  position: relative;
+  display: block;
+  height: 77px;
+  width: 600px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  background-color: #EF8100;
+  color: #fff;
+  font-size: 18px;
+  overflow: hidden;
+  transition: all 500ms ease;
+  border: 2px solid yellow;
+  margin-bottom: 40px;
+  z-index: 0;
+  font-weight: 700;
+  cursor: pointer;
+}
+.boton2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  background-color: #FCDB7E;
+  transition: all 500ms ease;
+  z-index: -1;
+}
+.boton2::before {
+  width: 0;
+  height: 100%;
+}
+.boton2:hover {
+  color: #434343;
+}
+.boton2:hover::before {
+  width: 100%;
+}
