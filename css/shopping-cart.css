@@ -4,17 +4,6 @@
     box-sizing: border-box;
 }
 
-.nav .nav-link{
-    background-color: #ef8100;
-    color: white;
-    
-}
-
-.nav .nav-link.active{
-    background-color: #8B0003;
-    color: white;
-}
-
 .division {
     border-color: #8B0003;
     border-width: 0.2em;
