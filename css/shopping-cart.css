@@ -166,7 +166,7 @@ input[type="checkbox"], input[type="radio"]{
     border-radius: 3px;
     border: 2px #8B0003 solid;
 }
-#label-group{
+.label-group{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -194,7 +194,7 @@ input[type="checkbox"], input[type="radio"]{
 /* * * * * * * * * Responsive Design * * * * * * * * * * * * */
 @media screen and (max-width: 575px) {
 
-    #label-group{
+    .label-group{
         width: 80%;
     }
 }
@@ -204,13 +204,13 @@ input[type="checkbox"], input[type="radio"]{
         width: 100%;
     }
 
-    #label-group{
+    .label-group{
         width: 90%;
     }
 }
 
 @media screen and (min-width:900px) {
-    #label-group{
+    .label-group{
         width: 80%;
     }
 }
