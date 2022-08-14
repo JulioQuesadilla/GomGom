@@ -43,36 +43,6 @@ table{
     text-align: center;
 }
 
-@media screen and (max-width: 575px) {
-
-    #label-group{
-        width: 80%;
-    }
-}
-
-@media screen and (min-width: 576px) and (max-width:800px) {
-    table{
-        width: 100%;
-    }
-
-    #label-group{
-        width: 90%;
-    }
-}
-
-@media screen and (min-width:900px) {
-    #label-group{
-        width: 80%;
-    }
-}
-/* @media screen and (max-width: 800px) {
-    table{
-        width: 90%;
-    }
-    
-} */
-
-
 .cantidad{
    width: 30%;
    text-align: center;
@@ -145,6 +115,7 @@ table{
     width: 12em;
 }
 
+/*Quién escribió esto?*/
 #floatingInput{
     text-align: center;
     width: 75%;
@@ -155,7 +126,7 @@ table{
     color: #8B0003;
 }
 
-/* Estilos de opciones en inputs */
+/* Estilos de opciones en radio inputs */
 .botoncito, .botoncito-2{
     display: flex;
     align-items: center;
@@ -187,7 +158,7 @@ input[type="checkbox"], input[type="radio"]{
     display: none;
 }
 
-.checkbox, .input, .dot{
+.checkbox{
     display: inline-block;
     width: 25px;
     height: 25px;
@@ -195,7 +166,7 @@ input[type="checkbox"], input[type="radio"]{
     border-radius: 3px;
     border: 2px #8B0003 solid;
 }
-#label-group, #info-envio{
+#label-group{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -213,29 +184,40 @@ input[type="checkbox"], input[type="radio"]{
     border-color: #8B0003;
 }
 
-.producto-chamoy{
+.producto-chamoy{ /*Imagen del chamoy*/
     border-radius: 10px;
     height: 50px;
     width:auto;
 }
 
-/*Refactoring*/
-#info-envio{
-    justify-content: space-around;
+
+/* * * * * * * * * Responsive Design * * * * * * * * * * * * */
+@media screen and (max-width: 575px) {
+
+    #label-group{
+        width: 80%;
+    }
 }
 
-.radio-input{
-    display: flex;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
+@media screen and (min-width: 576px) and (max-width:800px) {
+    table{
+        width: 100%;
+    }
 
-}
-.dot{
-    border-radius: 50%;
-    width: 80%;
-    height: 80%;
-    margin: auto auto;
+    #label-group{
+        width: 90%;
+    }
 }
 
+@media screen and (min-width:900px) {
+    #label-group{
+        width: 80%;
+    }
+}
+/* @media screen and (max-width: 800px) {
+    table{
+        width: 90%;
+    }
+    
+} */
 
