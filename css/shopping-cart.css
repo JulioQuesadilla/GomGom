@@ -44,7 +44,7 @@ table{
 }
 
 .cantidad{
-   width: 30%;
+   width: 40%;
    text-align: center;
    background-color: white;
    border-style: none;
@@ -57,7 +57,7 @@ table{
     border-style: none;
 }
 
-.producto{
+.producto{  /*Imagen*/
     border-radius: 1em;
     height: 80px;
     width:auto;
@@ -127,6 +127,33 @@ table{
 }
 
 /* Estilos de opciones en radio inputs */
+.envios-group{ /*Contenedor radio-input y label*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto auto;
+    border-radius:5px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #8B0003;
+}
+
+.radio-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5em;
+    height: 2.5em;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px white solid;
+}
+.dot {
+    height: 66%;
+    width: 66%;
+    border-radius: 50%;
+}
+
 .botoncito, .botoncito-2{
     display: flex;
     align-items: center;
@@ -137,7 +164,7 @@ table{
     border-style: none;
     border-radius: 2em;
     width: 85%;
-    height: 100%;
+    height: 2.5em;
 }
 
 .botoncito-2{
@@ -174,14 +201,12 @@ input[type="checkbox"], input[type="radio"]{
     /* border: #8B0003 3px solid; */
     border-radius:5px;
     padding: 7px 15px;
-    /* width: 80%; */
-    /* Se debe cambiarel width cuando el ancho cambia */
     cursor: pointer;
+    width: 90%;
 }
 
 .selected{
     background-color: #8B0003;
-    border-color: #8B0003;
 }
 
 .producto-chamoy{ /*Imagen del chamoy*/
@@ -192,32 +217,56 @@ input[type="checkbox"], input[type="radio"]{
 
 
 /* * * * * * * * * Responsive Design * * * * * * * * * * * * */
-@media screen and (max-width: 575px) {
-
+@media screen and (max-width: 575px) { /* Versión móbil */
+    table{
+        width: 90%;
+        background-color: #8B0003;
+    }
     .label-group{
         width: 80%;
     }
 }
 
-@media screen and (min-width: 576px) and (max-width:800px) {
+@media screen and (min-width: 576px) and (max-width:800px) { /* tablet */
+    table{
+        width: 100%;
+        background-color: #8B0003;
+    }
+    .producto{  /*Imagen*/
+        height: 55px;
+        width:auto;
+    }
+    .radio-input{
+        width: 25px;
+        height: 25px;
+    }
+    .botoncito{
+        height: 30px;
+    }
+    .producto-chamoy{
+        height: 45px;
+        width:auto;
+    }
+    h5{
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width:980px) { /* desktop */
     table{
         width: 100%;
     }
-
-    .label-group{
-        width: 90%;
+    .producto{  /*Imagen*/
+        height: 70px;
+        width:auto;
     }
 }
 
-@media screen and (min-width:900px) {
+@media screen and (min-width:980px) { /* desktop */
+    table{
+        width: 90%;
+    }
     .label-group{
         width: 80%;
     }
 }
-/* @media screen and (max-width: 800px) {
-    table{
-        width: 90%;
-    }
-    
-} */
-

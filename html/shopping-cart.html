@@ -217,23 +217,22 @@
             <h5>INFORMACIÓN DE ENVÍO</h5>
           </div>
           <div class="row mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
-            <label for="info-envio" id="info-envio">
+            <label for="info-envio" class="envios-group">
               <input type="radio" name="info-envio" id="envios">
-              <div class="input radio-input">
+              <div class="radio-input">
                 <div class="dot selected"></div>
               </div>
-              <div class="botoncito" style="font-weight: bold;">Envíos en Zona de trabajo</div>
+              <div class="botoncito">Envíos en Zona de trabajo</div>
             </label>
-
-
-            <!-- <label for="chamoy" id="label-group">
-              <input type="checkbox" id="chamoy">
-              <div id="checkbox" class="checkbox"></div>
-              <div style="font-weight: bold;">Bote Chamoy</div>
-              <div style="font-weight: bold;">$10 p/pz</div>
-              <img class="producto-chamoy" src="https://i.ibb.co/yyqr4ZW/f23d25ec-090b-4627-a9b7-ead0b6a94008.jpg"
-                alt="">
-            </label> -->
+          </div>
+          <div class="row mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
+            <label for="info-envio" class="envios-group">
+              <input type="radio" name="info-envio" id="envios">
+              <div class="radio-input">
+                <div class="dot selected"></div>
+              </div>
+              <div class="botoncito">Entregas en punto medio</div>
+            </label>
           </div>
 
           <div class="row mx-3 mb-2 mx-sm-0 mx-md-3 text-center">
@@ -252,35 +251,29 @@
           <div class="row mt-3 mb-2 text-center">
             <h5>INFORMACIÓN DE PAGO</h5>
           </div>
-          <div class="row mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
-            <div class="col">
-              <label for="Paypal" class="radio">
-                <input type="radio" name="pago" id="Paypal" class="radio-input">
-                <div class="radio-radio"></div>
+
+          <div class="row mb-3 mx-3 mx-sm-0 mx-md-3">
+              <label for="Paypal" class="envios-group">
+                <input type="radio" name="info-pago" id="Paypal">
+                <div class="radio-input"><div class="dot selected"></div></div>
                 <div class="botoncito">Paypal</div>
               </label>
-
-            </div>
           </div>
 
           <div class="row mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
-            <div class="col">
-              <label for="deposito" class="radio">
-                <input type="radio" name="pago" id="deposito" class="radio-input">
-                <div class="radio-radio"></div>
+              <label for="deposito" class="envios-group">
+                <input type="radio" name="pago" id="deposito">
+                <div class="radio-input"><div class="dot selected"></div></div>
                 <div class="botoncito">Depósito/Transferencia</div>
               </label>
-            </div>
           </div>
 
           <div class="row mb-4 mx-3 mx-sm-0 mx-md-3 text-center">
-            <div class="col">
-              <label for="efectivo" class="radio">
-                <input type="radio" name="pago" id="efectivo" class="radio-input">
-                <div class="radio-radio"></div>
+              <label for="efectivo" class="envios-group">
+                <input type="radio" name="pago" id="efectivo">
+                <div class="radio-input"><div class="dot selected"></div></div>
                 <div class="botoncito">Efectivo</div>
               </label>
-            </div>
           </div>
         </div>
         <div class="container-fluid mt-2">
