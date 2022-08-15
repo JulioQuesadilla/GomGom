@@ -195,102 +195,94 @@
 
   <!-- Shopping Cart -->
   <div class="container-fluid" id="contenedor">
-    <div class="row" id="row">
+    <div class="row">
       <div class="col-12 col-sm-6 col-md-7 order-2 order-md-0 px-sm-0" id="cajitas">
 
         <div class="cajita container-fluid mb-4 mt-5 px-sm-0">
-          <div class="row mt-3 mb-2 text-center">
+          <div class="row mt-4 mb-2 text-center">
             <h5>INFORMACIÓN DE ENVÍO</h5>
           </div>
-          <div class="row  mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
-            <div class="col">
-              <label for="envios" class="radio">
-                <input type="radio" name="opciones" id="envios" class="radio-input">
-                <div class="radio-radio"></div>
-                <div class="botoncito">Envios en Zona de Trabajo</div>
-              </label>
-            </div>
+          <div class="row mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
+            <label for="envios" class="envios-group">
+              <input type="radio" name="info-envio" id="envios">
+              <div class="radio-input">
+                <div class="dot"></div>
+              </div>
+              <div class="botoncito">Envíos en Zona de trabajo</div>
+            </label>
           </div>
-
-          <div class="row mx-3 mb-2 mx-sm-0 mx-md-3 text-center">
-            <div class="col">
-              <label for="entregas" class="radio">
-                <input type="radio" name="opciones" id="entregas" class="radio-input">
-                <div class="radio-radio"></div>
-                <div class="botoncito">Entregas en Punto Medio</div>
-              </label>
-            </div>
+          <div class="row mb-3 mx-3 mx-sm-0 mx-md-3 mb-3 text-center">
+            <label for="entregas" class="envios-group">
+              <input type="radio" name="info-envio" id="entregas">
+              <div class="radio-input">
+                <div class="dot"></div>
+              </div>
+              <div class="botoncito">Entregas en punto medio</div>
+            </label>
           </div>
-
-          <div class="entregas">
-
-            <div class="row my-2 text-center">
-              <div class="col offset-2">
-                <label for="puntoA" class="radio">
-                  <input type="radio" name="entregas" id="puntoA" class="radio-input">
-                  <div class="radio-radio radio-2"></div>
+          <div id="puntosEntregas" class="hide">
+            <div class="row my-2 mx-2 text-center">
+                <label for="puntoA" class="puntosEntregas-group">
+                  <input type="radio" name="entregas" id="puntoA">
+                  <div class="radio-input radio-2 mx-3">
+                    <div class="dot"></div>
+                  </div>
                   <div class="botoncito-2">IEST</div>
                 </label>
-              </div>
             </div>
 
-            <div class="row mb-2 text-center">
-              <div class="col offset-2">
-                <label for="puntoB" class="radio">
-                  <input type="radio" name="entregas" id="puntoB" class="radio-input">
-                  <div class="radio-radio radio-2"></div>
+            <div class="row mb-2 mx-2 text-center">
+                <label for="puntoB" class="puntosEntregas-group">
+                  <input type="radio" name="entregas" id="puntoB">
+                  <div class="radio-input radio-2 mx-3">
+                    <div class="dot mx-2"></div>
+                  </div>
                   <div class="botoncito-2">Plaza Arenas</div>
                 </label>
-              </div>
-
             </div>
 
-            <div class="row mb-4 text-center">
-              <div class="col offset-2">
-                <label for="puntoC" class="radio">
-                  <input type="radio" name="entregas" id="puntoC" class="radio-input">
-                  <div class="radio-radio radio-2"></div>
+            <div class="row mb-4 mx-2 text-center">
+                <label for="puntoC" class="puntosEntregas-group">
+                  <input type="radio" name="entregas" id="puntoC">
+                  <div class="radio-input radio-2 mx-3">
+                    <div class="dot"></div>
+                  </div>
                   <div class="botoncito-2">Divisoria</div>
                 </label>
-              </div>
             </div>
+            
+        
           </div>
 
         </div>
         <br>
         <div class="cajita container-fluid mb-4 px-sm-0">
-          <div class="row mt-3 mb-2 text-center">
+          <div class="row mt-4 mb-2 text-center">
             <h5>INFORMACIÓN DE PAGO</h5>
           </div>
-          <div class="row mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
-            <div class="col">
-              <label for="Paypal" class="radio">
-                <input type="radio" name="pago" id="Paypal" class="radio-input">
-                <div class="radio-radio"></div>
+
+          <div class="row mb-3 mx-3 mx-sm-0 mx-md-3">
+              <label for="Paypal" class="pagos-group">
+                <input type="radio" name="info-pago" id="Paypal">
+                <div class="radio-input"><div class="dot"></div></div>
                 <div class="botoncito">Paypal</div>
               </label>
-
-            </div>
           </div>
 
           <div class="row mb-3 mx-3 mx-sm-0 mx-md-3 text-center">
-            <div class="col">
-              <label for="deposito" class="radio">
-                <input type="radio" name="pago" id="deposito" class="radio-input">
-                <div class="radio-radio"></div>
+              <label for="deposito" class="pagos-group">
+                <input type="radio" name="info-pago" id="deposito">
+                <div class="radio-input"><div class="dot"></div></div>
                 <div class="botoncito">Depósito/Transferencia</div>
               </label>
-            </div>
           </div>
 
           <div class="row mb-4 mx-3 mx-sm-0 mx-md-3 text-center">
-            <div class="col">
-              <label for="efectivo" class="radio">
-                <input type="radio" name="pago" id="efectivo" class="radio-input">
-                <div class="radio-radio"></div>
+              <label for="efectivo" class="pagos-group">
+                <input type="radio" name="info-pago" id="efectivo">
+                <div class="radio-input"><div class="dot"></div></div>
                 <div class="botoncito">Efectivo</div>
               </label>
-            </div>
           </div>
         </div>
         <div class="container-fluid mt-2">
@@ -309,48 +301,8 @@
 
         <!-- Resumen de pedido -->
         <div id="items">
-          <h5 class="text-center sticky-top bg-white pb-3 pt-5">RESUMEN DEL PEDIDO</h5>
-
-          <!-- Elemento inicia -->
-          <!--  <table id="elemento{num}">
-            <tbody>
-              Imagen y título
-              <tr>
-                <td rowspan="2">
-                  <img class="producto" src="https://i.ibb.co/tbwmSHM/Whats-App-Image-2022-07-11-at-4-16-05-PM.jpg">
-                </td>
-                <td colspan="4" class="titulo-elemento">Picasandías enchiladas</td>
-              </tr>
-
-              <tr class="text-center">
-                Botones
-                <td colspan="2">
-                  <img class="botones" src="https://i.ibb.co/mq7XTJ1/pandita-rojo.png" alt="pandita-rojo">
-                  <input type="text" class="cantidad" placeholder="5" disabled>
-                  <img class="botones" src="https://i.ibb.co/F7nPFbK/pandita-verde-antonio.png"
-                    alt="pandita-verde-antonio">
-                </td>
-
-                Precio
-                <td><input type="text" class="precio" placeholder="$$$" disabled></td>
-
-                Trash can
-                <td>
-                  <button class="btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                      class="bi bi-trash-fill" viewBox="0 0 16 16">
-                      <path
-                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
-                    </svg>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          Termina elemento -->
-
-
-
+          <h5 class="text-center bg-white pb-3 pt-5">RESUMEN DEL PEDIDO</h5>
+          <!-- Aquí van los items -->
         </div>
 
         <div id="datos">
@@ -362,11 +314,11 @@
             </div>
 
             <div class="row text-center">
-              <label for="chamoy" id="label-group">
+              <label for="chamoy" class="label-group">
                 <input type="checkbox" id="chamoy">
                 <div id="checkbox" class="checkbox"></div>
                 <div style="font-weight: bold;">Bote Chamoy</div>
-                <div style="font-weight: bold;">$10 p/pz</div>
+                <div style="font-weight: bold;">$10 pz</div>
                 <img class="producto-chamoy" src="https://i.ibb.co/yyqr4ZW/f23d25ec-090b-4627-a9b7-ead0b6a94008.jpg"
                   alt="">
               </label>
@@ -386,9 +338,9 @@
             <hr class="division">
 
             <!-- <hr class="division"> -->
-            <div class="row justify-content-center mx-auto mt-4 mb-5">
+            <div class="row justify-content-center mx-auto mt-4 mb-2">
               <!-- <div class="col"> -->
-              <button class="btn btn-warning py-2 d-none d-sm-block" type="submit">¡Quiero mis Gomitas!</button>
+              <button class="btn btn-warning d-none d-sm-block" type="submit">¡Quiero mis Gomitas!</button>
               <!-- </div> -->
             </div>
           </div>
