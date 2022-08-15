@@ -190,7 +190,9 @@ check.addEventListener("change", () => {
 /* Para los radio inputs */
 let envios = Array.from(document.getElementsByClassName("envios-group"));
 let pagos = Array.from(document.getElementsByClassName("pagos-group"));
+let puntosEntregas = Array.from(document.getElementsByClassName("puntosEntregas-group"));
 let entregas = document.getElementById("puntosEntregas");
+
 
 envios.forEach((e)=>{ //Para cada elemento de las opciones de envíos
     e.addEventListener("click",()=>{ //Se añade un eventListener
@@ -208,6 +210,15 @@ envios.forEach((e)=>{ //Para cada elemento de las opciones de envíos
 pagos.forEach(e=>{
     e.addEventListener("click",()=>{
         pagos.forEach(i => {
+            i.querySelector(".dot").classList.remove("selected");
+        });
+        e.querySelector(".dot").classList.add("selected");
+    });
+});
+
+puntosEntregas.forEach(e=>{
+    e.addEventListener("click",()=>{
+        puntosEntregas.forEach(i => {
             i.querySelector(".dot").classList.remove("selected");
         });
         e.querySelector(".dot").classList.add("selected");
