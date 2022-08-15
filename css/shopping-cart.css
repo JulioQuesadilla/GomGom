@@ -69,6 +69,7 @@ table{
 
 .botones{
     height: 1.6rem;
+    cursor: pointer;
 }
 .botones:active{
     transform: scale(1.2);
