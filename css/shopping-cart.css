@@ -127,15 +127,17 @@ table{
 }
 
 /* Estilos de opciones en radio inputs */
-.envios-group,.pagos-group{ /*Contenedor radio-input y label*/
+.envios-group,.pagos-group, .puntosEntregas-group{ /*Contenedor radio-input y label*/
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-around;
     align-items: center;
     margin: auto auto;
     border-radius:5px;
     width: 100%;
     cursor: pointer;
-    background-color: #8B0003;
+}
+.puntosEntregas-group{
+    justify-content: center;
 }
 
 .radio-input{
@@ -148,12 +150,15 @@ table{
     border-radius: 50%;
     border: 2px white solid;
 }
+.radio-2{
+    width: 2em;
+    height:2em;
+}
 .dot {
-    height: 66%;
-    width: 66%;
+    height: 50%;
+    width: 50%;
     border-radius: 50%;
 }
-
 .botoncito, .botoncito-2{
     display: flex;
     align-items: center;
@@ -168,10 +173,15 @@ table{
 }
 
 .botoncito-2{
+    height: 1.9em;
     background-color: white;
-    width: 70%;
+    width: 60%;
     border:solid #8B0003 0.18em;
     font-weight: normal;
+}
+
+.hide{
+    display: none;
 }
 
 .btn.btn-warning[type="submit"]{
@@ -181,9 +191,9 @@ table{
 }
 
 /* Estilos para chamoy */
-/* input[type="checkbox"], input[type="radio"]{
+input[type="checkbox"], input[type="radio"]{
     display: none;
-} */
+}
 
 .checkbox{
     display: inline-block;
@@ -251,6 +261,10 @@ table{
     }
     p{
         font-size: 14px;
+    }
+    .radio-2{
+        width: 20px;
+        height:20px;
     }
 }
 
