@@ -190,15 +190,18 @@ check.addEventListener("change", () => {
 /* Para los radio inputs */
 let envios = Array.from(document.getElementsByClassName("envios-group"));
 let pagos = Array.from(document.getElementsByClassName("pagos-group"));
-envios.forEach((e)=>{
-    e.addEventListener("click",()=>{
-        envios.forEach(i => {
+let entregas = document.getElementById("puntosEntregas");
+
+envios.forEach((e)=>{ //Para cada elemento de las opciones de envíos
+    e.addEventListener("click",()=>{ //Se añade un eventListener
+        envios.forEach(i => { //En donde para cada elemnto de las opciones de envíos
     
-            i.querySelector(".dot").classList.remove("selected");
+            i.querySelector(".dot").classList.remove("selected"); //Se elimina la clase selected al elemento dentro de cada opción cuya clase es dot
 
         });
-        e.querySelector(".dot").classList.add("selected");
-        
+        e.querySelector(".dot").classList.add("selected"); //Luego, se añade la clase selected al elemento target del click
+        if (e.firstElementChild.id == "entregas") entregas.classList.remove("hide"); //Se le elimina la clase hide i el id es entregas
+         else entregas.classList.add("hide"); //De lo contrario, se le agrega.
     });
 });
 
