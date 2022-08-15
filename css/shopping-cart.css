@@ -127,7 +127,7 @@ table{
 }
 
 /* Estilos de opciones en radio inputs */
-.envios-group{ /*Contenedor radio-input y label*/
+.envios-group,.pagos-group{ /*Contenedor radio-input y label*/
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -181,9 +181,9 @@ table{
 }
 
 /* Estilos para chamoy */
-input[type="checkbox"], input[type="radio"]{
+/* input[type="checkbox"], input[type="radio"]{
     display: none;
-}
+} */
 
 .checkbox{
     display: inline-block;
@@ -207,6 +207,7 @@ input[type="checkbox"], input[type="radio"]{
 
 .selected{
     background-color: #8B0003;
+    transition: all 0.5s;
 }
 
 .producto-chamoy{ /*Imagen del chamoy*/
@@ -220,7 +221,6 @@ input[type="checkbox"], input[type="radio"]{
 @media screen and (max-width: 575px) { /* Versión móbil */
     table{
         width: 90%;
-        background-color: #8B0003;
     }
     .label-group{
         width: 80%;
@@ -230,7 +230,6 @@ input[type="checkbox"], input[type="radio"]{
 @media screen and (min-width: 576px) and (max-width:800px) { /* tablet */
     table{
         width: 100%;
-        background-color: #8B0003;
     }
     .producto{  /*Imagen*/
         height: 55px;
@@ -249,6 +248,9 @@ input[type="checkbox"], input[type="radio"]{
     }
     h5{
         font-size: 18px;
+    }
+    p{
+        font-size: 14px;
     }
 }
 

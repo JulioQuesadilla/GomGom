@@ -186,3 +186,18 @@ check.addEventListener("change", () => {
     }
     calculaTotal();
 })
+
+/* Para los radio inputs */
+let envios = Array.from(document.getElementsByClassName("envios-group"));
+console.log(envios);
+envios.forEach((e)=>{
+    e.addEventListener("click",()=>{
+        envios.forEach(i => {
+    
+            i.querySelector(".dot").classList.remove("selected");
+
+        });
+        e.querySelector(".dot").classList.add("selected");
+        
+    });
+});
