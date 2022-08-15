@@ -203,7 +203,10 @@ envios.forEach((e)=>{ //Para cada elemento de las opciones de envíos
         });
         e.querySelector(".dot").classList.add("selected"); //Luego, se añade la clase selected al elemento target del click
         if (e.firstElementChild.id == "entregas") entregas.classList.remove("hide"); //Se le elimina la clase hide i el id es entregas
-         else entregas.classList.add("hide"); //De lo contrario, se le agrega.
+         else {
+            puntosEntregas.forEach(element => element.querySelector(".dot").classList.remove("selected")); //Se eliminan los dots
+            entregas.classList.add("hide");//De lo contrario, se le agrega.
+        } 
     });
 });
 
