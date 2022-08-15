@@ -99,12 +99,6 @@ table{
     align-self: flex-start;
 }
 
-/*
-#table1{
-    border-collapse: separate;
-    border-spacing: 0 10px;
-}
-*/
 
 .btn.btn-warning{
     background-color: #EF8100;
@@ -245,6 +239,9 @@ input[type="checkbox"], input[type="radio"]{
         height: 55px;
         width:auto;
     }
+    .botones{
+        height: 1.4rem;
+    }
     .radio-input{
         width: 25px;
         height: 25px;
@@ -284,5 +281,8 @@ input[type="checkbox"], input[type="radio"]{
     }
     .label-group{
         width: 80%;
+    }
+    .botones{
+        height: 1.8rem;
     }
 }
