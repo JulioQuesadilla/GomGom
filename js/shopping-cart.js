@@ -189,7 +189,7 @@ check.addEventListener("change", () => {
 
 /* Para los radio inputs */
 let envios = Array.from(document.getElementsByClassName("envios-group"));
-console.log(envios);
+let pagos = Array.from(document.getElementsByClassName("pagos-group"));
 envios.forEach((e)=>{
     e.addEventListener("click",()=>{
         envios.forEach(i => {
@@ -199,5 +199,14 @@ envios.forEach((e)=>{
         });
         e.querySelector(".dot").classList.add("selected");
         
+    });
+});
+
+pagos.forEach(e=>{
+    e.addEventListener("click",()=>{
+        pagos.forEach(i => {
+            i.querySelector(".dot").classList.remove("selected");
+        });
+        e.querySelector(".dot").classList.add("selected");
     });
 });
