@@ -217,14 +217,18 @@ body {
     
 }
 .btn__container{
-  background-color: #8B0003;
+  background-color: var(--naranja);
   border-radius: 15px;
   width: max-content;
   margin: auto;
- 
-  
-
 }
+
+.btn__containerAgrega{
+    background-color: white;
+    border-radius: 15px;
+    width: max-content;
+    margin: auto;
+  }
 
 .content-buttonPrice{
     width: 100%;
@@ -233,17 +237,30 @@ body {
 }
 .buttonPrecio {
     background-color: var(--Cafe);
-    border:  soloid 1px #FCDB7E;
+    border:  solid 1px var(--Cafe);
     color: var(--crema);
     text-decoration: none;
     font-size: 30px;
     font-family: var(--textoBurbuja);
     border-radius: 10px;
     margin: 5px;
-    
 }
 
+.content-buttonAgrega{
+    width: 100%;
+    display: flex;
+}
 
+.buttonAgrega {
+    background-color: var(--Cafe);
+    border:  solid 1px var(--Cafe);
+    color: var(--crema);
+    text-decoration: none;
+    font-size: 30px;
+    font-family: var(--textoBurbuja);
+    border-radius: 100px;
+    margin: 5px;
+}
 
 h1, h2, h3, h4, h5 {
     font-family: 'Fredoka One', cursive;
