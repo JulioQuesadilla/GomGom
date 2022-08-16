@@ -80,7 +80,7 @@ body {
   right: 0;
   top: 0;
   margin: auto;
-  background-color: #FCDB7E
+  background-color: #ffffff
   ;
   transition: all 500ms ease;
   z-index: -1;
@@ -192,7 +192,7 @@ body {
   right: 0;
   top: 0;
   margin: auto;
-  background-color: #FCDB7E;
+  background-color: #ffffff;
   transition: all 500ms ease;
   z-index: -1;
 }
