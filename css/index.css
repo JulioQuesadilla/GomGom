@@ -62,12 +62,12 @@ body {
   width: 250px;
   border-radius: 30px;
   text-transform: uppercase;
-  background-color: red;
+  background-color: #8B0003;
   color: rgb(255, 255, 255);
   font-size: 18px;
   overflow: hidden;
   transition: all 500ms ease;
-  border: 2px solid #e22020;
+  border: 2px solid #8B0003;
   margin-bottom: 40px;
   z-index: 0;
   font-weight: 700;
@@ -80,7 +80,8 @@ body {
   right: 0;
   top: 0;
   margin: auto;
-  background-color: #e22020;
+  background-color: #FCDB7E
+  ;
   transition: all 500ms ease;
   z-index: -1;
 }
@@ -111,7 +112,10 @@ body {
   height: 150%;
   transition: all 750ms ease;
   transform: rotate(45deg);
-  box-shadow: 0 0 10px #e22020, 0 0 20px #e22020, 0 0 20px #e22020;
+  box-shadow: 0 0 10px #FCDB7E
+  , 0 0 20px #FCDB7E
+  , 0 0 20px #FCDB7E
+  ;
 }
 .boton1:hover::before {
   left: 520px;
