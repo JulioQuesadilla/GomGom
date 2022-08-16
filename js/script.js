@@ -24,13 +24,13 @@ fetch('../json/prueba.json')
 
 
             let contenido = document.createElement('p')
-            contenido.innerHTML = i.contenido
+            //contenido.innerHTML = i.contenido
             contenido.classList.add("contenido")
             contenido.setAttribute('id', "contenido" + i.id)
 
 
             let precio = document.createElement('p')
-            precio.innerHTML = "$" + i.precio
+            //precio.innerHTML = "$" + i.precio
             precio.classList.add("precio")
             precio.setAttribute('id', "precio" + i.id)
 
@@ -53,8 +53,8 @@ fetch('../json/prueba.json')
             let datos = {
                 imagen: document.getElementById("imagen" + i.id).src,
                 producto: document.getElementById("producto" + i.id).innerHTML,
-                /*contenido: document.getElementById("contenido" + i.id).innerHTML,
-                precio: document.getElementById("precio" + i.id).innerHTML,*/
+                contenido: document.getElementById("contenido" + i.id).innerHTML,
+                precio: document.getElementById("precio" + i.id).innerHTML,
 
             }
             localStorage.setItem("datos" + i.id, JSON.stringify(datos))
