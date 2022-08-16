@@ -76,3 +76,21 @@ function initComparisons() {
   }
 
 initComparisons();
+
+
+let loQuiero = document.getElementsByClassName("boton1");
+loQuiero[0].addEventListener("click", addCartUno);
+loQuiero[1].addEventListener("click", addCartDos);
+loQuiero[2].addEventListener("click", addCartTres);
+
+async function addCartUno() {
+    
+    window.location.href = "html/shopping-cart.html";
+}
+
+async function addCartDos() {
+  window.location.href = "html/shopping-cart.html";
+}
+async function addCartTres(){
+window.location.href = "html/shopping-cart.html";
+}

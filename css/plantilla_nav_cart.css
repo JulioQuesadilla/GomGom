@@ -99,12 +99,25 @@ a#navItemUno, a#navItemDos, a#navItemTres, a#navItemCuatro, a#navItemNueve {
 input[type=submit] {
     background-color: #ef8100;
     border: none;
-    color: #8B0003;
-    padding: 16px 32px;
+    padding: 8px 16px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 150%;
+    position: relative;
+  display: block;
+  height: 77px;
+  width: 250px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  overflow: hidden;
+  transition: all 500ms ease;
+  margin-bottom: -25px;
+  z-index: 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
   }
 
 #botonLogin {
