@@ -97,6 +97,8 @@ cargarEventLIstener();
                     setBackgrounImage(i)
                 })
             });
+            window.location.reload();
+            //////
             let clave = e.target.parentElement.children[1].id.replace(/((?:0+))/, "");
             let elemento = e.target.parentElement;
             let imagen = elemento.children[0].src;
