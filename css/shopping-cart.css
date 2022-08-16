@@ -212,7 +212,27 @@ input[type="checkbox"], input[type="radio"]{
 
 
 /* * * * * * * * * Responsive Design * * * * * * * * * * * * */
-@media screen and (max-width: 575px) { /* Versión móbil */
+@media screen and (min-width: 320px) and (max-width: 414px){ /* Versión móbil */
+    table{
+        width: 100%;
+    }
+    .label-group{
+        width: 100%;
+    }
+    .producto{  /*Imagen*/
+        height: 48px;
+        width:auto;
+    }
+    .botones{
+        height: 1.4rem;
+    }
+    .cajita{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (min-width: 575px) { /* Versión móbil */
     table{
         width: 90%;
     }
