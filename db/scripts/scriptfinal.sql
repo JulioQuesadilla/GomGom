@@ -152,6 +152,7 @@ INSERT INTO gomgom.ventas(`id_usuario`, `id_pedidos`) VALUES (3, 35);
 INSERT INTO gomgom.ventas(`id_usuario`, `id_pedidos`) VALUES (3, 36);
 
 -- último pedido vendido
-INSERT INTO gomgom.ventas(`id_usuario`, `id_pedidos`) VALUES (7, 37);
-INSERT INTO gomgom.ventas(`id_usuario`, `id_pedidos`) VALUES (7, 38);
+INSERT INTO gomgom.ventas(`id_usuario`, `id_pedidos`) VALUES (4, 37);
+INSERT INTO gomgom.ventas(`id_usuario`, `id_pedidos`) VALUES (4, 38);
 
+SELECT * FROM gomgom.ventas;

@@ -76,3 +76,94 @@ function initComparisons() {
   }
 
 initComparisons();
+
+
+let loQuiero = document.getElementsByClassName("boton1");
+// loQuiero[0].addEventListener("click", addCart);
+addCart();
+async function addCart() {
+  (function () {
+    listaCursos.addEventListener('click', (e) => {
+        if (e.target.classList.contains("boton")) {
+
+            const anadirCarrito = document.querySelectorAll(".boton");
+
+            anadirCarrito.forEach(function(element, i){
+
+                element.addEventListener("click", () => {
+                    
+                    setBackgrounImage(i)
+                })
+            });
+            window.location.reload();
+            //////
+            let clave = e.target.parentElement.children[1].id.replace(/((?:0+))/, "");
+            let elemento = e.target.parentElement;
+            let imagen = elemento.children[0].src;
+            let producto = elemento.children[1].innerHTML;
+            let precio = elemento.children[3].innerHTML;
+            precio = precio.replace(/((?:\$*))/, "")
+            let cantidad = 1;
+
+            //Si no hay algo guardado en el LocalStorage:
+            if (localStorage.getItem("carritos") == null) {
+                let carritos = {};
+                let datos =
+                {
+                    producto: producto,
+                    imagen: imagen,
+                    precio: precio,
+                    cantidad: cantidad
+                };
+
+                carritos[`${clave}`] = datos;
+                localStorage.setItem("carritos", JSON.stringify(carritos));
+
+            } else {
+                //Si  ya hay un carrito
+                let carritos = (JSON.parse(localStorage.getItem("carritos")));
+
+
+                //Si además, ya está guardado el producto en el LocalStorage:
+                if (carritos[`${clave}`] != null) {
+                    //Se modifica la cantidad del item y se guarda
+                    carritos[`${clave}`].cantidad++;
+
+
+                } else { //si no está guardado el elemento en el item
+                    let datos =
+                    {
+                        producto: producto,
+                        imagen: imagen,
+                        precio: precio,
+                        cantidad: cantidad
+                    };
+
+                    carritos[`${clave}`] = datos;
+                }
+                localStorage.setItem("carritos", JSON.stringify(carritos));
+            }
+
+            // carritos[`${clave}`] = datos;
+            // localStorage.setItem("carritos", JSON.stringify(carritos));
+            // console.log(carritos);
+        }
+    })
+})();
+const seleccionPrecio = document.querySelectorAll(".buttonPrecio");
+
+seleccionPrecio.forEach(element => {
+
+    element.addEventListener("click", () => {
+
+        seleccionPrecio.forEach(element => element.classList.remove("background-botones"))
+        element.classList.add("background-botones")
+    })
+
+
+
+    window.location.href = "html/shopping-cart.html";
+});
+
+  
+}
