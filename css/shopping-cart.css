@@ -110,17 +110,6 @@ table{
     width: 12em;
 }
 
-/*Quién escribió esto?*/
-#floatingInput{
-    text-align: center;
-    width: 75%;
-    border-color: #8B000362;
-}
-
-.form-floating label{
-    color: #8B0003;
-}
-
 /* Estilos de opciones en radio inputs */
 .envios-group,.pagos-group, .puntosEntregas-group{ /*Contenedor radio-input y label*/
     display: flex;
