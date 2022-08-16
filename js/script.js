@@ -39,7 +39,7 @@ fetch('../json/prueba.json')
             boton.setAttribute('id', "boton" + i.id)
             boton.classList.add("boton")
             boton.classList.add("mb-5")
-            boton.innerHTML = "Añadir al carrito"
+            boton.innerHTML = "Elegir esta gomita"
 
 
 
@@ -53,8 +53,8 @@ fetch('../json/prueba.json')
             let datos = {
                 imagen: document.getElementById("imagen" + i.id).src,
                 producto: document.getElementById("producto" + i.id).innerHTML,
-                contenido: document.getElementById("contenido" + i.id).innerHTML,
-                precio: document.getElementById("precio" + i.id).innerHTML,
+                /*contenido: document.getElementById("contenido" + i.id).innerHTML,
+                precio: document.getElementById("precio" + i.id).innerHTML,*/
 
             }
             localStorage.setItem("datos" + i.id, JSON.stringify(datos))
@@ -97,6 +97,8 @@ cargarEventLIstener();
                     setBackgrounImage(i)
                 })
             });
+
+            //////
             let clave = e.target.parentElement.children[1].id.replace(/((?:0+))/, "");
             let elemento = e.target.parentElement;
             let imagen = elemento.children[0].src;

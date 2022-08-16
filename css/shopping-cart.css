@@ -4,17 +4,6 @@
     box-sizing: border-box;
 }
 
-.nav .nav-link{
-    background-color: #ef8100;
-    color: white;
-    
-}
-
-.nav .nav-link.active{
-    background-color: #8B0003;
-    color: white;
-}
-
 .division {
     border-color: #8B0003;
     border-width: 0.2em;
@@ -54,38 +43,8 @@ table{
     text-align: center;
 }
 
-@media screen and (max-width: 575px) {
-
-    #label-group{
-        width: 80%;
-    }
-}
-
-@media screen and (min-width: 576px) and (max-width:800px) {
-    table{
-        width: 100%;
-    }
-
-    #label-group{
-        width: 90%;
-    }
-}
-
-@media screen and (min-width:900px) {
-    #label-group{
-        width: 80%;
-    }
-}
-/* @media screen and (max-width: 800px) {
-    table{
-        width: 90%;
-    }
-    
-} */
-
-
 .cantidad{
-   width: 30%;
+   width: 40%;
    text-align: center;
    background-color: white;
    border-style: none;
@@ -98,7 +57,7 @@ table{
     border-style: none;
 }
 
-.producto{
+.producto{  /*Imagen*/
     border-radius: 1em;
     height: 80px;
     width:auto;
@@ -110,6 +69,7 @@ table{
 
 .botones{
     height: 1.6rem;
+    cursor: pointer;
 }
 .botones:active{
     transform: scale(1.2);
@@ -140,12 +100,6 @@ table{
     align-self: flex-start;
 }
 
-/*
-#table1{
-    border-collapse: separate;
-    border-spacing: 0 10px;
-}
-*/
 
 .btn.btn-warning{
     background-color: #EF8100;
@@ -156,6 +110,7 @@ table{
     width: 12em;
 }
 
+/*Quién escribió esto?*/
 #floatingInput{
     text-align: center;
     width: 75%;
@@ -166,7 +121,39 @@ table{
     color: #8B0003;
 }
 
-/* Estilos de opciones en inputs */
+/* Estilos de opciones en radio inputs */
+.envios-group,.pagos-group, .puntosEntregas-group{ /*Contenedor radio-input y label*/
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin: auto auto;
+    border-radius:5px;
+    width: 100%;
+    cursor: pointer;
+}
+.puntosEntregas-group{
+    justify-content: center;
+}
+
+.radio-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5em;
+    height: 2.5em;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px white solid;
+}
+.radio-2{
+    width: 2em;
+    height:2em;
+}
+.dot {
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+}
 .botoncito, .botoncito-2{
     display: flex;
     align-items: center;
@@ -177,74 +164,19 @@ table{
     border-style: none;
     border-radius: 2em;
     width: 85%;
-    height: 100%;
+    height: 2.5em;
 }
 
 .botoncito-2{
+    height: 1.9em;
     background-color: white;
-    width: 70%;
+    width: 60%;
     border:solid #8B0003 0.18em;
     font-weight: normal;
 }
 
-/* La clase .radio es la clase de label que contiene el radio input */
-.radio{
-    display:inline-flex;
-    align-items: center;
-    cursor: pointer;
-    margin-right: 10px;
-    width: 100%;
-    height: 100%;
-}
-
-.radio-input {
-    display:none;
-}
-
-/* Se está creando el círculo grande del input */
-.radio-radio{
-    width: 2.5em;
-    height: 2.5em;
-    background-color: white;
-    border-radius: 50%;
-
-    /* Margen a al texto de al lado */
-    margin-right: 10px;
-
-    /* Espacio entre el círculo grande y el chico */
-    box-sizing: border-box;
-    padding: 8px;
-}
-
-/* Se crea un elemento virtual (el circulito de adentro) */
-.radio-radio::after{
-    /* Para que se visualice */
-    content: ""; 
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-color: #8B0003;
-    border-radius: 50%;
-
-    /* El aspecto base es "deseleccionado" */
-    transform: scale(0);
-    transition: 0.15s;
-
-}
-
-/* Se selecciona el siguiente elemento al '.radio-input:checked' */
-/* Es decir, se selecciona el circulito 'seleccionado' */
-.radio-input:checked + .radio-radio::after{
- transform: scale(1);
-}
-
-.radio-radio.radio-2{
-    width: 2em;
-    height: 2em;
-}
-
-.radio-radio.radio-2::after{
-    background-color: #8B0003;
+.hide{
+    display: none;
 }
 
 .btn.btn-warning[type="submit"]{
@@ -254,7 +186,7 @@ table{
 }
 
 /* Estilos para chamoy */
-input[type="checkbox"]{
+input[type="checkbox"], input[type="radio"]{
     display: none;
 }
 
@@ -266,7 +198,7 @@ input[type="checkbox"]{
     border-radius: 3px;
     border: 2px #8B0003 solid;
 }
-#label-group{
+.label-group{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -274,19 +206,84 @@ input[type="checkbox"]{
     /* border: #8B0003 3px solid; */
     border-radius:5px;
     padding: 7px 15px;
-    /* width: 80%; */
-    /* Se debe cambiarel width cuando el ancho cambia */
     cursor: pointer;
+    width: 90%;
 }
 
 .selected{
     background-color: #8B0003;
-    padding: 5px;
+    transition: all 0.5s;
 }
 
-.producto-chamoy{
+.producto-chamoy{ /*Imagen del chamoy*/
     border-radius: 10px;
     height: 50px;
     width:auto;
 }
 
+
+/* * * * * * * * * Responsive Design * * * * * * * * * * * * */
+@media screen and (max-width: 575px) { /* Versión móbil */
+    table{
+        width: 90%;
+    }
+    .label-group{
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width:800px) { /* tablet */
+    table{
+        width: 100%;
+    }
+    .producto{  /*Imagen*/
+        height: 55px;
+        width:auto;
+    }
+    .botones{
+        height: 1.4rem;
+    }
+    .radio-input{
+        width: 25px;
+        height: 25px;
+    }
+    .botoncito{
+        height: 30px;
+    }
+    .producto-chamoy{
+        height: 45px;
+        width:auto;
+    }
+    h5{
+        font-size: 18px;
+    }
+    p{
+        font-size: 14px;
+    }
+    .radio-2{
+        width: 20px;
+        height:20px;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width:980px) { /* desktop */
+    table{
+        width: 100%;
+    }
+    .producto{  /*Imagen*/
+        height: 70px;
+        width:auto;
+    }
+}
+
+@media screen and (min-width:980px) { /* desktop */
+    table{
+        width: 90%;
+    }
+    .label-group{
+        width: 80%;
+    }
+    .botones{
+        height: 1.8rem;
+    }
+}
