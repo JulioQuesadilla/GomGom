@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 @Entity
@@ -16,13 +18,16 @@ public class Empleado implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idEmpleado;
 	private Long idUsuario;
-	private Long idRol;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	private Roles idRol;
 	private String rfc;
 	private Double salario;
 	private Long descuento;
 	
 	public Empleado() {}
-	public Empleado(Long idEmpleado, Long idUsuario, Long idRol, String rfc, Double salario, Long descuento) {
+	
+	public Empleado(Long idEmpleado, Long idUsuario, Roles idRol, String rfc, Double salario, Long descuento) {
 		super();
 		this.idEmpleado = idEmpleado;
 		this.idUsuario = idUsuario;
@@ -31,6 +36,7 @@ public class Empleado implements Serializable {
 		this.salario = salario;
 		this.descuento = descuento;
 	}
+
 	public Long getIdEmpleado() {
 		return idEmpleado;
 	}
@@ -43,12 +49,16 @@ public class Empleado implements Serializable {
 	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	public Long getIdRol() {
+
+	
+	public Roles getIdRol() {
 		return idRol;
 	}
-	public void setIdRol(Long idRol) {
+
+	public void setIdRol(Roles idRol) {
 		this.idRol = idRol;
 	}
+
 	public String getRfc() {
 		return rfc;
 	}
