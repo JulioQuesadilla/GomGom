@@ -1,4 +1,4 @@
-package com.gomgom.entity;
+package com.gomgom.app.entity;
 
 import java.io.Serializable;
 
