@@ -22,6 +22,7 @@ public class Cliente implements Serializable {
 	private Long idCliente;
 
 	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="id_roles")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Roles rol;
 	

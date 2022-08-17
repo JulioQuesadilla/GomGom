@@ -20,6 +20,7 @@ public class Cotizaciones implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long cotizacionId;
 	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="id_usuario")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Usuario idUsuario;
 	private Date fecha;

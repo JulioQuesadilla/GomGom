@@ -22,6 +22,7 @@ public class Empleado implements Serializable {
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Usuario idUsuario;
 	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="id_roles")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Roles idRol;
 	private String rfc;
