@@ -16,6 +16,10 @@ public class Cliente implements Serializable {
 
 	 /*  Columnas  */
 	@Id
+	@OneToOne(fetch=FetchType.LAZY)
+    @MapsId
+    @JoinColumn(name = "id_usuario")
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long idCliente;
 
@@ -23,8 +27,5 @@ public class Cliente implements Serializable {
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Roles rol;
 	
-
-	@OneToOne(mappedBy = "clientes", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private Usuario usuario;
 	
 }
