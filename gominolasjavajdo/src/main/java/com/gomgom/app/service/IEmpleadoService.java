@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gomgom.app.entity.Empleado;
 
-public interface IEmpleado {
+public interface IEmpleadoService {
 	
 	/**
 	 * Enlista todos los employees

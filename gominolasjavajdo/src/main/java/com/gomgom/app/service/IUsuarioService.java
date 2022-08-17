@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gomgom.app.entity.Usuario;
 
-public interface IUsuario {
+public interface IUsuarioService {
 	
 	/**
 	 * Enlista todos los usuarios
