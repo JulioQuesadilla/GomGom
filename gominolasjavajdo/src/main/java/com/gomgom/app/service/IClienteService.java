@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gomgom.app.entity.Cliente;
 
-public interface ICliente {
+public interface IClienteService {
 	
 	/**
 	 * Enlista todos los clientes

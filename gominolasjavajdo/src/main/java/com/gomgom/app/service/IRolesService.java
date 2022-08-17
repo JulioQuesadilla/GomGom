@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gomgom.app.entity.Roles;
 
-public interface IRoles {
+public interface IRolesService {
 	
 	/**
 	 * Enlista todos los rols

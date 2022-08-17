@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gomgom.app.entity.Cotizaciones;
 
-public interface ICotizaciones {
+public interface ICotizacionesService {
 	
 	/**
 	 * Enlista todos los cotizaciones

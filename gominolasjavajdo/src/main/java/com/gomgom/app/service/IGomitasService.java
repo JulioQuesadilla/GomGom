@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gomgom.app.entity.Gomitas;
 
-public interface IGomitas {
+public interface IGomitasService {
 	
 	/**
 	 * Enlista todos los gomitas

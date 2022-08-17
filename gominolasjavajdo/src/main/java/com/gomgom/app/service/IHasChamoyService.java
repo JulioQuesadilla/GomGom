@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gomgom.app.entity.HasChamoy;
 
-public interface IHasChamoy {
+public interface IHasChamoyService {
 	
 	/**
 	 * Enlista todos los haschamoys

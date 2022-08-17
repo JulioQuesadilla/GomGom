@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.gomgom.app.entity.NombrePaquete;
 
-public interface INombrePaquete {
+public interface INombrePaqueteService {
 	
 	/**
 	 * Enlista todos los nombrepaquetes
