@@ -17,9 +17,7 @@ public class Empleado implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idEmpleado;
-	@OneToOne(fetch=FetchType.LAZY)
-    @MapsId
-    @JoinColumn(name = "id_usuario")
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Usuario idUsuario;
 	@ManyToOne(fetch=FetchType.LAZY)
