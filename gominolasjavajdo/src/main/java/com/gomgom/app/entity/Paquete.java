@@ -25,8 +25,13 @@ public class Paquete implements Serializable {
 	private Double precio;
 	
 	@ManyToMany(fetch=FetchType.LAZY)
-	@Column(name="pedidos")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JoinTable(
+			name = "pedidos",
+			joinColumns = @JoinColumn(name="paquetes_id_paquetes"),
+			inverseJoinColumns = @JoinColumn(name="gomitas_id_gomitas")			
+			
+			)
 	private List<Gomitas> gomitas;
 	
 	public Paquete(){}
