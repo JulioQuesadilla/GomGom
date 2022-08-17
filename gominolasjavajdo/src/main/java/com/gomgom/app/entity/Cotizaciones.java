@@ -5,6 +5,8 @@ import java.sql.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
 @Data
@@ -17,7 +19,9 @@ public class Cotizaciones implements Serializable{
 	@Column(name="id_cotizacion")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long cotizacionId;
-	private Long idUsuario;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	private Usuario idUsuario;
 	private Date fecha;
 	private String evento;
 	private Long numPersonas;
@@ -27,7 +31,8 @@ public class Cotizaciones implements Serializable{
 	
 	public Cotizaciones(){}
 
-	public Cotizaciones(Long cotizacionId, Long idUsuario, Date fecha, String evento, Long numPersonas,
+	
+	public Cotizaciones(Long cotizacionId, Usuario idUsuario, Date fecha, String evento, Long numPersonas,
 			Long presupuesto, String telefono, String descripcion) {
 		super();
 		this.cotizacionId = cotizacionId;
@@ -40,6 +45,7 @@ public class Cotizaciones implements Serializable{
 		this.descripcion = descripcion;
 	}
 
+
 	public Long getCotizacionId() {
 		return cotizacionId;
 	}
@@ -48,13 +54,16 @@ public class Cotizaciones implements Serializable{
 		this.cotizacionId = cotizacionId;
 	}
 
-	public Long getIdUsuario() {
+	
+	public Usuario getIdUsuario() {
 		return idUsuario;
 	}
 
-	public void setIdUsuario(Long idUsuario) {
+
+	public void setIdUsuario(Usuario idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+
 
 	public Date getFecha() {
 		return fecha;

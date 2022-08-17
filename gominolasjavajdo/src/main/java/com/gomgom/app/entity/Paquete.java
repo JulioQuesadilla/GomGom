@@ -1,8 +1,11 @@
 package com.gomgom.app.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Data;
 
@@ -16,18 +19,26 @@ public class Paquete implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_paquetes")
 	private Long idPaquetes;
-	@Column(name="id_nombre_paquete")
-	private Long idNombrePaquete;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	private NombrePaquete idNombrePaquete;
 	private Double precio;
+	
+	@ManyToMany(fetch=FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	private List<Gomitas> gomitas;
 	
 	public Paquete(){}
 	
+	
 
-	public Paquete(Long idPaquetes, Long idNombrePaquete, Double precio) {
-		super();
-		this.idPaquetes = idPaquetes;
-		this.idNombrePaquete = idNombrePaquete;
-		this.precio = precio;
+	public List<Gomitas> getGomitas() {
+		return gomitas;
+	}
+
+
+	public void setGomitas(List<Gomitas> gomitas) {
+		this.gomitas = gomitas;
 	}
 
 
@@ -37,14 +48,6 @@ public class Paquete implements Serializable {
 
 	public void setIdPaquetes(Long idPaquetes) {
 		this.idPaquetes = idPaquetes;
-	}
-
-	public Long getIdNombrePaquete() {
-		return idNombrePaquete;
-	}
-
-	public void setIdNombrePaquete(Long idNombrePaquete) {
-		this.idNombrePaquete = idNombrePaquete;
 	}
 
 	public Double getPrecio() {
