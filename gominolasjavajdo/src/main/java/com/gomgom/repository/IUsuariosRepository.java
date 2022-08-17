@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.gomgom.app.entity.Usuario;
 
-public interface IUsuariosEntity extends CrudRepository<Usuario, Long> {
+public interface IUsuariosRepository extends CrudRepository<Usuario, Long> {
 
 }
