@@ -18,12 +18,14 @@ public class Paquete implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idPaquetes;
-	@ManyToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="id_nombre_paquete", referencedColumnName = "id_nombre_paquete")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private NombrePaquete idNombrePaquete;
 	private Double precio;
 	
 	@ManyToMany(fetch=FetchType.LAZY)
+	@Column(name="pedidos")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private List<Gomitas> gomitas;
 	

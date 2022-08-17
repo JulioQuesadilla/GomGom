@@ -15,6 +15,7 @@ public class NombrePaquete implements Serializable {
 	private static final long serialVersionUID =1L;
 	
 	@Id
+	@Column(name="id_nombre_paquete")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idNombrePaquete;
 	private String nombrePaquete;

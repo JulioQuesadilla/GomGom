@@ -18,6 +18,7 @@ public class HasChamoy implements Serializable{
 	private Long hasChamoyId;
 	private String hasChamoy;
 	
+	
 	public HasChamoy() {}
 	public HasChamoy(Long hasChamoyId, String hasChamoy) {
 		super();
