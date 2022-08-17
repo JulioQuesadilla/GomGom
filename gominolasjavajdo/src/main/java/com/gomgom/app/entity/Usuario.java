@@ -23,7 +23,7 @@ public class Usuario implements Serializable {
 	private String correo;
 	@Column(name="contraseña")
 	private String contrasenia;
-	
+
 	
 	public Usuario() {}
 
