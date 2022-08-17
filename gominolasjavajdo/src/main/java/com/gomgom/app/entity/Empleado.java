@@ -17,7 +17,11 @@ public class Empleado implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idEmpleado;
-	private Long idUsuario;
+	@OneToOne(fetch=FetchType.LAZY)
+    @MapsId
+    @JoinColumn(name = "id_usuario")
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	private Usuario idUsuario;
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Roles idRol;
@@ -27,7 +31,9 @@ public class Empleado implements Serializable {
 	
 	public Empleado() {}
 	
-	public Empleado(Long idEmpleado, Long idUsuario, Roles idRol, String rfc, Double salario, Long descuento) {
+	
+
+	public Empleado(Long idEmpleado, Usuario idUsuario, Roles idRol, String rfc, Double salario, Long descuento) {
 		super();
 		this.idEmpleado = idEmpleado;
 		this.idUsuario = idUsuario;
@@ -37,20 +43,29 @@ public class Empleado implements Serializable {
 		this.descuento = descuento;
 	}
 
+
+
 	public Long getIdEmpleado() {
 		return idEmpleado;
 	}
 	public void setIdEmpleado(Long idEmpleado) {
 		this.idEmpleado = idEmpleado;
 	}
-	public Long getIdUsuario() {
+	
+	
+	
+	public Usuario getIdUsuario() {
 		return idUsuario;
 	}
-	public void setIdUsuario(Long idUsuario) {
+
+
+
+	public void setIdUsuario(Usuario idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 
-	
+
+
 	public Roles getIdRol() {
 		return idRol;
 	}
