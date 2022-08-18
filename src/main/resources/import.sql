@@ -114,30 +114,28 @@ INSERT INTO pedidos(numero_pedido, paquetes_id_paquetes, gomitas_id_gomitas, fec
 
 
 -- Ventas de un pedido
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (5, 20);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (5, 21);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (5, 22);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (5, 23);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (5, 24);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (5, 25);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (5, 26);
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '20');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '21');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '22');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '23');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '24');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '25');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '26');
 
  -- Ventas de otro pedido
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (2, 27);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (2, 28);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (2, 29);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (2, 30);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (2, 31);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (2, 32);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (2, 33);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (2, 34);
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '27');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '28');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '29');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '30');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '31');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '32');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '33');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '34');
 
  -- Ventas del tercer pedido
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (3, 35);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (3, 36);
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('3', '35');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('3', '36');
 
 -- último pedido vendido
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (4, 37);
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES (4, 38);
-
-SELECT * FROM ventas;
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('4', '37');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('4', '38');
