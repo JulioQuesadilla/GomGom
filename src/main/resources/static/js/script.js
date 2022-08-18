@@ -1,86 +1,66 @@
-fetch('../json/prueba.json')
-    .then(response => response.json())
-    .then(response => {
-        for (const i of response.articulos) {
-            let contenedor = document.createElement('div')
-            contenedor.classList.add("infoContainer")
-            contenedor.setAttribute('id', "contenedorInfo" + i.id)
+if ((localStorage.tiempoExpiracion - Date.now() < 0)||(localStorage.tiempoExpiracion == undefined)) {
+    console.log("se cargó del fetch")
+    cargarFetch("https://gomgominolas.herokuapp.com/api/Gummys");
+} else{
+    console.log("se cargó del local")
+    cargarLocal();
+}
 
-
-            let imagen = document.createElement('img')
-            imagen.src = i.img
-
-
-            imagen.classList.add("imagen")
-            imagen.setAttribute('id', "imagen" + i.id)
-
-
-
-            let producto = document.createElement('p')
-            producto.innerHTML = i.producto
-            producto.classList.add("producto")
-            producto.setAttribute('id', "producto" + i.id)
-
-
-
-            let contenido = document.createElement('p')
-            //contenido.innerHTML = i.contenido
-            contenido.classList.add("contenido")
-            contenido.setAttribute('id', "contenido" + i.id)
-
-
-            let precio = document.createElement('p')
-            //precio.innerHTML = "$" + i.precio
-            precio.classList.add("precio")
-            precio.setAttribute('id', "precio" + i.id)
-
-
-            let boton = document.createElement('button')
-            boton.setAttribute('id', "boton" + i.id)
-            boton.classList.add("boton")
-            boton.classList.add("mb-5")
-            boton.innerHTML = "Elegir esta gomita"
-            boton.setAttribute("onclick", `setBackgrounImage(${i.id - 1})`)
-
-
-
-
-            contenedor.append(imagen, producto, contenido, precio, boton)
-
-
-
-            let contenedorPrincipal = document.getElementById("contenedorPrincipal")
-
-            contenedorPrincipal.appendChild(contenedor)
-            let datos = {
-                imagen: document.getElementById("imagen" + i.id).src,
-                producto: document.getElementById("producto" + i.id).innerHTML,
-                contenido: document.getElementById("contenido" + i.id).innerHTML,
-                precio: document.getElementById("precio" + i.id).innerHTML,
-
-            }
-            localStorage.setItem("datos" + i.id, JSON.stringify(datos))
-
-
-        }
+function cargarLocal(){
+    const SABORES = JSON.parse(localStorage.getItem("datosSabores"));
+    SABORES.forEach((objeto) => {
+        cargar(objeto);
     })
+    
+}
+
+function cargarFetch(unaUrl) {
+    fetch(unaUrl)
+        .then(response => response.json())
+        .then(array => {
+
+            array.forEach((objeto) => {
+                cargar(objeto);
+            })
+
+            localStorage.setItem("datosSabores", JSON.stringify(array));
+            limite = Date.now() + 1000 * 60 * 1; //10 minutos de espera
+            localStorage.setItem(`tiempoExpiracion`, limite);
+        })
+}
+
+function cargar(unObjeto) {
+    /* Se vacía la información */
+    let contenedor = document.createElement('div');
+    contenedor.classList.add("infoContainer");
+    contenedor.setAttribute('id', "contenedorInfo" + unObjeto.idGomita);
+
+    let imagen = document.createElement('img');
+    imagen.src = unObjeto.imagen;
+    imagen.classList.add("imagen");
+    imagen.setAttribute('id', "imagen" + unObjeto.idGomita);
+
+    let producto = document.createElement('p');
+    producto.innerHTML = unObjeto.nombre;
+    producto.classList.add("producto");
+    producto.setAttribute('id', "producto" + unObjeto.idGomita);
+
+    let boton = document.createElement('button');
+    boton.setAttribute('id', "boton" + unObjeto.idGomita);
+    boton.classList.add("boton");
+    boton.classList.add("mb-5");
+    boton.innerHTML = "Elegir esta gomita";
 
 
+    /* Se agrega al HTML */
+    contenedor.append(imagen, producto, boton);
+    let contenedorPrincipal = document.getElementById("contenedorPrincipal");
+    contenedorPrincipal.appendChild(contenedor);
+}
 
 //variables
-
-const carrito = document.querySelector("#carrito")
 const listaCursos = document.querySelector("#contenedorPrincipal")
-const contenedorCarrito = document.querySelector("#lista-carrito")
-const botonVaciar = document.querySelector("#vaciar-carrito")
 
-function cargarEventLIstener() {
-    listaCursos.addEventListener('click', (e) => {
-        if (e.target.classList.contains("boton")) {
-            return
-        }
-    })
-}
 cargarEventLIstener();
 
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
@@ -88,6 +68,15 @@ cargarEventLIstener();
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
 
+            const anadirCarrito = document.querySelectorAll(".boton");
+
+            anadirCarrito.forEach(function (element, i) {
+
+                element.addEventListener("click", () => {
+
+                    setBackgrounImage(i)
+                })
+            });
 
             //////
             let clave = e.target.parentElement.children[1].id.replace(/((?:0+))/, "");
