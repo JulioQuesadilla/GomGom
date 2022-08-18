@@ -79,25 +79,33 @@ initComparisons();
 
 
 let loQuiero = document.getElementsByClassName("boton1");
-loQuiero[0].addEventListener("click", index1 (100,"https://i.ibb.co/wM6gJSR/1.png","Mini botanero dulce",150,1));
+loQuiero[0].addEventListener("click", addCartUno);
 loQuiero[1].addEventListener("click", addCartDos);
 loQuiero[2].addEventListener("click", addCartTres);
 
+async function addCartUno () { 
+  index1 (100,"https://i.ibb.co/wM6gJSR/1.png","Mini botanero dulce",150)
+    window.location.href = "html/shopping-cart.html";
+}
+
+
 async function addCartDos() {
+  index1 (100,"https://i.ibb.co/wM6gJSR/1.png","Mini botanero dulce",150)
   window.location.href = "html/shopping-cart.html";
 }
 async function addCartTres(){
+  index1 (100,"https://i.ibb.co/wM6gJSR/1.png","Mini botanero dulce",150)
 window.location.href = "html/shopping-cart.html";
 }
 
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito//
-function index1 (claves,imagenes, productos, precios, cantidades) {
+function index1 (claves,imagenes, productos, precios) {
           //////
           let clave = claves;
           let imagen = imagenes;
           let producto = productos;
           let precio = precios;
-          let cantidad = cantidades;
+          let cantidad = 1;
 
           //Si no hay algo guardado en el LocalStorage:
           if (localStorage.getItem("carritos") == null) {
@@ -137,6 +145,4 @@ function index1 (claves,imagenes, productos, precios, cantidades) {
               }
               localStorage.setItem("carritos", JSON.stringify(carritos));
           }
-
-          window.location.href = "html/shopping-cart.html";
 }
