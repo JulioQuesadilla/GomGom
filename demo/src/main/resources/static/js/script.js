@@ -76,9 +76,7 @@ function cargarEventLIstener() {
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
             return
-
         }
-
     })
 }
 cargarEventLIstener();
@@ -152,25 +150,27 @@ cargarEventLIstener();
         }
     })
 })();
+
+
 const seleccionPrecio = document.querySelectorAll(".buttonPrecio");
-
 seleccionPrecio.forEach(element => {
-
     element.addEventListener("click", () => {
-
         seleccionPrecio.forEach(element => element.classList.remove("background-botones"))
         element.classList.add("background-botones")
     })
-
-
-
 });
 
 
-
+contador=0;
 function setBackgrounImage(valor) {
-    
+    if(contador<21){
     const imagen = document.querySelectorAll(".infoContainer>.imagen")
-
-    imagen[valor].style.border = "15px solid var(--Cafe)"
+    imagen[valor].classList.add("seleccionado")
+    const paquete = localStorage.setItem(imagen, localStorage.getItem(imagen));
+    console.log(contador);
+    contador++;
+    console.log(contador);
+    }else{
+        alert('Sólo 6');
+    }
 }

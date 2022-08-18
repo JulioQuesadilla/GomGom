@@ -277,8 +277,7 @@ p {
     border: #8B0003 ;
     background: #FCDB7E;
     color: #8B0003;
-    box-shadow: 0 0 20px #ef8100;
-    
+    box-shadow: 0 0 20px #ef8100; 
 }
 
 @media (max-width: 770px){
@@ -295,4 +294,8 @@ p {
         font-size: 1rem;
   
     }
+}
+
+.seleccionado{
+    border : 15px solid var(--Cafe);
 }
