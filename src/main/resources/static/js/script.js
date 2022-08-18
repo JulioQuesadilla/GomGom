@@ -59,12 +59,7 @@ function cargar(unObjeto) {
 }
 
 //variables
-
-const carrito = document.querySelector("#carrito")
 const listaCursos = document.querySelector("#contenedorPrincipal")
-const contenedorCarrito = document.querySelector("#lista-carrito")
-const botonVaciar = document.querySelector("#vaciar-carrito")
-
 function cargarEventLIstener() {
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
