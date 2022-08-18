@@ -6,16 +6,23 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "paquetes")
+@Table(name = "ventas")
 @Data
-public class Pack {
+public class Sale {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_paquete")
-    private Long IdPaquete;
+    @Column(name = "id_ventas")
+    private Long idVenta;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_usuario")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private PackName packName;
+    private User user;
 
-    private Long precio;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_pedidos")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Order order;
 }

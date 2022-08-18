@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "nombre_paquetes")
+@Table(name = "nombre_paquete")
 @Data
 public class PackName {
     @Id

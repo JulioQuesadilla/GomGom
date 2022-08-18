@@ -5,15 +5,15 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "gomitas")
 @Data
-@Table(name = "usuarios")
-public class User {
+public class Gummy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUsuario;
+    @Column(name = "id_gomitas")
+    private Long idGomita;
+
     private String nombre;
-    private String apellido;
-    private String username;
-    private String correo;
-    private String contraseña;
+
+    private String imagen;
 }
