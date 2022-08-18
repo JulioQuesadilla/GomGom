@@ -1,4 +1,3 @@
-
 * {
     font-family: 'Catamaran', sans-serif;
     box-sizing: border-box;
@@ -9,9 +8,9 @@
     border-width: 0.2em;
 }
 
-.titulo-elemento{
+.titulo-elemento {
     color: #8B0003;
-    font-family:'Fredoka One';
+    font-family: 'Fredoka One';
 }
 
 
@@ -24,18 +23,18 @@
     background-color: #8B0003;
 }
 
-.cajita{
-background-color: #FCDB7E;
-border-radius: 0.8em;
-height: auto;
-color:black;
-width: 500px;
-max-width: 85%;
-margin: auto auto;
+.cajita {
+    background-color: #FCDB7E;
+    border-radius: 0.8em;
+    height: auto;
+    color: black;
+    width: 500px;
+    max-width: 85%;
+    margin: auto auto;
 
 }
 
-table{
+table {
     padding-top: 15px;
     width: 80%;
     background-color: white;
@@ -43,47 +42,49 @@ table{
     text-align: center;
 }
 
-.cantidad{
-   width: 40%;
-   text-align: center;
-   background-color: white;
-   border-style: none;
+.cantidad {
+    width: 40%;
+    text-align: center;
+    background-color: white;
+    border-style: none;
 }
 
-.precio{
+.precio {
     width: 100%;
     text-align: center;
     background-color: white;
     border-style: none;
 }
 
-.producto{  /*Imagen*/
+.producto {
+    /*Imagen*/
     border-radius: 1em;
     height: 80px;
-    width:auto;
+    width: auto;
 }
 
-#btn{
+#btn {
     display: none;
 }
 
-.botones{
+.botones {
     height: 1.6rem;
     cursor: pointer;
 }
-.botones:active{
+
+.botones:active {
     transform: scale(1.2);
 }
 
-#col2{
+#col2 {
     display: flex;
     flex-wrap: wrap;
     justify-self: center;
     align-items: center;
 }
 
-#items{
-    height:23em ;
+#items {
+    height: 23em;
     overflow: hidden scroll;
     align-self: flex-start;
     width: 100%;
@@ -93,7 +94,7 @@ table{
     display: none;
 }
 
-#datos{
+#datos {
     height: 50%;
     width: 100%;
     background-color: white;
@@ -101,41 +102,34 @@ table{
 }
 
 
-.btn.btn-warning{
+.btn.btn-warning {
     background-color: #EF8100;
     border-color: #EF8100;
     color: white;
-    font-family:'Fredoka One';
+    font-family: 'Fredoka One';
     margin: 0 auto;
     width: 12em;
 }
 
-/*Quién escribió esto?*/
-#floatingInput{
-    text-align: center;
-    width: 75%;
-    border-color: #8B000362;
-}
-
-.form-floating label{
-    color: #8B0003;
-}
-
 /* Estilos de opciones en radio inputs */
-.envios-group,.pagos-group, .puntosEntregas-group{ /*Contenedor radio-input y label*/
+.envios-group,
+.pagos-group,
+.puntosEntregas-group {
+    /*Contenedor radio-input y label*/
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
     margin: auto auto;
-    border-radius:5px;
+    border-radius: 5px;
     width: 100%;
     cursor: pointer;
 }
-.puntosEntregas-group{
+
+.puntosEntregas-group {
     justify-content: center;
 }
 
-.radio-input{
+.radio-input {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,20 +139,24 @@ table{
     border-radius: 50%;
     border: 2px white solid;
 }
-.radio-2{
+
+.radio-2 {
     width: 2em;
-    height:2em;
+    height: 2em;
 }
+
 .dot {
     height: 50%;
     width: 50%;
     border-radius: 50%;
 }
-.botoncito, .botoncito-2{
+
+.botoncito,
+.botoncito-2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color:#8B0003;
+    color: #8B0003;
     font-weight: bold;
     background-color: #FD8A3A;
     border-style: none;
@@ -167,30 +165,31 @@ table{
     height: 2.5em;
 }
 
-.botoncito-2{
+.botoncito-2 {
     height: 1.9em;
     background-color: white;
     width: 60%;
-    border:solid #8B0003 0.18em;
+    border: solid #8B0003 0.18em;
     font-weight: normal;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
-.btn.btn-warning[type="submit"]{
+.btn.btn-warning[type="submit"] {
     background-color: #8B0003;
     border-color: #8B0003;
     height: 3.125em;
 }
 
 /* Estilos para chamoy */
-input[type="checkbox"], input[type="radio"]{
+input[type="checkbox"],
+input[type="radio"] {
     display: none;
 }
 
-.checkbox{
+.checkbox {
     display: inline-block;
     width: 25px;
     height: 25px;
@@ -198,92 +197,182 @@ input[type="checkbox"], input[type="radio"]{
     border-radius: 3px;
     border: 2px #8B0003 solid;
 }
-.label-group{
+
+.label-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: auto auto;
     /* border: #8B0003 3px solid; */
-    border-radius:5px;
+    border-radius: 5px;
     padding: 7px 15px;
     cursor: pointer;
     width: 90%;
 }
 
-.selected{
+.selected {
     background-color: #8B0003;
     transition: all 0.5s;
 }
 
-.producto-chamoy{ /*Imagen del chamoy*/
+.producto-chamoy {
+    /*Imagen del chamoy*/
     border-radius: 10px;
     height: 50px;
-    width:auto;
+    width: auto;
 }
 
 
 /* * * * * * * * * Responsive Design * * * * * * * * * * * * */
-@media screen and (max-width: 575px) { /* Versión móbil */
-    table{
-        width: 90%;
-    }
-    .label-group{
-        width: 80%;
-    }
-}
-
-@media screen and (min-width: 576px) and (max-width:800px) { /* tablet */
-    table{
+@media screen and (max-width: 414px){/* Versión iPhone iPhone 5*/ 
+    table {
         width: 100%;
     }
-    .producto{  /*Imagen*/
-        height: 55px;
-        width:auto;
+
+    .label-group {
+        width: 100%;
     }
-    .botones{
-        height: 1.4rem;
+
+    .producto {
+        /*Imagen*/
+        height: 48px;
+        width: auto;
     }
-    .radio-input{
+
+    .botones {
+        height: 1.6rem;
+        padding-bottom: 4px;
+    }
+
+    .radio-input {
         width: 25px;
         height: 25px;
     }
-    .botoncito{
-        height: 30px;
+
+    .radio-2 {
+        width: 20px;
+        height: 20px;
     }
-    .producto-chamoy{
-        height: 45px;
-        width:auto;
+   
+    .botoncito{
+        height: 29px;
     }
     h5{
         font-size: 18px;
     }
-    p{
-        font-size: 14px;
+
+}
+
+@media screen and (max-width: 375px){ /* iPhone 6*/
+    .producto {
+        /*Imagen*/
+        height: 55px;
+        width: auto;
     }
-    .radio-2{
-        width: 20px;
-        height:20px;
+
+    .botones {
+        height: 1.8rem;
+        padding-bottom: 4px;
     }
 }
 
-@media screen and (min-width:800px) and (max-width:980px) { /* desktop */
-    table{
-        width: 100%;
+@media screen and (max-width: 414px){ /* iPhone 6,7,8 plus*/
+    .producto {
+        /*Imagen*/
+        height: 65px;
+        width: auto;
     }
-    .producto{  /*Imagen*/
-        height: 70px;
-        width:auto;
+
+    .botones {
+        height: 2rem;
+        padding-bottom: 4px;
     }
 }
 
-@media screen and (min-width:980px) { /* desktop */
-    table{
+
+@media screen and (min-width: 575px) {
+
+    /* Versión móbil */
+    table {
         width: 90%;
     }
-    .label-group{
+
+    .label-group {
         width: 80%;
     }
-    .botones{
+}
+
+@media screen and (min-width: 576px) and (max-width:800px) {
+
+    /* tablet */
+    table {
+        width: 100%;
+    }
+
+    .producto {
+        /*Imagen*/
+        height: 55px;
+        width: auto;
+    }
+
+    .botones {
+        height: 1.4rem;
+    }
+
+    .radio-input {
+        width: 25px;
+        height: 25px;
+    }
+
+    .botoncito {
+        height: 30px;
+    }
+
+    .producto-chamoy {
+        height: 45px;
+        width: auto;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .radio-2 {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width:980px) {
+
+    /* desktop */
+    table {
+        width: 100%;
+    }
+
+    .producto {
+        /*Imagen*/
+        height: 70px;
+        width: auto;
+    }
+}
+
+@media screen and (min-width:980px) {
+
+    /* desktop */
+    table {
+        width: 90%;
+    }
+
+    .label-group {
+        width: 80%;
+    }
+
+    .botones {
         height: 1.8rem;
     }
 }

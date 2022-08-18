@@ -77,7 +77,7 @@ ENGINE = InnoDB;
 -- Table `gomgom`.`cotizaciones_eventos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `gomgom`.`cotizaciones_eventos` (
-  `id_cotizacion` INT NULL AUTO_INCREMENT,
+  `id_cotizacion` INT NOT NULL AUTO_INCREMENT,
   `id_usuario` INT UNSIGNED NULL,
   `fecha` DATE NOT NULL,
   `evento` VARCHAR(15) NOT NULL,
