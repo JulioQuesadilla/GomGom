@@ -3,12 +3,17 @@ package com.example.demo.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "clientes")
 @Data
-public class Client {
+public class Client implements Serializable {
+	private static final long serialVersionUID =1L;
+
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Clientes")
