@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\generation\project\GomGom"/>
 			<item value="C:\generation\project\GomGom\demo-gomgominolas"/>
 			<item value="C:\generation\project\GomGom\demo"/>
 			<item value="C:\generation\heroku\amenoameno-gratiasdoplhinjokei"/>
