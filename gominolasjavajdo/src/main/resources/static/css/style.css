@@ -237,11 +237,7 @@ body {
 }
 .buttonPrecio {
     background-color: var(--Cafe);
-<<<<<<< HEAD:css/style.css
-    border: solid 1px #FCDB7E;
-=======
     border:  solid 1px var(--Cafe);
->>>>>>> 2108b16ff77c7c5cde9b1d568294d6d13eb68035:gominolasjavajdo/src/main/resources/static/css/style.css
     color: var(--crema);
     text-decoration: none;
     font-size: 30px;
