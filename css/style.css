@@ -233,7 +233,7 @@ body {
 }
 .buttonPrecio {
     background-color: var(--Cafe);
-    border:  soloid 1px #FCDB7E;
+    border: solid 1px #FCDB7E;
     color: var(--crema);
     text-decoration: none;
     font-size: 30px;
