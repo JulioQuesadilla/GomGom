@@ -85,7 +85,7 @@ loQuiero[2].addEventListener("click", addCartTres);
 
 async function addCartUno() {
     
-    window.location.href = "html/shopping-cart.html";
+index1 ()
 }
 
 async function addCartDos() {
@@ -93,4 +93,55 @@ async function addCartDos() {
 }
 async function addCartTres(){
 window.location.href = "html/shopping-cart.html";
+}
+
+// Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito//
+function index1 () {
+          //////
+          let clave = 100;
+          let imagen = "https://i.ibb.co/wM6gJSR/1.png"
+          let producto = "Mini botanero dulce"
+          let precio = 150
+          let cantidad = 1;
+
+          //Si no hay algo guardado en el LocalStorage:
+          if (localStorage.getItem("carritos") == null) {
+              let carritos = {};
+              let datos =
+              {
+                  producto: producto,
+                  imagen: imagen,
+                  precio: precio,
+                  cantidad: cantidad
+              };
+
+              carritos[`${clave}`] = datos;
+              localStorage.setItem("carritos", JSON.stringify(carritos));
+
+          } else {
+              //Si  ya hay un carrito
+              let carritos = (JSON.parse(localStorage.getItem("carritos")));
+
+
+              //Si además, ya está guardado el producto en el LocalStorage:
+              if (carritos[`${clave}`] != null) {
+                  //Se modifica la cantidad del item y se guarda
+                  carritos[`${clave}`].cantidad++;
+
+
+              } else { //si no está guardado el elemento en el item
+                  let datos =
+                  {
+                      producto: producto,
+                      imagen: imagen,
+                      precio: precio,
+                      cantidad: cantidad
+                  };
+
+                  carritos[`${clave}`] = datos;
+              }
+              localStorage.setItem("carritos", JSON.stringify(carritos));
+          }
+
+
 }
