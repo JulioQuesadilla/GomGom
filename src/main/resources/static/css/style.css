@@ -303,3 +303,12 @@ p {
 .naranja{
     color:var(--naranja);
 }
+
+.swal2-styled.swal2-confirm.swalBtnColor {
+    transition-duration: .6s;
+    border: none;
+    background: #FCDB7E;
+    color: #8B0003;
+    box-shadow: 0 0 20px #ef8100; 
+    font-family: 'Catamaran', sans-serif;
+  }

@@ -156,25 +156,34 @@ seleccionPrecio.forEach(element => {
 
 contador = 0;
 function setBackgrounImage(valor) {
+    const imagen = document.querySelectorAll(".infoContainer>.imagen")
     if (contador < 6) {
-        const imagen = document.querySelectorAll(".infoContainer>.imagen")
+        
         if (imagen[valor].classList.contains("seleccionado")) {
             //deseleccionar elemento
-            imagen[valor].classList.remove("seleccionado")
             contador = contador - 1;
-            console.log(contador);
+            imagen[valor].classList.remove("seleccionado")
         } else {
             imagen[valor].classList.add("seleccionado")
             const paquete = localStorage.setItem(imagen, localStorage.getItem(imagen));
             contador = contador + 1;
-            console.log(contador);
         }
     } else {
-        Swal.fire({
-            title: '<b class="naranja">¡Son muchas!</b>',
-            html: '<b class="naranja">Escoge Máximo 6, por favor</b>',
-            icon: 'warning'
-        })
+        if (imagen[valor].classList.contains("seleccionado")) {
+            //deseleccionar elemento
+            contador = contador - 1;
+            imagen[valor].classList.remove("seleccionado")
+        } else{
+            Swal.fire({
+
+                title: '<b class="naranja">¡Son muchas!</b>',
+                html: '<b class="naranja">Escoge Máximo 6, por favor</b>',
+                icon: 'warning',
+                customClass: {
+                    confirmButton: 'swalBtnColor'
+                  },
+            })
+        }
     }
 }
 
