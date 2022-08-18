@@ -73,9 +73,8 @@ INSERT INTO has_chamoy(has_chamoy) VALUES ('Sí tiene chamoy');
 
 
 
-SELECT * FROM pedidos;
 
-ALTER TABLE pedidos AUTO_INCREMENT= 20;
+--ALTER TABLE pedidos AUTO_INCREMENT= 20;
 -- Paquetes de un cliente
 INSERT INTO pedidos(numero_pedido, paquetes_id_paquetes, gomitas_id_gomitas, fecha, venta_total, id_has_chamoy) VALUES (1, 6, 2, '2022-10-01', 500.00, 1);
 INSERT INTO pedidos(numero_pedido, paquetes_id_paquetes, gomitas_id_gomitas, fecha, venta_total, id_has_chamoy) VALUES (1, 6, 3, '2022-10-01', 500.00, 1);
@@ -114,28 +113,28 @@ INSERT INTO pedidos(numero_pedido, paquetes_id_paquetes, gomitas_id_gomitas, fec
 
 
 -- Ventas de un pedido
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '20');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '21');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '22');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '23');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '24');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '25');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '26');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '1');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '2');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '3');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '4');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '5');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '6');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('5', '7');
 
  -- Ventas de otro pedido
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '27');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '28');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '29');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '30');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '31');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '32');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '33');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '34');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '8');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '9');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '10');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '11');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '12');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '13');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '14');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('2', '15');
 
  -- Ventas del tercer pedido
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('3', '35');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('3', '36');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('3', '16');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('3', '17');
 
 -- último pedido vendido
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('4', '37');
-INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('4', '38');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('4', '18');
+INSERT INTO ventas(id_usuario, id_pedidos) VALUES ('4', '19');
