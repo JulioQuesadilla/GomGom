@@ -1,0 +1,302 @@
+/*Inician opciones por default*/
+/*Plantilla por default*/
+
+/*Color y fuente para encabezados*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Fredoka One', cursive;
+    color: #ef8100;
+}
+
+/*Fuente para body y elementos en navbar*/
+body,
+.nav-items {
+    font-family: 'Catamaran', sans-serif;
+}
+
+/*Color para elementos anchor y del navbar*/
+a,
+.nav-items {
+    color: #FD8A3A;
+}
+
+/*Cambios de color al pasar el mouse en elementos de navbar
+puestos con ID y por separado para evitar conflictos con
+TwitterBootstrap*/
+a#navItemUno:hover,
+a#navItemDos:hover,
+a#navItemTres:hover,
+a#navItemCuatro:hover,
+a#navItemCinco:hover,
+a#navItemSeis:hover,
+a#navItemSiete:hover,
+a#navItemOcho:hover {
+    color: #8B0003;
+    transform: scale(1.05);
+}
+
+/*Color de los bordes de la navbar*/
+hr.borde {
+    border: 0.15em solid #8B0003;
+    border-radius: 5px;
+}
+
+/*Color de relleno de los iconos del footer*/
+.icon-tabler-brand-facebook:hover,
+.icon-tabler-brand-instagram:hover,
+.icon-tabler-brand-whatsapp:hover {
+    fill: #FCDB7E;
+}
+
+/*Color de borde para el login*/
+#login-borde {
+    border: #8B0003;
+}
+
+/*Color para el icono toggler en mobile navbar*/
+#hamburguesita {
+    color: #8B0003;
+}
+
+/*Color para el menú de offcanvas...*/
+#offcanvasNavbar {
+    background-color: #FCDB7E;
+    
+}
+
+/*...que se elimina al pasar a PC*/
+@media (min-width: 576px) {
+    #offcanvasNavbar {
+    background-color: #ffffff;
+    }
+}
+
+/*Color y estilo para inputs submit, como el de login de la navbar*/
+input[type=submit] {
+    background-color: #ef8100;
+    border: none;
+    color: #8B0003;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 150%;
+  }
+
+#botonLogin {
+    color: #8B0003
+}
+
+/*Color para el login dropdown*/
+#drop-login {
+    color: #FCDB7E
+}
+
+/*Redes fijas*/
+@media (max-width: 770px){
+
+    .redes{
+        display: flex;
+        justify-content: center;
+    }}
+
+/*Poderosa animación creada por Leo para el logo GomGom*/
+.img-brand:hover {
+    transform: scale(1.1) rotate(360deg);
+    transition-duration: 2s;
+    transition-delay: now;
+}
+
+.img-brand:not(:hover) {
+    transform: scale(1.1) rotate(-360deg);
+    transition-duration: 2s;
+    transition-delay: now;
+}
+
+/*Terminan opciones por default*/
+
+/*Terminan opciones por default*/
+
+:root {
+    --textoBurbuja: 'Fredoka one';
+    --textoSecundario: 'Catamaran';
+    --Cafe: #8B0003;
+    --crema: #FCDB7E;
+    --naranja: #ef8100;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+}
+
+
+#contenedorPrincipal {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr;
+     */
+    grid-template-columns: repeat(auto-fill,minmax(320px, 1fr));
+    text-align: center;
+    gap: 1.8rem;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: var(--textoSecundario);
+    font-size: 15px;
+    background-color: white;
+    border-color: var(--Cafe);
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 20px;
+    height: 20rem;
+    color: var(--Cafe);
+    transition-property: transform;
+    transition-duration: 500ms;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.producto {
+    margin: 0px;
+}
+
+.contenido {
+    height: 3.125rem;
+    width: 3.125rem;
+    margin: 0px;
+    width: auto;
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.imagen {
+    height: 13rem;
+    width: 13rem;
+    border-radius: 100%;
+    border-color: var(--crema);
+    border-style: solid;
+    border-width: 15px;
+}
+
+.imagen:hover {
+    transform: scale(1.03);
+    border-width: 0px;
+}
+
+.boton {
+    background-color: white;
+    color: var(--naranja);
+    font-family: var(--textoBurbuja);
+    border-radius: 20px;
+    font-size: 20px;
+    border-color: var(--Cafe);
+    border-style: solid;
+}
+
+.txt__budget{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    
+}
+.btn__container{
+  background-color: var(--naranja);
+  border-radius: 15px;
+  width: max-content;
+  margin: auto;
+}
+
+.btn__containerAgrega{
+    background-color: white;
+    border-radius: 15px;
+    width: max-content;
+    margin: auto;
+  }
+
+.content-buttonPrice{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.buttonPrecio {
+    background-color: var(--Cafe);
+<<<<<<< HEAD:css/style.css
+    border: solid 1px #FCDB7E;
+=======
+    border:  solid 1px var(--Cafe);
+>>>>>>> 2108b16ff77c7c5cde9b1d568294d6d13eb68035:gominolasjavajdo/src/main/resources/static/css/style.css
+    color: var(--crema);
+    text-decoration: none;
+    font-size: 30px;
+    font-family: var(--textoBurbuja);
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.content-buttonAgrega{
+    width: 100%;
+    display: flex;
+}
+
+.buttonAgrega {
+    background-color: var(--Cafe);
+    border:  solid 1px var(--Cafe);
+    color: var(--crema);
+    text-decoration: none;
+    font-size: 30px;
+    font-family: var(--textoBurbuja);
+    border-radius: 100px;
+    margin: 5px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Fredoka One', cursive;
+    color: #ef8100;
+}
+
+p {
+    font-family: var(--textoSecundario), cursive;
+    color: var(--Cafe);
+}
+
+.background-botones{
+    transition-duration: .6s;
+    border: #8B0003 ;
+    background: #FCDB7E;
+    color: #8B0003;
+    box-shadow: 0 0 20px #ef8100;
+    
+}
+
+@media (max-width: 770px){
+
+
+    /* .btn__container{
+        width: 350px;
+        min-width: none;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    } */
+
+    .content-buttonPrice > .buttonPrecio{
+        font-size: 1rem;
+  
+    }
+}
