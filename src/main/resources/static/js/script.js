@@ -61,8 +61,6 @@ function cargar(unObjeto) {
 //variables
 const listaCursos = document.querySelector("#contenedorPrincipal")
 
-cargarEventLIstener();
-
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
 (function () {
     listaCursos.addEventListener('click', (e) => {
