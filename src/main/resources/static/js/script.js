@@ -40,6 +40,8 @@ fetch('../json/prueba.json')
             boton.classList.add("boton")
             boton.classList.add("mb-5")
             boton.innerHTML = "Elegir esta gomita"
+            boton.setAttribute("onclick", `setBackgrounImage(${i.id - 1})`)
+
 
 
 
@@ -76,9 +78,7 @@ function cargarEventLIstener() {
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
             return
-
         }
-
     })
 }
 cargarEventLIstener();
@@ -88,15 +88,6 @@ cargarEventLIstener();
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
 
-            const anadirCarrito = document.querySelectorAll(".boton");
-
-            anadirCarrito.forEach(function(element, i){
-
-                element.addEventListener("click", () => {
-                    
-                    setBackgrounImage(i)
-                })
-            });
 
             //////
             let clave = e.target.parentElement.children[1].id.replace(/((?:0+))/, "");
@@ -152,25 +143,47 @@ cargarEventLIstener();
         }
     })
 })();
+
+
 const seleccionPrecio = document.querySelectorAll(".buttonPrecio");
-
 seleccionPrecio.forEach(element => {
-
     element.addEventListener("click", () => {
-
         seleccionPrecio.forEach(element => element.classList.remove("background-botones"))
         element.classList.add("background-botones")
     })
-
-
-
 });
 
 
-
+contador = 0;
 function setBackgrounImage(valor) {
-    
     const imagen = document.querySelectorAll(".infoContainer>.imagen")
+    if (contador < 6) {
+        
+        if (imagen[valor].classList.contains("seleccionado")) {
+            //deseleccionar elemento
+            contador = contador - 1;
+            imagen[valor].classList.remove("seleccionado")
+        } else {
+            imagen[valor].classList.add("seleccionado")
+            const paquete = localStorage.setItem(imagen, localStorage.getItem(imagen));
+            contador = contador + 1;
+        }
+    } else {
+        if (imagen[valor].classList.contains("seleccionado")) {
+            //deseleccionar elemento
+            contador = contador - 1;
+            imagen[valor].classList.remove("seleccionado")
+        } else{
+            Swal.fire({
 
-    imagen[valor].style.border = "15px solid var(--Cafe)"
+                title: '<b class="naranja">¡Son muchas!</b>',
+                html: '<b class="naranja">Escoge Máximo 6, por favor</b>',
+                icon: 'warning',
+                customClass: {
+                    confirmButton: 'swalBtnColor'
+                  },
+            })
+        }
+    }
 }
+
