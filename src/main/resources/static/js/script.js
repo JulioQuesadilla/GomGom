@@ -59,22 +59,24 @@ function cargar(unObjeto) {
 }
 
 //variables
+//const carrito = document.querySelector("#carrito")
 const listaCursos = document.querySelector("#contenedorPrincipal")
+//const contenedorCarrito = document.querySelector("#lista-carrito")
+//const botonVaciar = document.querySelector("#vaciar-carrito")
+
+function cargarEventLIstener() {
+    listaCursos.addEventListener('click', (e) => {
+        if (e.target.classList.contains("boton")) {
+            return
+        }
+    })
+}
+cargarEventLIstener();
 
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
 (function () {
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
-
-            const anadirCarrito = document.querySelectorAll(".boton");
-
-            anadirCarrito.forEach(function (element, i) {
-
-                element.addEventListener("click", () => {
-
-                    setBackgrounImage(i)
-                })
-            });
 
             //////
             let clave = e.target.parentElement.children[1].id.replace(/((?:0+))/, "");
@@ -123,7 +125,6 @@ const listaCursos = document.querySelector("#contenedorPrincipal")
                 }
                 localStorage.setItem("carritos", JSON.stringify(carritos));
             }
-
             // carritos[`${clave}`] = datos;
             // localStorage.setItem("carritos", JSON.stringify(carritos));
             // console.log(carritos);
@@ -177,7 +178,6 @@ function setBackgrounImage(valor) {
             imagen[valor].classList.remove("seleccionado")
         } else{
             Swal.fire({
-
                 title: '<b class="naranja">¡Son muchas!</b>',
                 html: '<b class="naranja">Escoge Máximo 6, por favor</b>',
                 icon: 'warning',
