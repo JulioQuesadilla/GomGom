@@ -83,14 +83,66 @@ loQuiero[0].addEventListener("click", addCartUno);
 loQuiero[1].addEventListener("click", addCartDos);
 loQuiero[2].addEventListener("click", addCartTres);
 
-async function addCartUno() {
-    
+async function addCartUno () { 
+  index1 (100,"https://i.ibb.co/wM6gJSR/1.png","Mini botanero dulce",150)
     window.location.href = "html/shopping-cart.html";
 }
 
+
 async function addCartDos() {
+  index1 (101,"https://i.ibb.co/KW6Yk4b/3.png","Mini botanero enchilado",150)
   window.location.href = "html/shopping-cart.html";
 }
 async function addCartTres(){
+  index1 (102,"https://i.ibb.co/jzxNJQk/2.png","Charola botanera Med",150)
 window.location.href = "html/shopping-cart.html";
+}
+
+// Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito//
+function index1 (claves,imagenes, productos, precios) {
+          //////
+          let clave = claves;
+          let imagen = imagenes;
+          let producto = productos;
+          let precio = precios;
+          let cantidad = 1;
+
+          //Si no hay algo guardado en el LocalStorage:
+          if (localStorage.getItem("carritos") == null) {
+              let carritos = {};
+              let datos =
+              {
+                  producto: producto,
+                  imagen: imagen,
+                  precio: precio,
+                  cantidad: cantidad
+              };
+
+              carritos[`${clave}`] = datos;
+              localStorage.setItem("carritos", JSON.stringify(carritos));
+
+          } else {
+              //Si  ya hay un carrito
+              let carritos = (JSON.parse(localStorage.getItem("carritos")));
+
+
+              //Si además, ya está guardado el producto en el LocalStorage:
+              if (carritos[`${clave}`] != null) {
+                  //Se modifica la cantidad del item y se guarda
+                  carritos[`${clave}`].cantidad++;
+
+
+              } else { //si no está guardado el elemento en el item
+                  let datos =
+                  {
+                      producto: producto,
+                      imagen: imagen,
+                      precio: precio,
+                      cantidad: cantidad
+                  };
+
+                  carritos[`${clave}`] = datos;
+              }
+              localStorage.setItem("carritos", JSON.stringify(carritos));
+          }
 }
