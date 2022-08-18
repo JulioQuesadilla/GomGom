@@ -1,11 +1,14 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Event;
+
 import com.example.demo.service.IEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
 public class EventRestController {
