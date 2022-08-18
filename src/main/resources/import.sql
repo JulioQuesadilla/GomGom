@@ -139,5 +139,3 @@ INSERT INTO ventas(id_usuario, id_pedidos) VALUES (3, 36);
 -- último pedido vendido
 INSERT INTO ventas(id_usuario, id_pedidos) VALUES (4, 37);
 INSERT INTO ventas(id_usuario, id_pedidos) VALUES (4, 38);
-
-SELECT * FROM ventas;
