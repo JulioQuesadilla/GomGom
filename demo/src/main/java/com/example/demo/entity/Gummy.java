@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Gummy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_gomita")
+    @Column(name = "id_gomitas")
     private Long idGomita;
 
     private String nombre;

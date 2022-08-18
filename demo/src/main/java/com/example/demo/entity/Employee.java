@@ -15,15 +15,17 @@ public class Employee {
     @Column(name = "id_empleado")
     private Long idEmpleado;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_usuario")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private User user;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_roles")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Role role;
 
     private String rfc;
 
-    private Long salario;
+    private Double salario;
     private Long descuento;
 
 }

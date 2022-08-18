@@ -11,11 +11,12 @@ import javax.persistence.*;
 public class Pack {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_paquete")
+    @Column(name = "id_paquetes")
     private Long IdPaquete;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_nombre_paquete")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private PackName packName;
 
-    private Long precio;
+    private Double precio;
 }
