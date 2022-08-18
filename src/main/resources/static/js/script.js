@@ -58,20 +58,7 @@ function cargar(unObjeto) {
     contenedorPrincipal.appendChild(contenedor);
 }
 
-//variables
-//const carrito = document.querySelector("#carrito")
 const listaCursos = document.querySelector("#contenedorPrincipal")
-//const contenedorCarrito = document.querySelector("#lista-carrito")
-//const botonVaciar = document.querySelector("#vaciar-carrito")
-
-function cargarEventLIstener() {
-    listaCursos.addEventListener('click', (e) => {
-        if (e.target.classList.contains("boton")) {
-            return
-        }
-    })
-}
-cargarEventLIstener();
 
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
 (function () {
