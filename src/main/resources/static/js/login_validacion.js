@@ -17,7 +17,7 @@
  que simula una base de datos de usuarios registrados y una variable
  que guarda la información de login */
 let loginInfo;
-fetchInfo("../json/login.json");
+fetchInfo("https://gomgominolas.herokuapp.com/api/Users");
 
 /*Checar expiración de login*/
 
@@ -82,15 +82,15 @@ async function validateNavLogin() {
    
     //Se iteran los elementos del JSON
     for (i = 0; ; i++) {
-        if (i < loginInfo.data.length) {
+        if (i < loginInfo.length) {
             //y se revisa que coincidan con la info del JSON
-            if (correoLoginNav.value == loginInfo.data[i].mail &&
-                contraseniaLoginNav.value == loginInfo.data[i].password) {
+            if (correoLoginNav.value == loginInfo[i].correo &&
+                contraseniaLoginNav.value == loginInfo[i].contraseña) {
                 //en caso de que encuentre coincidencia, rompe el loop y deja iniciar sesión
                 console.log("Logeado");
                 logged = true;
                 //y crea un local storage con datos de expiración
-                localStorage.setItem("logged", JSON.stringify(loginInfo.data[i].usuario));
+                localStorage.setItem("logged", JSON.stringify(loginInfo[i].username));
                 localStorage.setItem("expirationInfo", JSON.stringify ({
                     expiration: timeExpir,
                     }));
@@ -122,15 +122,15 @@ async function validatePcLogin() {
    
     //Se iteran los elementos del JSON
     for (i = 0; ; i++) {
-        if (i < loginInfo.data.length) {
+        if (i < loginInfo.length) {
             //y se revisa que coincidan con la info del JSON
-            if (correoLoginPc.value == loginInfo.data[i].mail &&
-                contraseniaLoginPc.value == loginInfo.data[i].password) {
+            if (correoLoginPc.value == loginInfo[i].correo &&
+                contraseniaLoginPc.value == loginInfo[i].contraseña) {
                 //en caso de que encuentre coincidencia, rompe el loop y deja iniciar sesión
                 console.log("Logeado");
                 logged = true;
                 //y crea un local storage con datos de expiración
-                localStorage.setItem("logged", JSON.stringify(loginInfo.data[i].usuario));
+                localStorage.setItem("logged", JSON.stringify(loginInfo[i].username));
                 localStorage.setItem("expirationInfo", JSON.stringify ({
                     expiration: timeExpir,
                 }));
@@ -164,6 +164,7 @@ async function validatePcLogin() {
     .then(response => response.json())
     .then(data=> {
         loginInfo=data;
+        console.log(loginInfo)
     }
     )
  }

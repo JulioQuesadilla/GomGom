@@ -373,6 +373,9 @@ input[type="radio"] {
     }
 
     .botones {
-        height: 1.8rem;
+        height: 2.1rem;
+    }
+    .cantidad{
+        font-size: large;
     }
 }
