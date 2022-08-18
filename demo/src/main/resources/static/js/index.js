@@ -90,11 +90,11 @@ async function addCartUno () {
 
 
 async function addCartDos() {
-  index1 (100,"https://i.ibb.co/wM6gJSR/1.png","Mini botanero dulce",150)
+  index1 (101,"https://i.ibb.co/KW6Yk4b/3.png","Mini botanero enchilado",150)
   window.location.href = "html/shopping-cart.html";
 }
 async function addCartTres(){
-  index1 (100,"https://i.ibb.co/wM6gJSR/1.png","Mini botanero dulce",150)
+  index1 (102,"https://i.ibb.co/jzxNJQk/2.png","Charola botanera Med",150)
 window.location.href = "html/shopping-cart.html";
 }
 
