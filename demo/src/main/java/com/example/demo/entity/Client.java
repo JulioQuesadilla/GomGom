@@ -14,9 +14,11 @@ public class Client {
     @Column(name = "id_Clientes")
     private Long idClientes;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_roles")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Role role;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_usuario")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private User user;
 

@@ -15,6 +15,7 @@ public class Event {
     @Column(name = "id_cotizacion")
     private Long idCotizacion;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id_usuario")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private User user;
     private Date fecha;
@@ -26,4 +27,5 @@ public class Event {
     private String telefono;
 
     private  String descripcion;
+    private String evento;
 }
