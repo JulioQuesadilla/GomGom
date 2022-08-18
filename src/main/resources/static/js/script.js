@@ -153,6 +153,21 @@ seleccionPrecio.forEach(element => {
     })
 });
 
+/*let agregaACarrito = document.getElementsByClassName(".buttonAgrega");
+
+async function agrCarrito () { 
+    index (100,"https://i.ibb.co/dPfMrvL/Imagen1.png","Mini botanero dulce",150)
+    window.location.href = "html/shopping-cart.html";
+}*/
+
+const agregaPaquete = document.querySelectorAll(".buttonAgrega");
+agregaPaquete.forEach(element => {
+    element.addEventListener("click", () => {
+        agregaPaquete.forEach(element => element.classList.remove("background-botones"))
+        element.classList.add("background-botones")
+    })
+    //agregaACarrito[0].addEventListener("click", agrCarrito);
+});
 
 contador = 0;
 function setBackgrounImage(valor) {
