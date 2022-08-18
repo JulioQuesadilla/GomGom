@@ -299,3 +299,7 @@ p {
 .seleccionado{
     border : 15px solid var(--Cafe);
 }
+
+.naranja{
+    color:var(--naranja);
+}
