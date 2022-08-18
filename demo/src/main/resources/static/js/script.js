@@ -40,6 +40,8 @@ fetch('../json/prueba.json')
             boton.classList.add("boton")
             boton.classList.add("mb-5")
             boton.innerHTML = "Elegir esta gomita"
+            boton.setAttribute("onclick", `setBackgrounImage(${i.id - 1})`)
+
 
 
 
@@ -86,15 +88,6 @@ cargarEventLIstener();
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
 
-            const anadirCarrito = document.querySelectorAll(".boton");
-
-            anadirCarrito.forEach(function(element, i){
-
-                element.addEventListener("click", () => {
-                    
-                    setBackgrounImage(i)
-                })
-            });
 
             //////
             let clave = e.target.parentElement.children[1].id.replace(/((?:0+))/, "");
@@ -161,16 +154,40 @@ seleccionPrecio.forEach(element => {
 });
 
 
-contador=0;
+contador = 0;
 function setBackgrounImage(valor) {
-    if(contador<21){
-    const imagen = document.querySelectorAll(".infoContainer>.imagen")
-    imagen[valor].classList.add("seleccionado")
-    const paquete = localStorage.setItem(imagen, localStorage.getItem(imagen));
-    console.log(contador);
-    contador++;
-    console.log(contador);
-    }else{
-        alert('Sólo 6');
+    if (contador < 6) {
+        const imagen = document.querySelectorAll(".infoContainer>.imagen")
+        if (imagen[valor].classList.contains("seleccionado")) {
+            //deseleccionar elemento
+            imagen[valor].classList.remove("seleccionado")
+            contador = contador - 1;
+            console.log(contador);
+        } else {
+            imagen[valor].classList.add("seleccionado")
+            const paquete = localStorage.setItem(imagen, localStorage.getItem(imagen));
+            contador = contador + 1;
+            console.log(contador);
+        }
+    } else {
+        alert("Máx 6")
+        /*<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>*/
     }
 }
+
