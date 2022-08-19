@@ -320,29 +320,3 @@ function enviarPedido() {
     }, 1000);
     
 }
-
-
-/**
- * Esta función convierte los id sabores a nombres de sabores
- */
-/*
-nombreSabores =[]
-function traerSabores(otroNumero){
-    let unNumero = otroNumero;
-    let SABORES = JSON.parse(localStorage.getItem("datosSabores"));
-    SABORES.forEach(e =>{
-    if (e.idGomita == unNumero ) //Esta dentro de un array en clave "sabores" de carritos
-       console.log( e.idGomita )
-       console.log( e.nombre )
-       //Falta que lo guarde en un array
-       //Falta que unNumero sea el array
-       //Lo guarde en el localStorage de carritos
-    });
-}
-for (let index = 0; index < array.length; index++) {
-    const element = array[index];
-    
-    nombreSabores.push(e.nombre)
-}
-traerSabores()
-*/
