@@ -126,7 +126,7 @@ async function postUser() {
                 window.location.href = "registro_login.html";
             }
         });
-        //event.preventDefault();
+        event.preventDefault();
         fetchInfo("https://gomgominolas.herokuapp.com/api/Users");
     }
     else {
