@@ -86,7 +86,7 @@ function añadirAlCarrito() {
     } else {
         let botonPrecio = document.querySelector(".background-botones");
         let precio = Number(botonPrecio.innerHTML.replace(/((?:\$))/, ""));
-        let idPaquete = botonPrecio.id;
+        let idPaquete = Number(botonPrecio.id.replace(/((?:pack-))/, ""));
         let imagenPaquete = "";
         switch (precio) {
             case 50: {
