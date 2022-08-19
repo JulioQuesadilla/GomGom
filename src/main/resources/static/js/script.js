@@ -122,6 +122,7 @@ function añadirAlCarrito() {
         }
         let indicesSabores = [];
         let nombreSabores = []
+        let item = 1;
         saboresElegidos = document.querySelectorAll(".seleccionado");
         saboresElegidos.forEach((e, i) => {
             indicesSabores[i] = Number(e.id.replace(/((?:imagen))/, ""));
@@ -130,7 +131,7 @@ function añadirAlCarrito() {
         
         )
 
-        carritoAñade(imagenPaquete, indicesSabores, nombreSabores, 'Paquete ' + precio, precio, idPaquete);
+        carritoAñade(imagenPaquete, indicesSabores, nombreSabores, 'Paquete ' + precio, precio, idPaquete, item++);
 
         Swal.fire({
             title: '<b class="naranja">¡Se ha añadido al carrito!</b>',
@@ -158,10 +159,11 @@ function añadirAlCarrito() {
 
 
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
-function carritoAñade(imagen1, eleccion1, nombre1, producto1, precio1, idPack) {
+function carritoAñade(imagen1, eleccion1, nombre1, producto1, precio1, idPack, contador1) {
 
     let clave = `p${precio1}-${eleccion1.toString()}`;
     let idpaquete = idPack;
+    let contador = contador1;
     let imagen = imagen1;
     let sabores = eleccion1;
     let nomSabores = nombre1;
@@ -173,13 +175,14 @@ function carritoAñade(imagen1, eleccion1, nombre1, producto1, precio1, idPack) 
         let carritos = {};
         let datos =
         {
-            idPack: idPack,
+            idPack: idpaquete,
             sabores: sabores, //saboresId
             nomSabores: nomSabores,
             imagen: imagen,
             precio: precio,
             cantidad: cantidad,
-            producto: producto
+            producto: producto,
+            contador: contador
         };
 
         carritos[`${clave}`] = datos;
@@ -205,7 +208,8 @@ function carritoAñade(imagen1, eleccion1, nombre1, producto1, precio1, idPack) 
                 imagen: imagen,
                 precio: precio,
                 cantidad: cantidad,
-                producto: producto
+                producto: producto,
+                contador: contador
             };
 
             carritos[`${clave}`] = datos;
