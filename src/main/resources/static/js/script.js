@@ -1,17 +1,17 @@
-if ((localStorage.tiempoExpiracion - Date.now() < 0)||(localStorage.tiempoExpiracion == undefined)) {
+if ((localStorage.tiempoExpiracion - Date.now() < 0) || (localStorage.tiempoExpiracion == undefined)) {
     console.log("se cargó del fetch")
     cargarFetch("https://gomgominolas.herokuapp.com/api/Gummys");
-} else{
+} else {
     console.log("se cargó del local")
     cargarLocal();
 }
 
-function cargarLocal(){
+function cargarLocal() {
     const SABORES = JSON.parse(localStorage.getItem("datosSabores"));
     SABORES.forEach((objeto) => {
         cargar(objeto);
     })
-    
+
 }
 
 function cargarFetch(unaUrl) {
@@ -62,8 +62,7 @@ function cargar(unObjeto) {
 const listaCursos = document.querySelector("#contenedorPrincipal")
 
 function añadirAlCarrito() {
-    if(contador<2 || (SwitchCosto=0)){
-        console.log(SwitchCosto)
+    if (contador < 2 || (SwitchCosto = 0)) {
         Swal.fire({
             title: '<b class="naranja">¡Falta seleccionar!</b>',
             html: '<b class="naranja">Por favor selecciona el costo y al menos 2 gomitas</b>',
@@ -71,114 +70,139 @@ function añadirAlCarrito() {
             iconColor: '#8B0003',
             customClass: {
                 confirmButton: 'swalBtnColor'
-              },
+            },
         })
-    }else{
-    Swal.fire({
-        title: '<b class="naranja">¡Se ha añadido al carrito!</b>',
-        html: '<b class="naranja">¿Qué deseas hacer a continuación?</b>',
-        icon: 'info',
-        iconColor: '#8B0003',
-        showCancelButton: true,
-        confirmButtonColor: '#ef8100',
-        cancelButtonColor: '#8B0003',
-        confirmButtonText: 'Ir al carrito',
-        cancelButtonText: 'Elegir un nuevo paquete'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href="shopping-cart.html"
-        }else{
-            window.location.href="paquetes.html"
-        }
-    });
-    saboresElegidos = document.querySelectorAll(".seleccionado");
-    saboresElegidos.forEach(
-        id.saboresElegidos
-        //Nombre
-        //Precio del paquete
-
-        //Filtros
-        //Si no hay seleccionados: precio o sabores.
-
-        //Al localStorage
-
-    )
-    } 
-}
-// Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
-/* (function () {
-    listaCursos.addEventListener('click', (e) => {
-        if (e.target.classList.contains("boton")) {
-
-            //////
-            let clave = e.target.parentElement.children[1].id.replace(/((?:0+))/, "");
-            let elemento = e.target.parentElement;
-            let imagen = elemento.children[0].src;
-            let producto = elemento.children[1].innerHTML;
-            let precio = elemento.children[3].innerHTML;
-            precio = precio.replace(/((?:\$*))/, "")
-            let cantidad = 1;
-
-            //Si no hay algo guardado en el LocalStorage:
-            if (localStorage.getItem("carritos") == null) {
-                let carritos = {};
-                let datos =
-                {
-                    producto: producto,
-                    imagen: imagen,
-                    precio: precio,
-                    cantidad: cantidad
-                };
-
-                carritos[`${clave}`] = datos;
-                localStorage.setItem("carritos", JSON.stringify(carritos));
-
-            } else {
-                //Si  ya hay un carrito
-                let carritos = (JSON.parse(localStorage.getItem("carritos")));
-
-
-                //Si además, ya está guardado el producto en el LocalStorage:
-                if (carritos[`${clave}`] != null) {
-                    //Se modifica la cantidad del item y se guarda
-                    carritos[`${clave}`].cantidad++;
-
-
-                } else { //si no está guardado el elemento en el item
-                    let datos =
-                    {
-                        producto: producto,
-                        imagen: imagen,
-                        precio: precio,
-                        cantidad: cantidad
-                    };
-
-                    carritos[`${clave}`] = datos;
-                }
-                localStorage.setItem("carritos", JSON.stringify(carritos));
+    } else {
+        let botonPrecio = document.querySelector(".background-botones");
+        let precio = Number(botonPrecio.innerHTML.replace(/((?:\$))/, ""));
+        let imagenPaquete = "";
+        switch (precio) {
+            case 50: {
+                imagenPaquete = "https://i.ibb.co/xLfQD6G/50.png";
+                break;
             }
-            // carritos[`${clave}`] = datos;
-            // localStorage.setItem("carritos", JSON.stringify(carritos));
-            // console.log(carritos);
+            case 75: {
+                imagenPaquete = "https://i.ibb.co/1G5bPQ9/75.png";
+                break;
+            }
+            case 100: {
+                imagenPaquete = "https://i.ibb.co/X5dk0Ps/100.png";
+                break;
+            }
+            case 150: {
+                imagenPaquete = "https://i.ibb.co/fYzy6QQ/150.png";
+                break;
+            }
+            case 200: {
+                imagenPaquete = "https://i.ibb.co/rFn7X2z/200.png";
+                break;
+            }
+            case 250: {
+                imagenPaquete = "https://i.ibb.co/zHYNDFs/250.png";
+                break;
+            }
+            default: break;
         }
-    })
-})();
- */
+        let indicesSabores = [];
+        saboresElegidos = document.querySelectorAll(".seleccionado");
+        saboresElegidos.forEach((e, i) => {
+            indicesSabores[i] = Number(e.id.replace(/((?:imagen))/, ""));
+        }
+        )
+        carritoAñade(precio, imagenPaquete, saboresElegidos, 'paquete '+precio,precio);
+
+        Swal.fire({
+            title: '<b class="naranja">¡Se ha añadido al carrito!</b>',
+            html: '<b class="naranja">¿Qué deseas hacer a continuación?</b>',
+            icon: 'info',
+            iconColor: '#8B0003',
+            showCancelButton: true,
+            confirmButtonColor: '#ef8100',
+            cancelButtonColor: '#8B0003',
+            confirmButtonText: 'Ir al carrito',
+            cancelButtonText: 'Elegir un nuevo paquete'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "shopping-cart.html"
+            } else {
+                window.location.href = "paquetes.html"
+            }
+        });
+
+    }
+}
+
+
+// Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
+function carritoAñade(clave1, imagen1, eleccion1, producto1, precio1) {
+    let clave = clave1;
+    let imagen = imagen1;
+    let eleccion = eleccion1;
+    let precio = precio1;
+    let producto = producto1;
+    let cantidad = 1;
+    //Si no hay algo guardado en el LocalStorage:
+    if (localStorage.getItem("carritos") == null) {
+        let carritos = {};
+        let datos =
+        {
+            eleccion: eleccion,
+            imagen: imagen,
+            precio: precio,
+            cantidad: cantidad,
+            producto: producto
+        };
+
+        carritos[`${clave}`] = datos;
+        localStorage.setItem("carritos", JSON.stringify(carritos));
+
+    } else {
+        //Si  ya hay un carrito
+        let carritos = (JSON.parse(localStorage.getItem("carritos")));
+
+
+        //Si además, ya está guardado el producto en el LocalStorage:
+        if (carritos[`${clave}`] != null) {
+            //Se modifica la cantidad del item y se guarda
+            carritos[`${clave}`].cantidad++;
+
+
+        } else { //si no está guardado el elemento en el item
+            let datos =
+            {
+                eleccion: eleccion,
+                imagen: imagen,
+                precio: precio,
+                cantidad: cantidad,
+                producto:producto
+            };
+
+            carritos[`${clave}`] = datos;
+        }
+        localStorage.setItem("carritos", JSON.stringify(carritos));
+    }
+    // carritos[`${clave}`] = datos;
+    // localStorage.setItem("carritos", JSON.stringify(carritos));
+    //console.log(carritos);
+
+}
+
 
 const seleccionPrecio = document.querySelectorAll(".buttonPrecio");
 seleccionPrecio.forEach(element => {
     element.addEventListener("click", () => {
         seleccionPrecio.forEach(element => element.classList.remove("background-botones"))
         element.classList.add("background-botones")
+
     })
 });
 
 
-let SwitchCosto=0;
+let SwitchCosto = 0;
 const agregaPaquete = document.querySelectorAll(".buttonAgrega");
 agregaPaquete.forEach(element => {
     element.addEventListener("click", () => {
-        SwitchCosto=1;
+        SwitchCosto = 1;
         agregaPaquete.forEach(element => element.classList.remove("background-botones"))
         element.classList.add("background-botones")
     })
@@ -188,7 +212,7 @@ let contador = 0;
 function setBackgrounImage(valor) {
     const imagen = document.querySelectorAll(".infoContainer>.imagen")
     if (contador < 6) {
-        
+
         if (imagen[valor].classList.contains("seleccionado")) {
             //deseleccionar elemento
             contador = contador - 1;
@@ -203,7 +227,7 @@ function setBackgrounImage(valor) {
             //deseleccionar elemento
             contador = contador - 1;
             imagen[valor].classList.remove("seleccionado")
-        } else{
+        } else {
             Swal.fire({
                 title: '<b class="naranja">¡Son muchas!</b>',
                 html: '<b class="naranja">Escoge Máximo 6, por favor</b>',
@@ -211,7 +235,7 @@ function setBackgrounImage(valor) {
                 iconColor: '#8B0003',
                 customClass: {
                     confirmButton: 'swalBtnColor'
-                  },
+                },
             })
         }
     }
