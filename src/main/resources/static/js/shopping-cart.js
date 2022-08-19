@@ -53,6 +53,7 @@ function creaTabla(num, url, titulo, cantidad, precio) {
     cellSabor.setAttribute("colspan",6);
     cellSabor.setAttribute("id",num);
     cellSabor.innerHTML = "Aqui van los sabores"
+    // AQUI SE JALAN LOS DATOS DESDE EL LOCALSTORAGE
     // filaSabor.style.backgroundColor = "red"
 
 
@@ -301,3 +302,20 @@ function enviarPedido() {
         .then(json => console.log(json))
         .catch(err => console.log(err));
 }
+
+
+/**
+ * Esta función convierte los id sabores a nombres de sabores
+ */
+function traerSabores(){
+    let unNumero = 3;
+    let SABORES = JSON.parse(localStorage.getItem("datosSabores"));
+    SABORES.forEach(e =>{
+    if (e.idGomita == unNumero )
+       console.log( e.idGomita )
+       //Falta que lo guarde en un array
+       //Falta que unNumero sea el array
+       //Lo guarde en el localStorage de carritos
+    });
+}
+traerSabores()
