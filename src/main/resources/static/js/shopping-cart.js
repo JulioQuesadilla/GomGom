@@ -314,7 +314,11 @@ function enviarPedido() {
             })
             .catch(err => console.log(err));
     }
-    console.log(`Tu pedido tienen los id's: ${arrayIdPedidos.toString()}`)
+
+    setTimeout(()=>{
+        console.log(`Tu pedido tienen los id's: ${arrayIdPedidos.toString()}`)
+    }, 1000);
+    
 }
 
 
