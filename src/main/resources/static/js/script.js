@@ -50,6 +50,7 @@ function cargar(unObjeto) {
     boton.classList.add("boton");
     boton.classList.add("mb-5");
     boton.innerHTML = "Elegir esta gomita";
+    boton.setAttribute("onclick", `setBackgrounImage(${unObjeto.idGomita - 1})`);
 
 
     /* Se agrega al HTML */
@@ -61,7 +62,7 @@ function cargar(unObjeto) {
 const listaCursos = document.querySelector("#contenedorPrincipal")
 
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
-(function () {
+/* (function () {
     listaCursos.addEventListener('click', (e) => {
         if (e.target.classList.contains("boton")) {
 
@@ -118,7 +119,7 @@ const listaCursos = document.querySelector("#contenedorPrincipal")
         }
     })
 })();
-
+ */
 
 const seleccionPrecio = document.querySelectorAll(".buttonPrecio");
 seleccionPrecio.forEach(element => {
@@ -144,7 +145,7 @@ agregaPaquete.forEach(element => {
     //agregaACarrito[0].addEventListener("click", agrCarrito);
 });
 
-contador = 0;
+let contador = 0;
 function setBackgrounImage(valor) {
     const imagen = document.querySelectorAll(".infoContainer>.imagen")
     if (contador < 6) {
