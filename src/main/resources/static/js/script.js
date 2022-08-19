@@ -62,7 +62,8 @@ function cargar(unObjeto) {
 const listaCursos = document.querySelector("#contenedorPrincipal")
 
 function añadirAlCarrito() {
-    if (contador < 2 || (SwitchCosto = 0)) {
+    
+    if (contador < 2 || (SwitchCosto == 0)) {
         Swal.fire({
             title: '<b class="naranja">¡Falta seleccionar!</b>',
             html: '<b class="naranja">Por favor selecciona el costo y al menos 2 gomitas</b>',
@@ -71,7 +72,11 @@ function añadirAlCarrito() {
             customClass: {
                 confirmButton: 'swalBtnColor'
             },
-        })
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "paquetes.html"
+            }
+        });
     } else {
         let botonPrecio = document.querySelector(".background-botones");
         let precio = Number(botonPrecio.innerHTML.replace(/((?:\$))/, ""));
@@ -185,17 +190,17 @@ function carritoAñade(imagen1, eleccion1, producto1, precio1) {
 }
 
 
+let SwitchCosto = 0;
 const seleccionPrecio = document.querySelectorAll(".buttonPrecio");
 seleccionPrecio.forEach(element => {
     element.addEventListener("click", () => {
         seleccionPrecio.forEach(element => element.classList.remove("background-botones"))
         element.classList.add("background-botones")
-
+        SwitchCosto = 1;
     })
 });
 
 
-let SwitchCosto = 0;
 const agregaPaquete = document.querySelectorAll(".buttonAgrega");
 agregaPaquete.forEach(element => {
     element.addEventListener("click", () => {
