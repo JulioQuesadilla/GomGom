@@ -50,8 +50,8 @@ function creaTabla(num, url, titulo, cantidad, precio) {
     //Fila sabores
     let filaSabor = body.insertRow();
     let cellSabor = filaSabor.appendChild(document.createElement("td"));
-    cellSabor.setAttribute("colspan",6);
-    cellSabor.setAttribute("id",num);
+    cellSabor.setAttribute("colspan", 6);
+    cellSabor.setAttribute("id", num);
     cellSabor.innerHTML = "Aqui van los sabores"
     // AQUI SE JALAN LOS DATOS DESDE EL LOCALSTORAGE
     // filaSabor.style.backgroundColor = "red"
@@ -239,7 +239,7 @@ puntosEntregas.forEach(e => {
 });
 
 /* Evento POST */
-
+/*
 function enviarPedido() {
     //Se trae el localStorage
     let CARRITO = JSON.parse(localStorage.getItem("carritos"));
@@ -249,13 +249,12 @@ function enviarPedido() {
         //se agregan las cantidades a un arrayresApi
         cantidades.push(CARRITO[key].cantidad) //de todos los paquetes
         almacenarSabores.push(CARRITO[key].sabores) //Un array de arrays
-
     }
     
     let indiceSabores = almacenarSabores[0];//de un paquete
     let cantidad = cantidades[0]; //Solo se envia el primer paquete
 
-    /* Variables para enviar a la api */
+    // Variables para enviar a la api
     let saboresApi = []
     let repeticionesApi = []
     
@@ -267,12 +266,6 @@ function enviarPedido() {
         }
         saboresApi.push(gomita);
     }
-
-    /* let paquetes = document.querySelectorAll(".cantidad");
-    paquetes.forEach(e =>{
-       let indice =  e.value;
-
-    }) */
 
     let precio = document.getElementById("totales").innerHTML;
     let precioFinal = Number(precio.replace(/((?:\$))/, "").replace(/((?: pesos))/, ""));
@@ -314,8 +307,87 @@ function enviarPedido() {
         headers: { "Content-type": "application/json; charset=UTF-8" }
     })
         .then(response => response.json())
-        .then(json => console.log(json))
+        .then(json => console.log(`Tu pedido tiene el id ${json.idPedido}`))
         .catch(err => console.log(err));
+}
+*/
+
+function enviarPedido() {
+    let arrayIdPedidos = [];
+    //Se trae el localStorage
+    let CARRITO = JSON.parse(localStorage.getItem("carritos"));
+
+    //Se inicia el método post por cada paquete en CARRITO
+    
+    for (const paqueteStorage in CARRITO) {
+    //se agrega la info a las variables por cada paquete
+
+        
+        //Variables temporales
+         let cantidad = CARRITO[paqueteStorage].cantidad; //Un número
+        let indiceSabores = CARRITO[paqueteStorage].sabores; //Un array
+
+        // * * * * * * * * * * *  Variables para enviar a la api  * * * * * * * * * * * * *
+         let precio = document.getElementById("totales").innerHTML;
+         let precioFinal = Number(precio.replace(/((?:\$))/, "").replace(/((?: pesos))/, ""));
+ 
+         if (document.getElementById("checkbox").classList.contains("selected")) conOsinChamoy = 2;
+         else conOsinChamoy = 1;
+ 
+         let fecha = new Date();
+ 
+         let mes;
+         if (fecha.getMonth() >= 10) {
+             mes = fecha.getMonth();
+         } else {
+             mes = `0${fecha.getMonth()}`
+         }
+
+         // * * * * * Variables que tienen "objetos" dentro * * * 
+        let saboresApi = []
+        let repeticionesApi = []
+ 
+        //se guardan los objetos en el array de sabores
+        for (let i = 0; i < indiceSabores.length; i++) {
+
+            let gomita = {
+                "idGomita": indiceSabores[i]
+            }
+            saboresApi.push(gomita);
+        }
+
+        for (let i = 1; i <= cantidad; i++) {
+            let paquete = {
+                "idPaquete": 6
+            }
+
+            repeticionesApi.push(paquete)
+        }
+
+        // Se vaían las variables en el "body"
+        let datosPedido = {
+            "gummies": saboresApi,//Esto es un array
+            "pack": repeticionesApi, //Esto es un array
+            "fecha": `${fecha.getFullYear()}-${mes}-${fecha.getDate()}`,
+            "ventaTotal": precioFinal,
+            "chamoy": {
+                "idChamoy": conOsinChamoy  //1 = no, 2 = sí.
+            }
+        }
+
+        fetch('https://gomgominolas.herokuapp.com/api/Orders', {
+            method: "POST",
+            body: JSON.stringify(datosPedido),
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        })
+            .then(response => response.json())
+            .then(json => {
+                console.log(`Tu pedido tiene el id ${json.idPedido}`);
+                arrayIdPedidos.push(json.idPedido);
+            })
+            .catch(err => console.log(err));
+    }
+    console.log(`Tu pedido tienen los id's: ${arrayIdPedidos.toString()}`)
 }
 
 
