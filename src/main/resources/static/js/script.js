@@ -6,6 +6,9 @@ if ((localStorage.tiempoExpiracion - Date.now() < 0) || (localStorage.tiempoExpi
     cargarLocal();
 }
 
+/**
+ * Carga los datos de sabores desde el LocalStorage
+ */
 function cargarLocal() {
     const SABORES = JSON.parse(localStorage.getItem("datosSabores"));
     SABORES.forEach((objeto) => {
@@ -14,6 +17,10 @@ function cargarLocal() {
 
 }
 
+/**
+ * Realiza el GET de los sabores  y los guarda en el localStorage
+ * @param {String} unaUrl 
+ */
 function cargarFetch(unaUrl) {
     fetch(unaUrl)
         .then(response => response.json())
@@ -29,6 +36,10 @@ function cargarFetch(unaUrl) {
         })
 }
 
+/**
+ * Plantilla básica para cargar los datos de la base de datos al HTML
+ * @param {Object} unObjeto 
+ */
 function cargar(unObjeto) {
     /* Se vacía la información */
     let contenedor = document.createElement('div');
@@ -75,6 +86,7 @@ function añadirAlCarrito() {
     } else {
         let botonPrecio = document.querySelector(".background-botones");
         let precio = Number(botonPrecio.innerHTML.replace(/((?:\$))/, ""));
+        let idPaquete = botonPrecio.id;
         let imagenPaquete = "";
         switch (precio) {
             case 50: {
@@ -109,7 +121,7 @@ function añadirAlCarrito() {
             indicesSabores[i] = Number(e.id.replace(/((?:imagen))/, ""));
         }
         )
-        carritoAñade(imagenPaquete, indicesSabores, 'Paquete '+precio,precio);
+        carritoAñade(imagenPaquete, indicesSabores, 'Paquete '+precio,precio, idPaquete);
 
         Swal.fire({
             title: '<b class="naranja">¡Se ha añadido al carrito!</b>',
@@ -136,8 +148,8 @@ function añadirAlCarrito() {
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
 function carritoAñade(imagen1, eleccion1, producto1, precio1, idPack) {
 
-    let idpaquete = idPack;
     let clave = `p${precio1}-${eleccion1.toString()}`;
+    let idpaquete = idPack;
     let imagen = imagen1;
     let sabores = eleccion1;
     let precio = precio1;
