@@ -61,6 +61,50 @@ function cargar(unObjeto) {
 
 const listaCursos = document.querySelector("#contenedorPrincipal")
 
+function añadirAlCarrito() {
+    if(contador<2 || (SwitchCosto=0)){
+        console.log(SwitchCosto)
+        Swal.fire({
+            title: '<b class="naranja">¡Falta seleccionar!</b>',
+            html: '<b class="naranja">Por favor selecciona el costo y al menos 2 gomitas</b>',
+            icon: 'error',
+            iconColor: '#8B0003',
+            customClass: {
+                confirmButton: 'swalBtnColor'
+              },
+        })
+    }else{
+    Swal.fire({
+        title: '<b class="naranja">¡Se ha añadido al carrito!</b>',
+        html: '<b class="naranja">¿Qué deseas hacer a continuación?</b>',
+        icon: 'info',
+        iconColor: '#8B0003',
+        showCancelButton: true,
+        confirmButtonColor: '#ef8100',
+        cancelButtonColor: '#8B0003',
+        confirmButtonText: 'Ir al carrito',
+        cancelButtonText: 'Elegir un nuevo paquete'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href="shopping-cart.html"
+        }else{
+            window.location.href="paquetes.html"
+        }
+    });
+    saboresElegidos = document.querySelectorAll(".seleccionado");
+    saboresElegidos.forEach(
+        id.saboresElegidos
+        //Nombre
+        //Precio del paquete
+
+        //Filtros
+        //Si no hay seleccionados: precio o sabores.
+
+        //Al localStorage
+
+    )
+    } 
+}
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
 /* (function () {
     listaCursos.addEventListener('click', (e) => {
@@ -129,20 +173,15 @@ seleccionPrecio.forEach(element => {
     })
 });
 
-/*let agregaACarrito = document.getElementsByClassName(".buttonAgrega");
 
-async function agrCarrito () { 
-    index (100,"https://i.ibb.co/dPfMrvL/Imagen1.png","Mini botanero dulce",150)
-    window.location.href = "html/shopping-cart.html";
-}*/
-
+let SwitchCosto=0;
 const agregaPaquete = document.querySelectorAll(".buttonAgrega");
 agregaPaquete.forEach(element => {
     element.addEventListener("click", () => {
+        SwitchCosto=1;
         agregaPaquete.forEach(element => element.classList.remove("background-botones"))
         element.classList.add("background-botones")
     })
-    //agregaACarrito[0].addEventListener("click", agrCarrito);
 });
 
 let contador = 0;
@@ -169,6 +208,7 @@ function setBackgrounImage(valor) {
                 title: '<b class="naranja">¡Son muchas!</b>',
                 html: '<b class="naranja">Escoge Máximo 6, por favor</b>',
                 icon: 'warning',
+                iconColor: '#8B0003',
                 customClass: {
                     confirmButton: 'swalBtnColor'
                   },
