@@ -26,7 +26,7 @@ SELECT * FROM gomgom.cotizaciones_eventos;
 SELECT nombre, evento, fecha, presupuesto, telefono, descripcion FROM gomgom.usuarios NATURAL JOIN gomgom.cotizaciones_eventos;
 
 -- ¿Qué gomitas se pidieron, quién las pidió, en qué paquete?
-SELECT numero_pedido, usuarios.nombre, usuarios.apellido, paquetes_id_paquetes, gomitas.nombre 
+SELECT numero_pedido, usuarios.nombre, usuarios.apellido, paquetes_id_paquetes, gomitas.nombre, id_pedidos 
 FROM gomgom.usuarios NATURAL JOIN gomgom.ventas NATURAL JOIN gomgom.pedidos INNER JOIN gomgom.gomitas ON id_gomitas ORDER BY numero_pedido;
 
 SELECT * FROM gomgom.cotizaciones_eventos;

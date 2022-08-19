@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.security.PrivateKey;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "pedidos")
@@ -21,28 +22,23 @@ public class Order implements Serializable {
     @Column(name = "id_pedidos")
     private  Long idPedido;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="gomitas_id_gomitas")
+    @ManyToMany(fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private Gummy gummy;
+    private List<Gummy> gummies;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="paquetes_id_paquetes")
+    @ManyToMany(fetch = FetchType.LAZY)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private Pack pack;
+    private List<Pack> pack;
 
     private Date fecha;
     
     @Column(name="venta_total")
-    private Double total;
+    private Double ventaTotal;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_has_chamoy")
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Chamoy chamoy;
-    
-    @Column(name="numero_pedido")
-    private Long numeroPedido;
 
 
 }
