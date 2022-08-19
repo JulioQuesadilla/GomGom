@@ -15,7 +15,6 @@ let botonRegistro = document.getElementById("boton-registro");
 botonRegistro.addEventListener("click", validarRegistro);
 //Se localiza formulario
 let formularioRegistro = document.forms["registroFormulario"];
-console.log("ok");
 
 /**
  * La función asíncrona validarRegistro se enfoca en ver que las contraseñas
@@ -38,7 +37,7 @@ async function validarRegistro() {
         if (contraUno == contraDos) {
             validacion.style.color = "green";
             validacion.innerHTML = "¡Casi todo listo para las gomitas!";
-            console.log("tan iguales");
+            //console.log("tan iguales");
 
 
 
@@ -69,7 +68,7 @@ async function validarRegistro() {
     let regex = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+\w$/);
     let correoInput = formularioRegistro["validarCorreo"].value;
     let validationCorreo = document.getElementById("validaCorreoTxt");
-    console.log(regex.test(correoInput));
+    //console.log(regex.test(correoInput));
     if (regex.test(correoInput)) {
         validationCorreo.style.color = "green";
         validationCorreo.innerHTML = "¡Bonito correo!";
@@ -77,7 +76,7 @@ async function validarRegistro() {
     else {
         event.preventDefault();
 
-        console.log(regex.test(correoInput.value));
+        //console.log(regex.test(correoInput.value));
 
         validationCorreo.style.color = "#8B0003";
         validationCorreo.innerHTML = "Creo que esa no es una dirección de correo válida..."
@@ -108,13 +107,27 @@ async function validarRegistro() {
 //si ****todo cool****, se postea la info a DB
 
 async function postUser() {
+    let regex = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+\w$/);
+
+    let regexUser = new RegExp(/^\S+\w+\S$/);
+
     let nombre = formularioRegistro["validarNombre"].value;
     let apellido = formularioRegistro["validarApellido"].value;
     let usuario = formularioRegistro["validarUsuario"].value;
     let domicilio = formularioRegistro["validarDomicilio"].value;
     let correo = formularioRegistro["validarCorreo"].value;
     let contraseña = formularioRegistro["validarContraUno"].value;
-    if (nombre != "" && apellido != "" && usuario != "" && domicilio != "" && correo != "" && contraseña != "") {
+    if (nombre != ""
+        && apellido != ""
+        && usuario != "" 
+        && domicilio != "" 
+        && correo != "" 
+        && regex.test(correo)
+        && contraseña != "" 
+        && usuario.length < 18
+        && regexUser.test(usuario)
+        && contraseña.length >= 6
+        ) {
         Swal.fire({
             title: '<b class="naranja">¡Bienvenido!</b>',
             html: '<b class="naranja">¡Ya estás registrado!</b>',
