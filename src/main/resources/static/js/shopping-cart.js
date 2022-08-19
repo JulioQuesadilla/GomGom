@@ -283,8 +283,6 @@ function enviarPedido() {
         }
     }
 
-    console.log(JSON.stringify(datosPedido));
-
     fetch('https://gomgominolas.herokuapp.com/api/Orders', {
         method: "POST",
         body: JSON.stringify(datosPedido),
