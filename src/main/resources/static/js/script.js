@@ -109,7 +109,7 @@ function añadirAlCarrito() {
             indicesSabores[i] = Number(e.id.replace(/((?:imagen))/, ""));
         }
         )
-        carritoAñade(precio, imagenPaquete, saboresElegidos, 'paquete '+precio,precio);
+        carritoAñade(precio, imagenPaquete, indicesSabores, 'Paquete '+precio,precio);
 
         Swal.fire({
             title: '<b class="naranja">¡Se ha añadido al carrito!</b>',
@@ -202,7 +202,6 @@ let SwitchCosto = 0;
 const agregaPaquete = document.querySelectorAll(".buttonAgrega");
 agregaPaquete.forEach(element => {
     element.addEventListener("click", () => {
-        SwitchCosto = 1;
         agregaPaquete.forEach(element => element.classList.remove("background-botones"))
         element.classList.add("background-botones")
     })
