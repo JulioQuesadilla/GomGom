@@ -109,7 +109,7 @@ function añadirAlCarrito() {
             indicesSabores[i] = Number(e.id.replace(/((?:imagen))/, ""));
         }
         )
-        carritoAñade(precio, imagenPaquete, saboresElegidos, 'paquete '+precio,precio);
+        carritoAñade(imagenPaquete, indicesSabores, 'Paquete '+precio,precio);
 
         Swal.fire({
             title: '<b class="naranja">¡Se ha añadido al carrito!</b>',
@@ -134,10 +134,11 @@ function añadirAlCarrito() {
 
 
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
-function carritoAñade(clave1, imagen1, eleccion1, producto1, precio1) {
-    let clave = clave1;
+function carritoAñade(imagen1, eleccion1, producto1, precio1) {
+    
+    let clave = `p${precio1}-${eleccion1.toString()}`;
     let imagen = imagen1;
-    let eleccion = eleccion1;
+    let sabores = eleccion1;
     let precio = precio1;
     let producto = producto1;
     let cantidad = 1;
@@ -146,7 +147,7 @@ function carritoAñade(clave1, imagen1, eleccion1, producto1, precio1) {
         let carritos = {};
         let datos =
         {
-            eleccion: eleccion,
+            sabores: sabores,
             imagen: imagen,
             precio: precio,
             cantidad: cantidad,
@@ -170,7 +171,7 @@ function carritoAñade(clave1, imagen1, eleccion1, producto1, precio1) {
         } else { //si no está guardado el elemento en el item
             let datos =
             {
-                eleccion: eleccion,
+                sabores: sabores,
                 imagen: imagen,
                 precio: precio,
                 cantidad: cantidad,
@@ -181,10 +182,6 @@ function carritoAñade(clave1, imagen1, eleccion1, producto1, precio1) {
         }
         localStorage.setItem("carritos", JSON.stringify(carritos));
     }
-    // carritos[`${clave}`] = datos;
-    // localStorage.setItem("carritos", JSON.stringify(carritos));
-    //console.log(carritos);
-
 }
 
 
@@ -202,7 +199,6 @@ let SwitchCosto = 0;
 const agregaPaquete = document.querySelectorAll(".buttonAgrega");
 agregaPaquete.forEach(element => {
     element.addEventListener("click", () => {
-        SwitchCosto = 1;
         agregaPaquete.forEach(element => element.classList.remove("background-botones"))
         element.classList.add("background-botones")
     })
