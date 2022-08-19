@@ -93,8 +93,18 @@ async function validateNavLogin() {
                 localStorage.setItem("logged", JSON.stringify(loginInfo[i].username));
                 localStorage.setItem("expirationInfo", JSON.stringify ({
                     expiration: timeExpir,
-                    }));
-
+                }));
+                Swal.fire({
+                    title: '<b class="naranja">¡Bienvenido!</b>',
+                    html: '<b class="naranja">¡Hola de nuevo!</b>',
+                    icon: 'success',
+                    iconColor: '#8B0003',
+                    confirmButtonColor: '#ef8100',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "#";
+                    }
+                });
                 break;
             }
             //En caso contrario, continúa el loop, buscando cuenta...
@@ -105,9 +115,9 @@ async function validateNavLogin() {
             event.preventDefault();
             checkLoginDos.style.color = "#8B0003";
             checkLoginDos.innerHTML = "No tenemos esa cuenta de gomitas";
-            console.log("Sólo abuehackerman puede entrar zi ke zi");
-            console.log("...y JulioQuesadillas ps");
-            console.log("...y maybe adriancho ps");
+            //console.log("Sólo abuehackerman puede entrar zi ke zi");
+            //console.log("...y JulioQuesadillas ps");
+            //console.log("...y maybe adriancho ps");
             break;
         }
     }
@@ -145,8 +155,8 @@ async function validatePcLogin() {
             event.preventDefault();
             checkLoginUno.style.color = "#8B0003";
             checkLoginUno.innerHTML = "No tenemos esa cuenta de gomitas";
-            console.log("Sólo abuehackerman puede entrar zi ke zi");
-            console.log("...y JulioQuesadillas ps");
+            //console.log("Sólo abuehackerman puede entrar zi ke zi");
+            //console.log("...y JulioQuesadillas ps");
             break;
         }
     }
@@ -164,7 +174,7 @@ async function validatePcLogin() {
     .then(response => response.json())
     .then(data=> {
         loginInfo=data;
-        console.log(loginInfo)
+        //console.log(loginInfo)
     }
     )
  }
