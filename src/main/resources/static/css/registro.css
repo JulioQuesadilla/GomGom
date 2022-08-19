@@ -11,3 +11,7 @@
 #boton-registro:hover {
     transform: scale(1.03);
 }
+
+.naranja{
+    color:var(--naranja);
+}
