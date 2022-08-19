@@ -137,7 +137,7 @@ function añadirAlCarrito() {
 function carritoAñade(clave1, imagen1, eleccion1, producto1, precio1) {
     let clave = clave1;
     let imagen = imagen1;
-    let eleccion = eleccion1;
+    let sabores = eleccion1;
     let precio = precio1;
     let producto = producto1;
     let cantidad = 1;
@@ -146,7 +146,7 @@ function carritoAñade(clave1, imagen1, eleccion1, producto1, precio1) {
         let carritos = {};
         let datos =
         {
-            eleccion: eleccion,
+            sabores: sabores,
             imagen: imagen,
             precio: precio,
             cantidad: cantidad,
@@ -170,7 +170,7 @@ function carritoAñade(clave1, imagen1, eleccion1, producto1, precio1) {
         } else { //si no está guardado el elemento en el item
             let datos =
             {
-                eleccion: eleccion,
+                sabores: sabores,
                 imagen: imagen,
                 precio: precio,
                 cantidad: cantidad,
