@@ -42,10 +42,19 @@ function creaTabla(num, url, titulo, cantidad, precio) {
     let cell1 = fila1.appendChild(document.createElement("td"));
     let imagen = cell1.appendChild(document.createElement("img"));
 
-    cell1.setAttribute("rowspan", 2);
+    cell1.setAttribute("rowspan", 4);
     imagen.setAttribute("class", "producto");
     imagen.src = url;
     fila1.insertAdjacentHTML("beforeend", `<td colspan="4" class="titulo-elemento">${titulo}</td>`);
+
+    //Fila sabores
+    let filaSabor = body.insertRow();
+    let cellSabor = filaSabor.appendChild(document.createElement("td"));
+    cellSabor.setAttribute("colspan",6);
+    cellSabor.setAttribute("id",num);
+    cellSabor.innerHTML = "Aqui van los sabores"
+    // filaSabor.style.backgroundColor = "red"
+
 
     // Se crea segunda fila
     let fila2 = body.insertRow();
@@ -82,7 +91,7 @@ function creaTabla(num, url, titulo, cantidad, precio) {
 
 }
 
-function sumarUno(num) {
+function sumarUno(num) { //p**-*,*,*
     let cantidadUno = Number(document.getElementById(`cantidad-${num}`).value);
     document.getElementById(`cantidad-${num}`).value = cantidadUno + 1;
 
@@ -91,7 +100,7 @@ function sumarUno(num) {
     let carritos = JSON.parse(localStorage.getItem("carritos"));
 
     //Modifica cantidad
-    carritos[`producto${num}`].cantidad = ++cantidadUno;
+    carritos[`p${num}`].cantidad = ++cantidadUno;
 
     //Guarda el nuevo carrito en el LocalStorage
     localStorage.setItem("carritos", JSON.stringify(carritos));
@@ -110,7 +119,7 @@ function restarUno(num) {
     let carritos = JSON.parse(localStorage.getItem("carritos"));
 
     //Modifica cantidad
-    carritos[`producto${num}`].cantidad = Number(valor.value);
+    carritos[`p${num}`].cantidad = Number(valor.value);
 
     //Guarda el nuevo carrito en el LocalStorage
     localStorage.setItem("carritos", JSON.stringify(carritos));

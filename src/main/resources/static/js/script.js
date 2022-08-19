@@ -109,7 +109,7 @@ function añadirAlCarrito() {
             indicesSabores[i] = Number(e.id.replace(/((?:imagen))/, ""));
         }
         )
-        carritoAñade(precio, imagenPaquete, indicesSabores, 'Paquete '+precio,precio);
+        carritoAñade(imagenPaquete, indicesSabores, 'Paquete '+precio,precio);
 
         Swal.fire({
             title: '<b class="naranja">¡Se ha añadido al carrito!</b>',
@@ -134,8 +134,9 @@ function añadirAlCarrito() {
 
 
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
-function carritoAñade(clave1, imagen1, eleccion1, producto1, precio1) {
-    let clave = clave1;
+function carritoAñade(imagen1, eleccion1, producto1, precio1) {
+    
+    let clave = `p${precio1}-${eleccion1.toString()}`;
     let imagen = imagen1;
     let sabores = eleccion1;
     let precio = precio1;
@@ -181,10 +182,6 @@ function carritoAñade(clave1, imagen1, eleccion1, producto1, precio1) {
         }
         localStorage.setItem("carritos", JSON.stringify(carritos));
     }
-    // carritos[`${clave}`] = datos;
-    // localStorage.setItem("carritos", JSON.stringify(carritos));
-    //console.log(carritos);
-
 }
 
 
