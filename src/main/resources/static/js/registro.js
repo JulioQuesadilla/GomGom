@@ -39,6 +39,9 @@ async function validarRegistro() {
             validacion.style.color = "green";
             validacion.innerHTML = "¡Casi todo listo para las gomitas!";
             console.log("tan iguales");
+
+
+
         } else {  //de lo contrario, evita el envío del formulario
             event.preventDefault();
 
@@ -112,8 +115,19 @@ async function postUser() {
     let correo = formularioRegistro["validarCorreo"].value;
     let contraseña = formularioRegistro["validarContraUno"].value;
     if (nombre != "" && apellido != "" && usuario != "" && domicilio != "" && correo != "" && contraseña != "") {
-    event.preventDefault();
-    fetchInfo("https://gomgominolas.herokuapp.com/api/Users");
+        Swal.fire({
+            title: '<b class="naranja">¡Bienvenido!</b>',
+            html: '<b class="naranja">¡Ya estás registrado!</b>',
+            icon: 'success',
+            iconColor: '#8B0003',
+            confirmButtonColor: '#ef8100',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "registro_login.html";
+            }
+        });
+        //event.preventDefault();
+        fetchInfo("https://gomgominolas.herokuapp.com/api/Users");
     }
     else {
         console.log("no cumple");
@@ -151,45 +165,45 @@ function fetchInfo(url) {
         .then(responseTwo => responseTwo.json())
         .then(newJson => console.log(newJson))
         .catch(err => console.log(err))
-        //.finally(formularioRegistro.submit());
+    //.finally(formularioRegistro.submit());
 
-        //setTimeout((window.location.href="registro_login.html"), 3500)
-        
-    }
-    
-    async function getUsers() {
-        //Se hace un GET para conseguir el id con el que fue guardado el usuario
+    //setTimeout((window.location.href="registro_login.html"), 3500)
+
+}
+
+async function getUsers() {
+    //Se hace un GET para conseguir el id con el que fue guardado el usuario
     fetch('https://gomgominolas.herokuapp.com/api/Users')
-    .then(response => response.json())
-    .then(array => {
-        
-        array.forEach(objeto => {
-            if (objeto.nombre = nombre){
-                idUsuario = objeto.idUsuario;
-            }
-        })
+        .then(response => response.json())
+        .then(array => {
 
-        alert("Se hizo el GET");
-    });
+            array.forEach(objeto => {
+                if (objeto.nombre = nombre) {
+                    idUsuario = objeto.idUsuario;
+                }
+            })
+
+            alert("Se hizo el GET");
+        });
+}
+
+async function postClients(idUsuario) {
+    //Se hace el post a clientes
+    let datosCliente = {
+        "role": {
+            "idRoles": 3
+        },
+        "user": {
+            "idUsuario": idUsuario//`${idUsuario}`
+        }
     }
 
-    async function postClients(idUsuario) {
-        //Se hace el post a clientes
-        let datosCliente = {
-            "role": {
-                "idRoles": 3
-            },
-            "user": {
-                "idUsuario": idUsuario//`${idUsuario}`
-            }
-        }
+    fetch('https://gomgominolas.herokuapp.com/api/Clients', {
+        method: "POST",
+        body: JSON.stringify(datosCliente),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+        .then(response => response.json())
+        .then(json => console.log(json))
 
-        fetch('https://gomgominolas.herokuapp.com/api/Clients', {
-            method: "POST",
-            body: JSON.stringify(datosCliente),
-            headers: { "Content-type": "application/json; charset=UTF-8" }
-        })
-            .then(response => response.json())
-            .then(json => console.log(json))
-        
 }
