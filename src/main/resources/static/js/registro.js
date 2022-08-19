@@ -13,6 +13,9 @@ y se le añade un event listener, que al dar click
 comienza la función asíncrona validarRegistro*/
 let botonRegistro = document.getElementById("boton-registro");
 botonRegistro.addEventListener("click", validarRegistro);
+//Se localiza formulario
+let formularioRegistro = document.forms["registroFormulario"];
+
 
 /**
  * La función asíncrona validarRegistro se enfoca en ver que las contraseñas
@@ -22,7 +25,7 @@ async function validarRegistro() {
     /*Se guarda el formulario de registro
     y los valores en los inputs de contraseñas.
     */
-    let formularioRegistro = document.forms["registroFormulario"];
+    //let formularioRegistro = document.forms["registroFormulario"];
     let contraUno = formularioRegistro["validarContraUno"].value;
     let contraDos = formularioRegistro["validarContraDos"].value;
     /*La variable de validación recuerda dónde se encuentra un párrafo para añadir información
@@ -82,6 +85,7 @@ async function validarRegistro() {
     let validationUser = document.getElementById("validaUserTxt");
     let regexUser = new RegExp(/^\S+\w+\S$/);
     if (user_propuesto.length > 18) {
+        event.preventDefault();
         validationUser.style.color= "#8B0003";
         validationUser.innerHTML = "Intentemos un nombre de usuario más corto, mejor..."
     }
@@ -91,10 +95,50 @@ async function validarRegistro() {
             validationUser.innerHTML = `¡Gran nombre!: ${user_propuesto}`;
         }
         else {
+            event.preventDefault();
             validationUser.style.color= "#8B0003";
             validationUser.innerHTML = "Mejor un username sin espacios, por favor de Gomita"
         }
         }
+        
+    }
+    //si ****todo cool****, se postea la info a DB
 
-
+async function postUser() {
+    fetchInfo("https://gomgominolas.herokuapp.com/api/Users");
 }
+
+function fetchInfo(url) {
+    //Se lo calizan campos de formulario
+    let nombre = formularioRegistro["validarNombre"].value;
+    let apellido = formularioRegistro["validarApellido"].value;
+    let usuario = formularioRegistro["validarUsuario"].value;
+    let domicilio = formularioRegistro["validarDomicilio"].value;
+    let correo = formularioRegistro["validarCorreo"].value;
+    let contraseña = formularioRegistro["validarContraUno"].value;
+
+    window.alert(`
+    ${nombre},
+    ${apellido},
+    ${usuario},
+    ${domicilio},
+    ${correo},
+    ${contraseña}`);
+    /*fetch(url,{
+        'method' : 'POST',
+        body : JSON.stringify({
+        "nombre": `${nombre}`,
+        "apellido": `${apellido}`,
+        "domicilio": `${domicilio}`,
+        "username": ${usuario},
+        "correo": ${correo},
+        "contraseña": `${contraseña}`
+    }),
+        header: {
+            'content-type' : 'application/JSON'
+        }})
+        .then(data => console.log(data))
+        //.then(data => alert(data))
+        .catch(e => console.log(e));*/
+
+    }
