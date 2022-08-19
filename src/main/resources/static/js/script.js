@@ -62,9 +62,20 @@ function cargar(unObjeto) {
 const listaCursos = document.querySelector("#contenedorPrincipal")
 
 function añadirAlCarrito(){
+    alert("se hizo click");
     saboresElegidos = document.querySelectorAll(".seleccionado");
     saboresElegidos.forEach(
         id.saboresElegidos
+        //Nombre
+        //Precio del paquete
+
+        //Filtros
+                //Si no hay seleccionados: precio o sabores.
+
+        //Al localStorage
+
+        //Alert: "paquete agregado al carrito: ¿Seguir comprando O ir al carrito?"
+        //"Resetear la pagina" = deseleccinar elementos y precios. 
     )
 }
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
