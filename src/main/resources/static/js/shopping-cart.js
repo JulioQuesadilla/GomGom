@@ -194,24 +194,24 @@ let puntosEntregas = Array.from(document.getElementsByClassName("puntosEntregas-
 let entregas = document.getElementById("puntosEntregas");
 
 
-envios.forEach((e)=>{ //Para cada elemento de las opciones de envíos
-    e.addEventListener("click",()=>{ //Se añade un eventListener
+envios.forEach((e) => { //Para cada elemento de las opciones de envíos
+    e.addEventListener("click", () => { //Se añade un eventListener
         envios.forEach(i => { //En donde para cada elemnto de las opciones de envíos
-    
+
             i.querySelector(".dot").classList.remove("selected"); //Se elimina la clase selected al elemento dentro de cada opción cuya clase es dot
 
         });
         e.querySelector(".dot").classList.add("selected"); //Luego, se añade la clase selected al elemento target del click
         if (e.firstElementChild.id == "entregas") entregas.classList.remove("hide"); //Se le elimina la clase hide i el id es entregas
-         else {
+        else {
             puntosEntregas.forEach(element => element.querySelector(".dot").classList.remove("selected")); //Se eliminan los dots
             entregas.classList.add("hide");//De lo contrario, se le agrega.
-        } 
+        }
     });
 });
 
-pagos.forEach(e=>{
-    e.addEventListener("click",()=>{
+pagos.forEach(e => {
+    e.addEventListener("click", () => {
         pagos.forEach(i => {
             i.querySelector(".dot").classList.remove("selected");
         });
@@ -219,11 +219,76 @@ pagos.forEach(e=>{
     });
 });
 
-puntosEntregas.forEach(e=>{
-    e.addEventListener("click",()=>{
+puntosEntregas.forEach(e => {
+    e.addEventListener("click", () => {
         puntosEntregas.forEach(i => {
             i.querySelector(".dot").classList.remove("selected");
         });
         e.querySelector(".dot").classList.add("selected");
     });
 });
+
+/* Evento POST */
+
+function enviarPedido() {
+    let indiceSabores = [1, 2, 3, 4];
+    let sabores = []
+    let cantidades = []
+    let cantidad = 3;
+    for (let index = 0; index < indiceSabores.length; index++) {
+
+        let gomita = {
+            "idGomita": indiceSabores[index]
+        }
+        sabores.push(gomita);
+    }
+
+    /* let paquetes = document.querySelectorAll(".cantidad");
+    paquetes.forEach(e =>{
+       let indice =  e.value;
+
+    }) */
+
+    let precio = document.getElementById("totales").innerHTML;
+    let precioFinal = Number(precio.replace(/((?:\$))/, "").replace(/((?: pesos))/, ""));
+
+    if (document.getElementById("checkbox").classList.contains("selected")) conOsinChamoy = 2;
+    else conOsinChamoy = 1;
+
+
+    for (let i = 1; i <= cantidad; i++) {
+        let paquete = {
+            "idPaquete": 6
+        }
+
+        cantidades.push(paquete)
+    }
+
+    let fecha = new Date();
+
+    let mes;
+    if (fecha.getMonth()>=10){
+        mes = fecha.getMonth();
+    } else {
+        mes = `0${fecha.getMonth()}`
+    }
+
+    let datosPedido = {
+        "gummies": sabores,//Esto es un array
+        "pack": cantidades, //Esto es un array
+        "fecha": `${fecha.getFullYear()}-${mes}-${fecha.getDate()}`,
+        "ventaTotal": precioFinal,
+        "chamoy": {
+            "idChamoy": conOsinChamoy  //1 = no, 2 = sí.
+        }
+    }
+
+    fetch('https://gomgominolas.herokuapp.com/api/Orders', {
+        method: "POST",
+        body: JSON.stringify(datosPedido),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .catch(err => console.log(err));
+}
