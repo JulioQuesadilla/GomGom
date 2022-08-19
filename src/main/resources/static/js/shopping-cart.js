@@ -241,16 +241,31 @@ puntosEntregas.forEach(e => {
 /* Evento POST */
 
 function enviarPedido() {
-    let indiceSabores = [1, 2, 3, 4];
-    let sabores = []
+    //Se trae el localStorage
+    let CARRITO = JSON.parse(localStorage.getItem("carritos"));
     let cantidades = []
-    let cantidad = 3;
-    for (let index = 0; index < indiceSabores.length; index++) {
+    let almacenarSabores = []
+    for (const key in CARRITO) {
+        //se agregan las cantidades a un arrayresApi
+        cantidades.push(CARRITO[key].cantidad) //de todos los paquetes
+        almacenarSabores.push(CARRITO[key].sabores) //Un array de arrays
+
+    }
+    
+    let indiceSabores = almacenarSabores[0];//de un paquete
+    let cantidad = cantidades[0]; //Solo se envia el primer paquete
+
+    /* Variables para enviar a la api */
+    let saboresApi = []
+    let repeticionesApi = []
+    
+    //se guardan los objetos en el array de sabores
+    for (let i = 0; i < indiceSabores.length; i++) {
 
         let gomita = {
-            "idGomita": indiceSabores[index]
+            "idGomita": indiceSabores[i]
         }
-        sabores.push(gomita);
+        saboresApi.push(gomita);
     }
 
     /* let paquetes = document.querySelectorAll(".cantidad");
@@ -271,7 +286,7 @@ function enviarPedido() {
             "idPaquete": 6
         }
 
-        cantidades.push(paquete)
+        repeticionesApi.push(paquete)
     }
 
     let fecha = new Date();
@@ -284,8 +299,8 @@ function enviarPedido() {
     }
 
     let datosPedido = {
-        "gummies": sabores,//Esto es un array
-        "pack": cantidades, //Esto es un array
+        "gummies": saboresApi,//Esto es un array
+        "pack": repeticionesApi, //Esto es un array
         "fecha": `${fecha.getFullYear()}-${mes}-${fecha.getDate()}`,
         "ventaTotal": precioFinal,
         "chamoy": {
@@ -307,6 +322,7 @@ function enviarPedido() {
 /**
  * Esta función convierte los id sabores a nombres de sabores
  */
+/*
 nombreSabores =[]
 function traerSabores(otroNumero){
     let unNumero = otroNumero;
@@ -326,3 +342,4 @@ for (let index = 0; index < array.length; index++) {
     nombreSabores.push(e.nombre)
 }
 traerSabores()
+*/
