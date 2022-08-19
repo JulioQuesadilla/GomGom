@@ -61,6 +61,12 @@ function cargar(unObjeto) {
 
 const listaCursos = document.querySelector("#contenedorPrincipal")
 
+function añadirAlCarrito(){
+    saboresElegidos = document.querySelectorAll(".seleccionado");
+    saboresElegidos.forEach(
+        id.saboresElegidos
+    )
+}
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
 /* (function () {
     listaCursos.addEventListener('click', (e) => {
