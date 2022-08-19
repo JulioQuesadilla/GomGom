@@ -15,7 +15,7 @@ let botonRegistro = document.getElementById("boton-registro");
 botonRegistro.addEventListener("click", validarRegistro);
 //Se localiza formulario
 let formularioRegistro = document.forms["registroFormulario"];
-
+console.log("ok");
 
 /**
  * La función asíncrona validarRegistro se enfoca en ver que las contraseñas
@@ -105,7 +105,19 @@ async function validarRegistro() {
 //si ****todo cool****, se postea la info a DB
 
 async function postUser() {
+    let nombre = formularioRegistro["validarNombre"].value;
+    let apellido = formularioRegistro["validarApellido"].value;
+    let usuario = formularioRegistro["validarUsuario"].value;
+    let domicilio = formularioRegistro["validarDomicilio"].value;
+    let correo = formularioRegistro["validarCorreo"].value;
+    let contraseña = formularioRegistro["validarContraUno"].value;
+    if (nombre != "" && apellido != "" && usuario != "" && domicilio != "" && correo != "" && contraseña != "") {
+    event.preventDefault();
     fetchInfo("https://gomgominolas.herokuapp.com/api/Users");
+    }
+    else {
+        console.log("no cumple");
+    }
 }
 
 function fetchInfo(url) {
@@ -134,30 +146,41 @@ function fetchInfo(url) {
         headers: { "Content-type": "application/json; charset=UTF-8" }
     })
         .then(response => response.json())
-        .then(json => console.log(json))
-        .catch(err => console.log(err));
+        .then(json => idUsuario = json.idUsuario)
+        .then(userNum => postClients(userNum))
+        .then(responseTwo => responseTwo.json())
+        .then(newJson => console.log(newJson))
+        .catch(err => console.log(err))
+        //.finally(formularioRegistro.submit());
 
-    //Se hace un GET para conseguir el id con el que fue guardado el usuario
+        //setTimeout((window.location.href="registro_login.html"), 3500)
+        
+    }
+    
+    async function getUsers() {
+        //Se hace un GET para conseguir el id con el que fue guardado el usuario
     fetch('https://gomgominolas.herokuapp.com/api/Users')
-        .then(response => response.json())
-        .then(array => {
-            
-            array.forEach(objeto => {
-                if (objeto.nombre = nombre){
-                    idUsuario = objeto.idUsuario;
-                }
-            })
+    .then(response => response.json())
+    .then(array => {
+        
+        array.forEach(objeto => {
+            if (objeto.nombre = nombre){
+                idUsuario = objeto.idUsuario;
+            }
+        })
 
-            alert("Se hizo el GET");
-        });
+        alert("Se hizo el GET");
+    });
+    }
 
+    async function postClients(idUsuario) {
         //Se hace el post a clientes
         let datosCliente = {
             "role": {
                 "idRoles": 3
             },
             "user": {
-                "idUsuario": `${idUsuario}`
+                "idUsuario": idUsuario//`${idUsuario}`
             }
         }
 
@@ -168,4 +191,5 @@ function fetchInfo(url) {
         })
             .then(response => response.json())
             .then(json => console.log(json))
+        
 }
