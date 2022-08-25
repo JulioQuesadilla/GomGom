@@ -73,7 +73,7 @@ function cargar(unObjeto) {
 const listaCursos = document.querySelector("#contenedorPrincipal")
 
 function añadirAlCarrito() {
-    
+
     if (contador < 2 || (SwitchCosto == 0)) {
         Swal.fire({
             title: '<b class="naranja">¡Falta seleccionar!</b>',
@@ -121,12 +121,16 @@ function añadirAlCarrito() {
             default: break;
         }
         let indicesSabores = [];
+        let nombreSabores = []
         saboresElegidos = document.querySelectorAll(".seleccionado");
         saboresElegidos.forEach((e, i) => {
             indicesSabores[i] = Number(e.id.replace(/((?:imagen))/, ""));
+            nombreSabores[i] = e.nextElementSibling.innerHTML;
         }
+        
         )
-        carritoAñade(imagenPaquete, indicesSabores, 'Paquete '+precio,precio, idPaquete);
+
+        carritoAñade(imagenPaquete, indicesSabores, nombreSabores, 'Paquete ' + precio, precio, idPaquete);
 
         Swal.fire({
             title: '<b class="naranja">¡Se ha añadido al carrito!</b>',
@@ -150,13 +154,17 @@ function añadirAlCarrito() {
 }
 
 
+
+
+
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
-function carritoAñade(imagen1, eleccion1, producto1, precio1, idPack) {
+function carritoAñade(imagen1, eleccion1, nombre1, producto1, precio1, idPack) {
 
     let clave = `p${precio1}-${eleccion1.toString()}`;
     let idpaquete = idPack;
     let imagen = imagen1;
     let sabores = eleccion1;
+    let nomSabores = nombre1;
     let precio = precio1;
     let producto = producto1;
     let cantidad = 1;
@@ -165,8 +173,9 @@ function carritoAñade(imagen1, eleccion1, producto1, precio1, idPack) {
         let carritos = {};
         let datos =
         {
-            idPack : idPack,
+            idPack: idPack,
             sabores: sabores, //saboresId
+            nomSabores: nomSabores,
             imagen: imagen,
             precio: precio,
             cantidad: cantidad,
@@ -190,12 +199,13 @@ function carritoAñade(imagen1, eleccion1, producto1, precio1, idPack) {
         } else { //si no está guardado el elemento en el item
             let datos =
             {
-                idPack : idPack,
+                idPack: idPack,
                 sabores: sabores,
+                nomSabores: nomSabores,
                 imagen: imagen,
                 precio: precio,
                 cantidad: cantidad,
-                producto:producto
+                producto: producto
             };
 
             carritos[`${clave}`] = datos;
@@ -235,7 +245,7 @@ function setBackgrounImage(valor) {
             imagen[valor].classList.remove("seleccionado")
         } else {
             imagen[valor].classList.add("seleccionado")
-            const paquete = localStorage.setItem(imagen, localStorage.getItem(imagen));
+            //const paquete = localStorage.setItem(imagen, localStorage.getItem(imagen)); ¿Qué hace esta línea? 🤔
             contador = contador + 1;
         }
     } else {

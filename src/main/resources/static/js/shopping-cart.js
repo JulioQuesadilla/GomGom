@@ -32,7 +32,7 @@ function cargarFetch(url) {
  * @param {number} cantidad de elementos del item
  * @param {number} precio unitario del item
  */
-function creaTabla(num, url, titulo, cantidad, precio) {
+function creaTabla(num, url, titulo, cantidad, precio, arraySabores) {
     // Se crea tabla y cuerpo de tabla
     document.getElementById("items").appendChild(document.createElement("table")).id = `producto${num}`;
     let body = document.getElementById(`producto${num}`).appendChild(document.createElement("tbody"));
@@ -52,7 +52,8 @@ function creaTabla(num, url, titulo, cantidad, precio) {
     let cellSabor = filaSabor.appendChild(document.createElement("td"));
     cellSabor.setAttribute("colspan",6);
     cellSabor.setAttribute("id",num);
-    cellSabor.innerHTML = "Aqui van los sabores"
+    cellSabor.innerHTML = arraySabores.join(", ");
+    cellSabor.setAttribute("class", "textSabor");
     // AQUI SE JALAN LOS DATOS DESDE EL LOCALSTORAGE
     // filaSabor.style.backgroundColor = "red"
 
@@ -153,7 +154,7 @@ function borrarUno(num) {
 function cargarLocal() {
     carrito = JSON.parse(localStorage.getItem("carritos"));
     for (const producto in carrito)
-        creaTabla(producto.replace(/((?:producto0*))/, ""), carrito[producto].imagen, carrito[producto].producto, carrito[producto].cantidad, carrito[producto].precio);
+        creaTabla(producto.replace(/((?:producto0*))/, ""), carrito[producto].imagen, carrito[producto].producto, carrito[producto].cantidad, carrito[producto].precio, carrito[producto].nomSabores);
 }
 
 function calculaTotal() {

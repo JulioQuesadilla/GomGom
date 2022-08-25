@@ -222,6 +222,10 @@ input[type="radio"] {
     width: auto;
 }
 
+.textSabor{
+    font-size: small;
+}
+
 
 /* * * * * * * * * Responsive Design * * * * * * * * * * * * */
 @media screen and (max-width: 414px){/* Versión iPhone iPhone 5*/ 
