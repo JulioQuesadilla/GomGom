@@ -245,7 +245,7 @@ function setBackgrounImage(valor) {
             imagen[valor].classList.remove("seleccionado")
         } else {
             imagen[valor].classList.add("seleccionado")
-            const paquete = localStorage.setItem(imagen, localStorage.getItem(imagen));
+            //const paquete = localStorage.setItem(imagen, localStorage.getItem(imagen)); ¿Qué hace esta línea? 🤔
             contador = contador + 1;
         }
     } else {
