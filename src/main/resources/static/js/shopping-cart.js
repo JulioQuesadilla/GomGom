@@ -313,7 +313,12 @@ function enviarPedido() {
             },
         })
 
-        console.log(`Tu pedido es el ${arrayIdPedidos.join("-")}`)
+        console.log(`Tu pedido es el ${arrayIdPedidos.join("-")}`);
+
+        //Se debe borrar todo
+
+
+
     }, 400);
     
 }
