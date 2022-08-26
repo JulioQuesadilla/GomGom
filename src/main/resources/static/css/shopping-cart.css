@@ -226,6 +226,13 @@ input[type="radio"] {
     font-size: small;
 }
 
+/* Estilos para sweetAlert */
+.swal2-styled.swal2-confirm.swalBtnColor {
+    transition-duration: .6s;
+    background: #FCDB7E;
+    color: #8B0003;
+    font-family: 'Catamaran', sans-serif;
+  }
 
 /* * * * * * * * * Responsive Design * * * * * * * * * * * * */
 @media screen and (max-width: 414px){/* Versión iPhone iPhone 5*/ 
