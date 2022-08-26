@@ -161,7 +161,7 @@ function añadirAlCarrito() {
 // Función que guarda los elementos seleccionados en el LocalStorage para llevarlos al Carrito
 function carritoAñade(imagen1, eleccion1, nombre1, producto1, precio1, idPack, contador1) {
 
-    let clave = `p${precio1}-${eleccion1.toString()}`;
+    let clave = `${precio1}_${eleccion1.join("_")}`;
     let idpaquete = idPack;
     let contador = contador1;
     let imagen = imagen1;
@@ -170,6 +170,7 @@ function carritoAñade(imagen1, eleccion1, nombre1, producto1, precio1, idPack, 
     let precio = precio1;
     let producto = producto1;
     let cantidad = 1;
+    
     //Si no hay algo guardado en el LocalStorage:
     if (localStorage.getItem("carritos") == null) {
         let carritos = {};
@@ -249,7 +250,7 @@ function setBackgrounImage(valor) {
             imagen[valor].classList.remove("seleccionado")
         } else {
             imagen[valor].classList.add("seleccionado")
-            const paquete = localStorage.setItem(imagen, localStorage.getItem(imagen));
+            //const paquete = localStorage.setItem(imagen, localStorage.getItem(imagen));
             contador = contador + 1;
         }
     } else {
