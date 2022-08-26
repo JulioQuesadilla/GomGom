@@ -173,7 +173,7 @@ function carritoAñade(imagen1, eleccion1, nombre1, producto1, precio1, idPack) 
         let carritos = {};
         let datos =
         {
-            idPack: idPack,
+            idPack: idpaquete,
             sabores: sabores, //saboresId
             nomSabores: nomSabores,
             imagen: imagen,

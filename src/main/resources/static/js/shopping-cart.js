@@ -11,19 +11,6 @@ cargarLocal();
 calculaTotal();
 
 /* * * * * * * * *  Funciones  * * * * * * * * * * * */
-
-function cargarFetch(url) {
-    fetch(url)
-        .then(response => response.json())
-        .then(datos => {
-            carrito = datos.data[0].carrito;
-            carrito.forEach(producto => {
-                creaTabla(producto.idproducto, producto.imagen, producto.articulo, producto.cantidad, producto.preciounitario);
-            });
-        });
-
-}
-
 /**
  * 
  * @param {number} num de item iniciando desde 1
@@ -54,8 +41,6 @@ function creaTabla(num, url, titulo, cantidad, precio, arraySabores) {
     cellSabor.setAttribute("id",num);
     cellSabor.innerHTML = arraySabores.join(", ");
     cellSabor.setAttribute("class", "textSabor");
-    // AQUI SE JALAN LOS DATOS DESDE EL LOCALSTORAGE
-    // filaSabor.style.backgroundColor = "red"
 
 
     // Se crea segunda fila
@@ -68,8 +53,8 @@ function creaTabla(num, url, titulo, cantidad, precio, arraySabores) {
          <img class="botones" id="btn-mas-${num}" src="https://i.ibb.co/F7nPFbK/pandita-verde-antonio.png" alt="pandita-verde-antonio">`
     );
 
-    document.getElementById(`btn-mas-${num}`).setAttribute("onclick", `sumarUno(${num})`);
-    document.getElementById(`btn-menos-${num}`).setAttribute("onclick", `restarUno(${num})`);
+    document.getElementById(`btn-mas-${num}`).setAttribute("onclick", `sumarUno('${num}')`);
+    document.getElementById(`btn-menos-${num}`).setAttribute("onclick", `restarUno('${num}')`);
 
     fila2.cells[0].colSpan = 2;
     //se asigna valor de cantidad
@@ -89,7 +74,7 @@ function creaTabla(num, url, titulo, cantidad, precio, arraySabores) {
     </svg>
   </button>`);
 
-    document.getElementById(`borrar-${num}`).setAttribute("onclick", `borrarUno(${num})`);
+    document.getElementById(`borrar-${num}`).setAttribute("onclick", `borrarUno('${num}')`);
 
 }
 
@@ -102,7 +87,7 @@ function sumarUno(num) { //p**-*,*,*
     let carritos = JSON.parse(localStorage.getItem("carritos"));
 
     //Modifica cantidad
-    carritos[`p${num}`].cantidad = ++cantidadUno;
+    carritos[`${num}`].cantidad = ++cantidadUno;
 
     //Guarda el nuevo carrito en el LocalStorage
     localStorage.setItem("carritos", JSON.stringify(carritos));
@@ -121,7 +106,7 @@ function restarUno(num) {
     let carritos = JSON.parse(localStorage.getItem("carritos"));
 
     //Modifica cantidad
-    carritos[`p${num}`].cantidad = Number(valor.value);
+    carritos[`${num}`].cantidad = Number(valor.value);
 
     //Guarda el nuevo carrito en el LocalStorage
     localStorage.setItem("carritos", JSON.stringify(carritos));
@@ -141,7 +126,7 @@ function borrarUno(num) {
     let carritos = JSON.parse(localStorage.getItem("carritos"));
 
     // elimina el producto
-    delete carritos[producto.id];
+    delete carritos[num];
 
     //Guarda el nuevo carrito en el LocalStorage
     localStorage.setItem("carritos", JSON.stringify(carritos));
@@ -154,7 +139,7 @@ function borrarUno(num) {
 function cargarLocal() {
     carrito = JSON.parse(localStorage.getItem("carritos"));
     for (const producto in carrito)
-        creaTabla(producto.replace(/((?:producto0*))/, ""), carrito[producto].imagen, carrito[producto].producto, carrito[producto].cantidad, carrito[producto].precio, carrito[producto].nomSabores);
+        creaTabla(producto, carrito[producto].imagen, carrito[producto].producto, carrito[producto].cantidad, carrito[producto].precio, carrito[producto].nomSabores);
 }
 
 function calculaTotal() {
@@ -240,107 +225,95 @@ puntosEntregas.forEach(e => {
 });
 
 /* Evento POST */
-
 function enviarPedido() {
+    let arrayIdPedidos = [];
     //Se trae el localStorage
     let CARRITO = JSON.parse(localStorage.getItem("carritos"));
-    let cantidades = []
-    let almacenarSabores = []
-    for (const key in CARRITO) {
-        //se agregan las cantidades a un arrayresApi
-        cantidades.push(CARRITO[key].cantidad) //de todos los paquetes
-        almacenarSabores.push(CARRITO[key].sabores) //Un array de arrays
 
-    }
+    //Se inicia el método post por cada paquete en CARRITO
     
-    let indiceSabores = almacenarSabores[0];//de un paquete
-    let cantidad = cantidades[0]; //Solo se envia el primer paquete
+    for (const paqueteStorage in CARRITO) {
+    //se agrega la info a las variables por cada paquete
 
-    /* Variables para enviar a la api */
-    let saboresApi = []
-    let repeticionesApi = []
-    
-    //se guardan los objetos en el array de sabores
-    for (let i = 0; i < indiceSabores.length; i++) {
+        
+        //Variables temporales
+         let cantidad = CARRITO[paqueteStorage].cantidad; //Un número
+        let indiceSabores = CARRITO[paqueteStorage].sabores; //Un array
 
-        let gomita = {
-            "idGomita": indiceSabores[i]
-        }
-        saboresApi.push(gomita);
-    }
+        // * * * * * * * * * * *  Variables para enviar a la api  * * * * * * * * * * * * *
+         let precio = document.getElementById("totales").innerHTML;
+         let precioFinal = Number(precio.replace(/((?:\$))/, "").replace(/((?: pesos))/, ""));
+ 
+         if (document.getElementById("checkbox").classList.contains("selected")) conOsinChamoy = 2;
+         else conOsinChamoy = 1;
+ 
+         let fecha = new Date();
+ 
+         let mes;
+         if (fecha.getMonth() >= 10) {
+             mes = fecha.getMonth();
+         } else {
+             mes = `0${fecha.getMonth()}`
+         }
 
-    /* let paquetes = document.querySelectorAll(".cantidad");
-    paquetes.forEach(e =>{
-       let indice =  e.value;
+         // * * * * * Variables que tienen "objetos" dentro * * * 
+        let saboresApi = []
+        let repeticionesApi = []
+ 
+        //se guardan los objetos en el array de sabores
+        for (let i = 0; i < indiceSabores.length; i++) {
 
-    }) */
-
-    let precio = document.getElementById("totales").innerHTML;
-    let precioFinal = Number(precio.replace(/((?:\$))/, "").replace(/((?: pesos))/, ""));
-
-    if (document.getElementById("checkbox").classList.contains("selected")) conOsinChamoy = 2;
-    else conOsinChamoy = 1;
-
-
-    for (let i = 1; i <= cantidad; i++) {
-        let paquete = {
-            "idPaquete": 6
+            let gomita = {
+                "idGomita": indiceSabores[i]
+            }
+            saboresApi.push(gomita);
         }
 
-        repeticionesApi.push(paquete)
-    }
+        for (let i = 1; i <= cantidad; i++) {
+            let paquete = {
+                "idPaquete": 6
+            }
 
-    let fecha = new Date();
-
-    let mes;
-    if (fecha.getMonth()>=10){
-        mes = fecha.getMonth();
-    } else {
-        mes = `0${fecha.getMonth()}`
-    }
-
-    let datosPedido = {
-        "gummies": saboresApi,//Esto es un array
-        "pack": repeticionesApi, //Esto es un array
-        "fecha": `${fecha.getFullYear()}-${mes}-${fecha.getDate()}`,
-        "ventaTotal": precioFinal,
-        "chamoy": {
-            "idChamoy": conOsinChamoy  //1 = no, 2 = sí.
+            repeticionesApi.push(paquete)
         }
+
+        // Se vaían las variables en el "body"
+        let datosPedido = {
+            "gummies": saboresApi,//Esto es un array
+            "pack": repeticionesApi, //Esto es un array
+            "fecha": `${fecha.getFullYear()}-${mes}-${fecha.getDate()}`,
+            "ventaTotal": precioFinal,
+            "chamoy": {
+                "idChamoy": conOsinChamoy  //1 = no, 2 = sí.
+            }
+        }
+
+        fetch('https://gomgominolas.herokuapp.com/api/Orders', {
+            method: "POST",
+            body: JSON.stringify(datosPedido),
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        })
+            .then(response => response.json())
+            .then(json => {
+                console.log(`Tu pedido tiene el id ${json.idPedido}`);
+                arrayIdPedidos.push(json.idPedido);
+            })
+            .catch(err => console.log(err));
     }
 
-    fetch('https://gomgominolas.herokuapp.com/api/Orders', {
-        method: "POST",
-        body: JSON.stringify(datosPedido),
-        headers: { "Content-type": "application/json; charset=UTF-8" }
-    })
-        .then(response => response.json())
-        .then(json => console.log(json))
-        .catch(err => console.log(err));
-}
+    setTimeout(()=>{
 
+        Swal.fire({
+            title: '<b style="color: #8B0003">Recibimos tu pedido</b>',
+            html: `<span  style="color: #ef8100">Tu compra tiene el id: ${arrayIdPedidos.join("-")} </span>`,
+            icon: 'success',
+            iconColor: '#8B0003',
+            customClass: {
+                confirmButton: 'swalBtnColor'
+            },
+        })
 
-/**
- * Esta función convierte los id sabores a nombres de sabores
- */
-/*
-nombreSabores =[]
-function traerSabores(otroNumero){
-    let unNumero = otroNumero;
-    let SABORES = JSON.parse(localStorage.getItem("datosSabores"));
-    SABORES.forEach(e =>{
-    if (e.idGomita == unNumero ) //Esta dentro de un array en clave "sabores" de carritos
-       console.log( e.idGomita )
-       console.log( e.nombre )
-       //Falta que lo guarde en un array
-       //Falta que unNumero sea el array
-       //Lo guarde en el localStorage de carritos
-    });
-}
-for (let index = 0; index < array.length; index++) {
-    const element = array[index];
+        console.log(`Tu pedido es el ${arrayIdPedidos.join("-")}`)
+    }, 400);
     
-    nombreSabores.push(e.nombre)
 }
-traerSabores()
-*/
