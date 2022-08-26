@@ -302,7 +302,18 @@ function enviarPedido() {
     }
 
     setTimeout(()=>{
+
+        Swal.fire({
+            title: '<b style="color: #8B0003">Recibimos tu pedido</b>',
+            html: `<span  style="color: #ef8100">Tu compra tiene el id: ${arrayIdPedidos.join("-")} </span>`,
+            icon: 'success',
+            iconColor: '#8B0003',
+            customClass: {
+                confirmButton: 'swalBtnColor'
+            },
+        })
+
         console.log(`Tu pedido es el ${arrayIdPedidos.join("-")}`)
-    }, 1000);
+    }, 400);
     
 }
