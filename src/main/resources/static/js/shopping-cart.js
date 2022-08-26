@@ -11,19 +11,6 @@ cargarLocal();
 calculaTotal();
 
 /* * * * * * * * *  Funciones  * * * * * * * * * * * */
-
-function cargarFetch(url) {
-    fetch(url)
-        .then(response => response.json())
-        .then(datos => {
-            carrito = datos.data[0].carrito;
-            carrito.forEach(producto => {
-                creaTabla(producto.idproducto, producto.imagen, producto.articulo, producto.cantidad, producto.preciounitario);
-            });
-        });
-
-}
-
 /**
  * 
  * @param {number} num de item iniciando desde 1
@@ -54,8 +41,6 @@ function creaTabla(num, url, titulo, cantidad, precio, arraySabores) {
     cellSabor.setAttribute("id",num);
     cellSabor.innerHTML = arraySabores.join(", ");
     cellSabor.setAttribute("class", "textSabor");
-    // AQUI SE JALAN LOS DATOS DESDE EL LOCALSTORAGE
-    // filaSabor.style.backgroundColor = "red"
 
 
     // Se crea segunda fila
@@ -68,8 +53,8 @@ function creaTabla(num, url, titulo, cantidad, precio, arraySabores) {
          <img class="botones" id="btn-mas-${num}" src="https://i.ibb.co/F7nPFbK/pandita-verde-antonio.png" alt="pandita-verde-antonio">`
     );
 
-    document.getElementById(`btn-mas-${num}`).setAttribute("onclick", `sumarUno(${num})`);
-    document.getElementById(`btn-menos-${num}`).setAttribute("onclick", `restarUno(${num})`);
+    document.getElementById(`btn-mas-${num}`).setAttribute("onclick", `sumarUno('${num}')`);
+    document.getElementById(`btn-menos-${num}`).setAttribute("onclick", `restarUno('${num}')`);
 
     fila2.cells[0].colSpan = 2;
     //se asigna valor de cantidad
@@ -89,7 +74,7 @@ function creaTabla(num, url, titulo, cantidad, precio, arraySabores) {
     </svg>
   </button>`);
 
-    document.getElementById(`borrar-${num}`).setAttribute("onclick", `borrarUno(${num})`);
+    document.getElementById(`borrar-${num}`).setAttribute("onclick", `borrarUno('${num}')`);
 
 }
 
@@ -102,7 +87,7 @@ function sumarUno(num) { //p**-*,*,*
     let carritos = JSON.parse(localStorage.getItem("carritos"));
 
     //Modifica cantidad
-    carritos[`p${num}`].cantidad = ++cantidadUno;
+    carritos[`${num}`].cantidad = ++cantidadUno;
 
     //Guarda el nuevo carrito en el LocalStorage
     localStorage.setItem("carritos", JSON.stringify(carritos));
@@ -121,7 +106,7 @@ function restarUno(num) {
     let carritos = JSON.parse(localStorage.getItem("carritos"));
 
     //Modifica cantidad
-    carritos[`p${num}`].cantidad = Number(valor.value);
+    carritos[`${num}`].cantidad = Number(valor.value);
 
     //Guarda el nuevo carrito en el LocalStorage
     localStorage.setItem("carritos", JSON.stringify(carritos));
@@ -141,7 +126,7 @@ function borrarUno(num) {
     let carritos = JSON.parse(localStorage.getItem("carritos"));
 
     // elimina el producto
-    delete carritos[producto.id];
+    delete carritos[num];
 
     //Guarda el nuevo carrito en el LocalStorage
     localStorage.setItem("carritos", JSON.stringify(carritos));
@@ -154,7 +139,7 @@ function borrarUno(num) {
 function cargarLocal() {
     carrito = JSON.parse(localStorage.getItem("carritos"));
     for (const producto in carrito)
-        creaTabla(producto.replace(/((?:producto0*))/, ""), carrito[producto].imagen, carrito[producto].producto, carrito[producto].cantidad, carrito[producto].precio, carrito[producto].nomSabores);
+        creaTabla(producto, carrito[producto].imagen, carrito[producto].producto, carrito[producto].cantidad, carrito[producto].precio, carrito[producto].nomSabores);
 }
 
 function calculaTotal() {
