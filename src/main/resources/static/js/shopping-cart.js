@@ -225,8 +225,6 @@ puntosEntregas.forEach(e => {
 });
 
 /* Evento POST */
-
-/* Evento POST */
 function enviarPedido() {
     let arrayIdPedidos = [];
     //Se trae el localStorage
